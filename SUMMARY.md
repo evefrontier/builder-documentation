@@ -6,6 +6,7 @@
 
 * [Quickstart](getting-started/quickstart.md)
 * [Publish your docs](getting-started/publish-your-docs.md)
+* [Contributing](getting-started/Contributing.md)
 
 ## Basics
 
