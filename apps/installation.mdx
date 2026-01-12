@@ -1,0 +1,60 @@
+# Add A Wallet To The EVE Vault Browser Extension
+
+import { Steps } from "nextra/components"
+import { Callout } from "nextra/components"
+
+This document describes installing and adding your in-game wallet to the EVE Vault browser extension. Every new character is funded with EVE Tokens and GAS in their account.
+
+<Callout>
+These steps assume you have already created your in-game characters that automatically creates your wallet, for info on how to setup the wallet in game see [Wallet game setup](/EveVault/walletSetup).
+</Callout>
+
+<br/ >
+
+The EVE Vault extension is only available for the Google Chrome browser at this time. Please [download and install Chrome](https://www.google.com/chrome/) before continuing with these instructions.
+
+**Note**: If you have installed EVE Vault in the past, please uninstall it, and then follow these instructions. Earlier versions will conflict with the new EVE Vault, and cause it to break.
+<Steps>
+### Step 1: Download the Extension
+Download the EVE Vault browser extension: [Vault V1.1.1](https://artifacts.evefrontier.com/wallet/extension/vault-v1.1.1/wallet-alpha.zip)
+
+### Step 2: Unzip the Extension
+In your download folder, unzip the extension file. This creates the _wallet-alpha_ folder.
+
+### Step 3: Visit Chrome Extension Management
+Open Google Chrome and visit <strong>chrome://extensions</strong>
+
+### Step 4: Enable Developer Mode
+In the top-right corner of the Extensions tab, enable **Developer Mode**.
+
+<br />
+
+![Add extension](./assets/6-add-extension.png "Add extension")
+
+### Step 5: Install the EVE Vault Extension
+Click **Load Unpacked**, and choose the **wallet-alpha** folder. Chrome adds the EVE Vault extension.
+
+### Step 6: Open EVE Vault
+Click **Extensions** (the puzzle piece), and then click **EVE Vault**. The EVE Vault window opens. ![Chrome Extensions List](./assets/extensionslist.png)
+
+### Step 7: Import your Wallet
+Click **Import Wallet**. then enter the _recovery phrase_ you created when you set up your wallet, and then click **Confirm**. The recovery phrase is also called the _mnemonic passphrase_ and you can access it through the game client:
+![Password recovery](./assets/game-setup/recovery-view.png)
+Click on the Wallet icon on the left and then the cog wheel in the Wallet window and select **View recovery phrase** that brings up a window with your _mnemonic passphrase_.
+
+### Step 8: Create a Password
+On the Set Password screen, enter and confirm a password of at least eight characters, and then click **Continue**. This password encrypts your data. You can use it to unlock your EVE Vault in the future.
+
+**NOTE**: Save this password in a secure location (we recommend [1Password](https://1password.com/)). There is no way to recover the password at this time.
+
+</Steps>
+
+Congratulations! Your wallet is ready in EVE Vault and is linked to your character's in-game wallet: click **Enter**. Your character's wallet in the EVE Vault displays.
+
+You can view your EVE Vault in Chrome at any time by adding the Extension as a pinned item in your toolbar at the top of the Extensions window:
+    1. Click the Puzzle-Icon.
+    2. Select the **EVE Vault** pin icon, turning it blue.
+
+![Pinning EVE Vault](./assets/14-pinning-eve-vault.png "Pinning EVE Vault")
+
+Having issues? Please let us know on [Discord](https://discord.com/invite/evefrontier).

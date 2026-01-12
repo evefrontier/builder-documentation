@@ -1,0 +1,97 @@
+import { Steps } from "nextra/components"
+
+![Asset](../images/SSU.png)
+
+# Smart Storage Unit
+The **Smart Storage Unit (SSU)** is a [Smart Assembly](/SmartAssemblies) that can store and dispense items. **SSU**'s can be used for several different purposes; from creating Trade Hubs to Games. 
+
+To deploy a **Smart Storage Unit**, you need to deploy it at least 200KM away from another **SSU**.
+
+## Item Storage
+
+The **Smart Storage Unit** has two types of inventories; the main inventory and the ephemeral (player) inventory. These inventories are attached to the **SSU** game object. Interaction and access can be configured to allow for full public usage, direct **SSU Inventory** (or **Ephemeral Inventory**) transfers, or more complex scenarios. These inventories hold game items on-chain and provide builders the opportunity to create custom use cases around this on-chain storage.
+
+### SSU Inventory
+This is the storage that is directly used by the **SSU** game object, any items therein belong to the owner of the **SSU**. Other players do not have access to the inventory contents unless the owner grants them access (or transfers those items to a player controlled **Ephemeral Inventory**). **SSU** owners can control who can interact with the **SSU Inventory** contents (and how) via an integrated set of **transfer** entry points.
+
+### Ephemeral Inventory
+Temporary storage for players interacting with an **SSU**. Players can deposit to (and withdraw items from) the **SSU** via this storage space. It is an inventory slot exclusively dedicated to each individual player who interacts with an **SSU**.
+
+When items are placed in an **Ephemeral Inventory**, they are removed from the player's Ship inventory and are placed in that player's allocated **Ephemeral Inventory** storage on that **SSU**. Once there, it is the **SSU** owner's responsibility to have exposed logic in-place to transfer items between player **Ephemeral Inventory** and the **SSU Inventory**. 
+
+Players should be aware that any items placed inside of an **Ephemeral Inventory** slot will remain there until that player initiates some further action to trigger the **SSU**'s transfer logic or until those items are removed. 
+**Importantly**, any transfer logic between the **SSU Inventory** and a player's **Ephemeral Inventory** is decided by the **SSU owner**.
+
+### Ephemeral Inventory to SSU Inventory Interaction
+Direct interaction with the SSU **Inventory** and any associated **Ephemeral Inventories** is reserved for game actions (for example when you move items in and out of an **SSU** from the in-game UI) However, **SSU** owners can control who can interact with the **SSU Inventory** contents (and how they can interact) via two transfer entrypoints:
+
+- **SSU Inventory transfer** - This allows for the transfer of items from the **SSU Inventory** to any player's dedicated **Ephemeral Inventory**. It triggers an **SSU Inventory** withdrawal and an **Ephemeral Inventory** deposit. By default this entrypoint is public and anyone can use it. As such the **SSU** owner should configure which approved accounts are allowed to interact with it. For example, the owner can set access to allow themselves (or tribe-mates) to call the **SSU Inventory transfer** directly or approve interaction through a custom smart contract.
+
+- **Ephemeral Inventory transfer** - This allows for the transfer of items from any player's **Ephemeral Inventory** to the **SSU Inventory**. In the opposite direction, this entrypoint triggers an **Ephemeral Inventory** withdrawal and an **SSU Inventory** deposit. This entrypoint _ONLY_ accepts actions initiated by the player owner of that associated **Ephemeral Inventory**. This means that after a player moves items from their Ship inventory to an **SSU** associated **Ephemeral Inventory**, _ONLY_ that player can make transfer or withdrawal actions from their **Ephemeral Inventory**. By default that player can call the **Ephemeral Inventory transfer** directly or via any smart contract interaction, however, the **SSU** owner has the ability to allow (or disallow) direct transfers or transfers from other smart contracts.
+
+A very common pattern for configuring the above two entrypoints is to allow _ONLY_ the **SSU** owner to call the **SSU Inventory transfer** directly, and prohibiting player's from calling the **Ephemeral Inventory transfer** directly, while at the same time approving calls from _ONLY_ a custom logic smart contract to access and use both entrypoints. This gives the **SSU** owner the freedom to make direct **SSU Inventory transfers**, while at the same time enforcing specific business logic rules (via a custom smart contract) upon anyone who has items in the **SSU**'s **Ephemeral Inventory** storage.
+
+## How to Get an SSU
+To get an **SSU** in Testnet / OP Sepolia you need to manufacture and deploy it manually. If you are developing on the locally deployed world you can use the given scripts to create a mock **SSU** for testing purposes.
+
+<Steps>
+### Step 1: Get The Resources
+To manufacture the **SSU**, you first need the resources required. To get these resources you can either purchase them from the market, destroy other player's ships with the items or mine them. 
+
+### Step 2: Manufacture
+To manufacture an **SSU**, you need to find a station that will allow you to make one. Not all stations will let you create one, so make sure you go to one that can.
+
+Once you are at one of these stations, you can use the Industry tab to start manufacturing an **SSU**. Once it is done, you can transfer it into your ship cargo inventory and un-dock.
+
+### Step 3: Location
+To deploy an **SSU**, you need to be over 50KM away from any station and over 5KM away from any other deployable's. Make sure to place your **SSU** in a place where it will make sense. For example, if you are using the **Smart Storage Unit** as a vending machine for miners you would want to put it near an asteroid field.  
+
+### Step 4: Deploy
+From your ship cargo hold, you can deploy the **SSU** and then configure it. Make sure to put fuel in it and switch it online for it to work.
+
+</Steps>
+## Example
+### Smart Assembly Unit: [View](/SmartStorageUnit)
+Create a Vending Machine **Smart Storage Unit (SSU)** in the game which trade items between the owner and players.
+
+## Data
+On the chain, you can access data about anyone's **Smart Storage Unit**. For more information on this you can visit the [Swagger World API](/SwaggerWorldApi) page.
+
+### How To Access
+To access the data, visit https://blockchain-gateway-stillness.live.tech.evefrontier.com/v2/smartassemblies/ssu_id (and replace ssu_id with your SSU ID).
+To see all SSUs, visit https://blockchain-gateway-stillness.live.tech.evefrontier.com/v2/smartassemblies
+
+You should then receive JSON similar to below. You can view items in the inventory, and all of the ephemeral inventories.
+
+```json copy
+"inventory": {
+  "storageCapacity": 100000000000000,
+  "usedCapacity": 490000000000,
+  "storageItems": [
+    {
+      "typeId": 77518,
+      "itemId": "112603025077760770783264636189502217226733230421932850697496331082050661822826",
+      "quantity": 49,
+      "name": "Lens 3X",
+      "image": "https://mainnet-game-ipfs-gateway.nursery.reitnorf.com/ipfs/QmcQzTvz9Z4koU8pvBJL94HxHtLoPoB9wDnuRE278AdbmA"
+    }
+  ],
+  "ephemeralInventoryList": [
+    {
+      "ownerId": "0xbc07106cc909d37e36a1c3db35411805836bdf67",
+      "ownerName": "skygirl",
+      "storageCapacity": 1000000000000,
+      "usedCapacity": 10000000000,
+      "ephemeralInventoryItems": [
+        {
+          "typeId": 77518,
+          "itemId": "112603025077760770783264636189502217226733230421932850697496331082050661822826",
+          "quantity": 1,
+          "name": "Lens 3X",
+          "image": "https://mainnet-game-ipfs-gateway.nursery.reitnorf.com/ipfs/QmcQzTvz9Z4koU8pvBJL94HxHtLoPoB9wDnuRE278AdbmA"
+        }
+      ]
+    }
+  ]
+},
+```

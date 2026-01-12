@@ -1,0 +1,61 @@
+# Wallet game setup
+
+## Add your Wallet to the EVE Vault in game
+
+When you have created a character we automatically create a wallet that you need to connect to the EVE Vault to see it in game.
+
+1. Open the **Wallet** in-game from the lower left Keeper wallet button:
+
+   ![Password recovery](./assets/game-setup/recovery-open.png)
+
+
+2. Open the **EVE Vault** in the wallet by clicking the orange <strong>EVE</strong> Tab:
+
+   ![Password recovery](./assets/game-setup/vault-open.png)
+
+3. Click the cog wheel on the EVE Tab in the _wallet window_ and select the "**View recovery phrase**" option:
+
+   ![Password recovery](./assets/game-setup/recovery-view.png)
+
+import { Callout } from "nextra/components"
+
+<Callout emoji="">
+	**IMPORTANT:** Do not lose your recovery phrase. Without this phrase you could permanently lose access to your wallet and your digital assets. We recommend storing it somewhere safe for example in a secure physical location ( by writing it down ) and not sharing it with others.
+
+    _If you log into your account on another computer you must have your original recovery phrase to recover your digital assets on another computer._
+
+</Callout>
+
+4. This brings up a window with the 12 word recovery phrase for your wallet. Click the "**Click to copy**" button to copy it.
+5. Now click the "**Import character wallet**" button in the EVE Vault:
+
+<center>
+   ![Import Wallet - Character](./assets/game-setup/import.png)
+</center>
+
+6. Paste or type your recovery phrase into the text area and click **Confirm**.
+7. You'll then be asked for a password for locking the EVE Vault (the wallet you just added), select a password (and don't forget it or keep it safe somewhere).
+8. Now you should see <strong>EVE</strong> and <strong>GAS</strong> in your wallet in the EVE Vault.
+
+## What happens when you delete your character?
+
+When you delete a character, the EVE Vault and any wallets stored in it remain accessible and are not removed or cleared.
+
+If you create a new character and open the EVE Vault, you will be prompted to enter the password to access it, just as before. The inventory, including your game wallet, will still be intact.
+
+_For the current playtest, players are given a single starting wallet for their characters. However, this will be updated later so that you can manually add and remove wallets as you wish._
+
+## Why is there an in-game password for the EVE Vault?
+
+The password protects access to the EVE Vault inventory within the game, as it contains items stored on the blockchain. _As soon as you add a wallet to the EVE Vault you are asked to protect it with a password to protect the inventory inside._
+
+Anything in the EVE Vault is not tied to the game client but resides on the blockchain, making it accessible from other platforms, not just the in-game EVE Vault.
+
+_For example, you can access the EVE Vault at [vault.evefrontier.com](https://vault.evefrontier.com/), where you also need to set up a password for the browser. This password can be different from the one you use for the in-game EVE Vault._
+
+## How is the recovery phrase stored?
+The recovery phrase is currently stored in plaintext on the computer where your character was created. Since the playtest is focused on testing wallet functionality, we are not addressing this immediately. 
+
+<Callout emoji="">
+_This will be replaced with Account Abstraction in future updates._
+</Callout>
