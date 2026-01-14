@@ -1,12 +1,8 @@
 # EVE Vault
 
-import { Cards } from "nextra/components"
-
-\<br/ >
-
 **EVE Vault:** is an inventory management tool available for browser accessible on [vault.evefrontier.com](https://vault.evefrontier.com/).
 
-\<br/ > \<Cards.Card icon={"⬇️"} title=" Download Chrome Extension" href="/EveVault/installation" arrow /> \<br/ >
+<table data-view="cards"><thead><tr><th>Title</th><th data-card-target data-type="content-ref">Target</th></tr></thead><tbody><tr><td>⬇️ Download Chrome Extension</td><td><a href="/broken/pages/47463b151e436a4ae0c7dd7f4fc89efa10ad97c2">Broken link</a></td></tr></tbody></table>
 
 _Taking a plunge into the unknown depths of a remote and desolate region, the Exiles are assisted by a tool worthy of weathering catastrophes of interstellar magnitudes. Utilizing extreme protection methods, the EVE Vault preserves data required to reboot civilization in the face of a collapse, impervious to the waves of decay which wash over the Frontier._
 
@@ -18,7 +14,7 @@ The economy of EVE Frontier is designed to allow for real-world value to be exch
 
 A community-driven dynamic economy allows you to create custom currencies, establish markets, and convert digital to real-world value. Trade assets, services, and reputation in a truly open free-market environment.
 
-## In-Game Currencies
+### In-Game Currencies
 
 To support this free-market approach, EVE Frontier will have a range of in-game currencies available.
 
@@ -27,9 +23,9 @@ To support this free-market approach, EVE Frontier will have a range of in-game 
 
 The EVE Token will exist on a test environment until it has undergone rigorous testing and meets our standards related to economy design, usage, performance, security and transaction speed.
 
-### These enable:
+#### These enable:
 
 * The ability to trade currency outside of EVE Frontier
 * The de-incentivizing of secondary markets
 * The ability for players to create, exchange and use their own currencies (for example alliance-specific currency)
-* A means to reward the builders and operators of in-game infrastructure and support its maintenance (edited)
+* A means to reward the builders and operators of in-game infrastructure and support its maintenance
