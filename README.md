@@ -1,23 +1,3 @@
----
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/yE16Xb3IemPxJWydtPOj/
----
-
 # Welcome
 
 **EVE Frontier** redefines the survival genre by fusing intense space survival gameplay with the limitless potential of a player-driven sandbox universe where you can play a vital role in rebuilding this world, actively participating as architects in the reconstruction of civilization.
