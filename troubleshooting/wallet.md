@@ -36,7 +36,7 @@ Click the cog wheel in the EVE section and select the 'View recovery phrase' opt
 
 This brings up a window with the 12 word recovery phrase for your wallet. Click the copy button to copy the phrase to the clipboard.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 Ensure to store this somewhere secure so that you can import it in the future.
 {% endhint %}
 {% endstep %}
@@ -62,6 +62,11 @@ For **Windows** you can follow the following steps.
 
 Replace **\[USERNAME-HERE]** with your OS username and visit the below folder directory:
 
+{% code title="File path" %}
+```
+```
+{% endcode %}
+
 ```bash
 C:\Users\[USERNAME-HERE]\AppData\Local\CCP\EVE\c_ccp_eve_frontier_stillness_stillness.servers.evefrontier.com\cache\Wallet
 ```
@@ -76,7 +81,7 @@ Here you'll see folders for all the characters you have created. The folder name
 
 In the file explorer, click on the View Button > Show > Hidden Items to be able to view the **.mnemonic\_plaintext** file.
 
-This file contains that recovery phrase which is a 12 word key used to recover your wallet.
+This file contains the recovery phrase which is a 12 word key used to recover your wallet.
 {% endstep %}
 
 {% step %}
@@ -96,6 +101,11 @@ For **MacOS** you can follow the following steps.
 
 You'll need to access the following folder where **\[USERNAME-HERE]** needs to be replaced with your OS username:
 
+{% code title="File path" %}
+```
+```
+{% endcode %}
+
 ```bash
 /Users/[USERNAME-HERE]/Library/Application Support/CCP/EVE/_users_[USERNAME-HERE]_library_application_support_frontier_sharedcache_stillness_eve.app_contents_resources_build_stillness.servers.evefrontier.com/cache/Wallet
 ```
@@ -110,7 +120,7 @@ Here you'll see folders for all the characters you have created. The folder name
 
 In Finder, press **Command+Shift+Dot** and hidden files will become visible and you should see a file called **.mnemonic\_plaintext**.
 
-This file contains that recovery phrase which is a 12 word key used to recover your wallet.
+This file contains the recovery phrase which is a 12 word key used to recover your wallet.
 {% endstep %}
 
 {% step %}
@@ -134,4 +144,4 @@ If you recreate your character, make sure to store your assets and items with yo
 
 ## Still Having Issues?
 
-If your still having issues then you can create a ticket at [EVE Frontier Support](https://support.evefrontier.com/hc/en-us/requests/new) to get support.
+If you're still having issues then you can create a ticket at [EVE Frontier Support](https://support.evefrontier.com/hc/en-us/requests/new) to get support.

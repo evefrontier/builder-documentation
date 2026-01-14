@@ -2,14 +2,20 @@
 
 This page covers some of the most common issues and the potential solutions to them.
 
-### Lost your wallet recovery phrase
+{% hint style="danger" %}
+#### Lost your wallet recovery phrase
 
-If you have lost your wallet phrase then you can access it by following the [Wallet Troubleshooting Guide](/broken/pages/f915bbd702ab23e2ba60da7ebc00c5ecb5ab7da4#file).
+If you have lost your wallet phrase then you can access it by following the [Wallet Troubleshooting Guide](/broken/pages/261193fdef32a988a1fee297f0ddd5ec8c1725af#file).
+{% endhint %}
 
-### Other issues
+{% hint style="info" %}
+#### Other issues
 
-You can view [support.evefrontier.com](https://support.evefrontier.com/hc/en-us) for more tips and information.
+You can view [https://support.evefrontier.com/hc/en-us](https://support.evefrontier.com/hc/en-us) for more tips and information.
+{% endhint %}
 
-## Still Having Issues?
+### Still Having Issues?
 
-If your still having issues then you can visit the [EVE Frontier Discord](https://www.discord.gg/evefrontier) to get support!
+If you're still having issues you can visit the [EVE Frontier Discord](https://www.discord.gg/evefrontier) to get support!
+
+<a href="https://www.discord.gg/evefrontier" class="button primary">Join EVE Frontier Discord</a>

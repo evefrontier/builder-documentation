@@ -56,7 +56,7 @@ If that does not work, then restart your system.
 
 #### Incorrect Tool Version
 
-If you have an incorrect version of a required tool, it might cause issues when building and developing smart contracts. To fix this go [here](/broken/pages/3a7bb5afc156c2855c38aa783dfd8161c19fd6ee) to upgrade the version of the tool.
+If you have an incorrect version of a required tool, it might cause issues when building and developing smart contracts. To fix this go [here](/broken/pages/97dfb7484d0f3fcf2546773dd94461db14100b6f) to upgrade the version of the tool.
 
 #### Error: script failed: Module\_AlreadyInstalled()
 
@@ -90,7 +90,7 @@ pnpm deploy
 
 #### Incorrect Tool Version
 
-If you have an incorrect version of a required tool, it might cause issues when building and developing smart contracts. To fix this go [here](/broken/pages/3a7bb5afc156c2855c38aa783dfd8161c19fd6ee) to upgrade the version of the tool.
+If you have an incorrect version of a required tool, it might cause issues when building and developing smart contracts. To fix this go [here](/broken/pages/97dfb7484d0f3fcf2546773dd94461db14100b6f) to upgrade the version of the tool.
 
 #### Error: script failed: Module\_AlreadyInstalled()
 
@@ -130,7 +130,7 @@ If that does not work, then restart your system.
 
 #### Incorrect Tool Version
 
-If you have an incorrect version of a required tool, it might cause issues when building and developing smart contracts. To fix this go [here](/broken/pages/3a7bb5afc156c2855c38aa783dfd8161c19fd6ee) to upgrade the version of the tool.
+If you have an incorrect version of a required tool, it might cause issues when building and developing smart contracts. To fix this go [here](/broken/pages/97dfb7484d0f3fcf2546773dd94461db14100b6f) to upgrade the version of the tool.
 
 #### Error: script failed: Module\_AlreadyInstalled()
 
@@ -142,6 +142,6 @@ When deploying some smart contracts, if they have a ERC20 Token linked to them t
 
 <summary>Still Having Issues?</summary>
 
-If you're still having issues then you can visit the [EVE Frontier Discord](https://www.discord.gg/evefrontier) to get support!
+If you're still having issues then you can visit the \[EVE Frontier Discord]\(https://www.discord.gg/evefrontier) to get support!
 
 </details>
