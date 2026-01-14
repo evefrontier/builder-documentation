@@ -45,5 +45,8 @@
 
 ***
 
-* [Troubleshooting](troubleshooting.md)
+* [Troubleshooting](troubleshooting/README.md)
+  * [Builder](troubleshooting/builder.md)
+  * [Player](troubleshooting/player.md)
+  * [Wallet](troubleshooting/wallet.md)
 * [Contributing](contributing.md)
