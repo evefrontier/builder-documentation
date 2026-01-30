@@ -1,79 +1,71 @@
 # Table of contents
 
+## Welcome
+
 * [Welcome](README.md)
-* [Introduction](introduction.md)
 
-## Concepts
-
-* [Smart Infrastructure](concepts/smartinfrastructure.md)
-* [Smart Assemblies](concepts/smartassemblies/README.md)
-  * [Smart Storage Unit](concepts/smartassemblies/smartstorageunit.md)
-  * [Smart Turret](concepts/smartassemblies/smartturret.md)
-  * [Smart Gate](concepts/smartassemblies/smartgate.md)
-
-## Getting Started
-
-* [Setting Up Your Tools](getting-started/Tools.md)
-* [Setting Up The World](getting-started/LocalWorldSetup.md)
+## Title
 
 ## Examples
 
-* [Smart Turret](examples/smart-turret/README.md)
-  * [configure smart turret](examples/smart-turret/configure-smart-turret.md)
-  * [deploy smart turret contracts](examples/smart-turret/deploy-smart-turret-contracts.md)
-* [Smart Storage Unit](examples/smart-storage-unit/README.md)
-  * [configure smart storage unit](examples/smart-storage-unit/configure-smart-storage-unit.md)
-  * [deploy smart storage unit contracts](examples/smart-storage-unit/deploy-smart-storage-unit-contracts.md)
-* [Smart Gate](examples/smart-gate/README.md)
-  * [configure smart gate](examples/smart-gate/configure-smart-gate.md)
-  * [deploy smart gate contracts](examples/smart-gate/deploy-smart-gate-contracts.md)
-
 ## Tools
-
-* [Swagger World Api](tools/swaggerworldapi.md)
-* [Stillness Blockchain Address](tools/blockchains-stillness-list.md)
 
 ## dApps
 
-* [Decentralized Applications](dapps/dapp/README.md)
-  * [dApp Quick Start](dapps/dapp/dapp-quick-start.md)
-  * [Folder Structure](dapps/dapp/folder-structure.md)
-  * [Navigating the dApp (In-Game)](dapps/dapp/navigating-the-dapp-in-game.md)
-  * [Connecting From An External Browser](dapps/dapp/connecting-from-an-external-browser.md)
-  * [Building](dapps/dapp/building/README.md)
-    * [Customizing External dApps](dapps/dapp/building/customizing-external-dapps.md)
-    * [Building with the dApp Scaffold](dapps/dapp/building/building-with-the-dapp-scaffold.md)
-    * [World API](dapps/dapp/building/world-api.md)
-    * [Connecting In-Game](dapps/dapp/building/connecting-in-game.md)
-
 ## Smart Object Framework
-
-* [Smart Contracts](smart-object-framework/smart/README.md)
-  * [Development in the EVE Frontier World](smart-object-framework/smart/development-in-the-eve-frontier-world.md)
-  * [MUD Explainer](smart-object-framework/smart/mud-explainer.md)
-  * [Smart Object Framework Explainer](smart-object-framework/smart/smart-object-framework-explainer.md)
-  * [EVE Frontier World Explainer](smart-object-framework/smart/eve-frontier-world-explainer.md)
-  * [Interfacing with the EVE Frontier World](smart-object-framework/smart/interfacing-with-the-eve-frontier-world.md)
-  * [Building Pragmatics](smart-object-framework/smart/building-pragmatics.md)
 
 ## PODs
 
-* [Introduction to PODs](pods/pods.md)
-* [Creating and Verifying PODs](pods/creating-and-verifying-pods.md)
-* [Zero Knowledge Proofs](pods/zero-knowledge-proofs.md)
-
 ## Apps
 
-* [EVE Vault](apps/eve-vault/README.md)
-  * [Wallet Game Setup](apps/eve-vault/wallet-game-setup.md)
-  * [Browser Extension](apps/eve-vault/browser-extension.md)
-  * [GAS Faucet](apps/eve-vault/gas-faucet.md)
-  * [Known Issues](apps/eve-vault/known-issues.md)
+## Archive
 
-***
-
-* [Troubleshooting](troubleshooting/README.md)
-  * [Builder](troubleshooting/builder.md)
-  * [Player](troubleshooting/player.md)
-  * [Wallet](troubleshooting/wallet.md)
-* [Contributing](contributing.md)
+* [Introduction](archive/introduction.md)
+* [Smart Infrastructure](archive/smartinfrastructure.md)
+* [Smart Assemblies](archive/smartassemblies/README.md)
+  * [Smart Storage Unit](archive/smartassemblies/smartstorageunit.md)
+  * [Smart Turret](archive/smartassemblies/smartturret.md)
+  * [Smart Gate](archive/smartassemblies/smartgate.md)
+* [Setting Up Your Tools](archive/tools.md)
+* [Setting Up The World](archive/localworldsetup.md)
+* [Smart Storage Unit](archive/smart-storage-unit/README.md)
+  * [configure smart storage unit](archive/smart-storage-unit/configure-smart-storage-unit.md)
+  * [deploy smart storage unit contracts](archive/smart-storage-unit/deploy-smart-storage-unit-contracts.md)
+* [Smart Turret](archive/smart-turret/README.md)
+  * [configure smart turret](archive/smart-turret/configure-smart-turret.md)
+  * [deploy smart turret contracts](archive/smart-turret/deploy-smart-turret-contracts.md)
+* [Smart Gate](archive/smart-gate/README.md)
+  * [configure smart gate](archive/smart-gate/configure-smart-gate.md)
+  * [deploy smart gate contracts](archive/smart-gate/deploy-smart-gate-contracts.md)
+* [Swagger World Api](archive/swaggerworldapi.md)
+* [Stillness Blockchain Address](archive/blockchains-stillness-list.md)
+* [Decentralized Applications](archive/dapp/README.md)
+  * [dApp Quick Start](archive/dapp/dapp-quick-start.md)
+  * [Folder Structure](archive/dapp/folder-structure.md)
+  * [Navigating the dApp (In-Game)](archive/dapp/navigating-the-dapp-in-game.md)
+  * [Connecting From An External Browser](archive/dapp/connecting-from-an-external-browser.md)
+  * [Building](archive/dapp/building/README.md)
+    * [Customizing External dApps](archive/dapp/building/customizing-external-dapps.md)
+    * [Building with the dApp Scaffold](archive/dapp/building/building-with-the-dapp-scaffold.md)
+    * [World API](archive/dapp/building/world-api.md)
+    * [Connecting In-Game](archive/dapp/building/connecting-in-game.md)
+* [Smart Contracts](archive/smart/README.md)
+  * [Development in the EVE Frontier World](archive/smart/development-in-the-eve-frontier-world.md)
+  * [MUD Explainer](archive/smart/mud-explainer.md)
+  * [Smart Object Framework Explainer](archive/smart/smart-object-framework-explainer.md)
+  * [EVE Frontier World Explainer](archive/smart/eve-frontier-world-explainer.md)
+  * [Interfacing with the EVE Frontier World](archive/smart/interfacing-with-the-eve-frontier-world.md)
+  * [Building Pragmatics](archive/smart/building-pragmatics.md)
+* [Introduction to PODs](archive/pods.md)
+* [Creating and Verifying PODs](archive/creating-and-verifying-pods.md)
+* [Zero Knowledge Proofs](archive/zero-knowledge-proofs.md)
+* [EVE Vault](archive/eve-vault/README.md)
+  * [Wallet Game Setup](archive/eve-vault/wallet-game-setup.md)
+  * [Browser Extension](archive/eve-vault/browser-extension.md)
+  * [GAS Faucet](archive/eve-vault/gas-faucet.md)
+  * [Known Issues](archive/eve-vault/known-issues.md)
+* [Troubleshooting](archive/troubleshooting/README.md)
+  * [Builder](archive/troubleshooting/builder.md)
+  * [Player](archive/troubleshooting/player.md)
+  * [Wallet](archive/troubleshooting/wallet.md)
+* [Contributing](archive/contributing.md)
