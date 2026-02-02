@@ -2,9 +2,70 @@
 
 <figure><img src=".gitbook/assets/banner_gate.png" alt=""><figcaption></figcaption></figure>
 
-EVE Frontier is CCP Games’ next-generation sandbox MMO experience, designed to push the boundaries of player-driven creativity and emergent gameplay. Built on the principles that made EVE Online a legendary universe, Frontier takes these ideas further by embracing modularity, openness and extensibility, empowering builders and developers to shape the future of the game.
 
-With EVE Frontier on Sui, we’re unlocking new possibilities for decentralized ownership, composable game systems, and community-driven innovation. This move isn’t just about adopting cutting-edge blockchain technology it’s about creating a foundation where builders can truly participate in the evolution of the EVE universe.
+In **EVE Frontier**, survival is only the starting point. What truly defines this next generation sandbox is the unprecedented agency it gives to Builders, creators, and developers. Frontier expands on decades of EVE design philosophy, player-driven economies, emergent gameplay, and systemic depth, and pushes it into a new era of openness, modularity, and community-driven evolution.
 
-By joining the Frontier ecosystem, Builders gain access to a rich sandbox backed by decades of EVE’s design philosophy and a future-proof blockchain infrastructure. Whether you’re interested in creating gameplay extensions, building economic tools, or designing immersive worlds, Frontier offers the flexibility and technical depth to make it possible.\
-Together, we can redefine what it means to build in the EVE universe, open, collaborative and powered by the creativity of its community.
+## A Sandbox Where Builders Shape the Universe
+
+At the core of Frontier are **Smart Assemblies**, physical and programmable structures anchored in space. These are not just buildings, they are the foundation of a living infrastructure layer that players can design, modify, automate, and optimize. Turrets, markets, storage facilities, refineries, logistics hubs, and defensive networks become active components of your strategy. Your constructions do not just exist in the world, they act within it.
+
+Frontier is designed as a true open environment. The world evolves not only through player actions, but also through server-side, real-time editing by the community. This is a game where builders can directly influence the systems that govern it.
+
+## Construct to Expand, Program to Dominate
+
+Building in Frontier is not cosmetic, it is strategic.
+
+### Build Infrastructure to Expand Your Influence
+Every structure you place expands your agency in the Frontier. Bases become footholds, networks become territory, and entire playstyles emerge from how you design your industrial, logistical, or defensive footprint.
+
+### Program Functionality to Master the Sandbox
+Through the programmable layer of Smart Assemblies, you could for example:  
+- automate defenses  
+- create dynamic trade systems  
+- build custom logistics pipelines  
+- design specialized utility structures  
+- script unique gameplay interactions  
+
+The more you build, and the smarter your assemblies are, the more control you gain over your environment.
+
+## A Fully Open Economic Sandbox
+
+Frontier embraces a **community-driven, open in-game economy**. Builders can create:  
+- custom currencies  
+- decentralized markets  
+- trading networks  
+- service economies  
+- reputation-based systems  
+
+Every tool exists for players to shape the economic landscape, not just participate in it.
+
+## Powered by Smart Assemblies
+
+The **World Package** extends Frontier's programmability far beyond structures. Any in-game entity can be represented on-chain and edited by player-written code, including:  
+- characters  
+- ships  
+- items  
+- skill systems  
+- production rules  
+- marketplaces  
+- and more  
+
+This creates a composable and extensible universe where emergent gameplay is not just allowed, it is inevitable.
+
+## Building on Sui, A Foundation for the Future
+
+Frontier's integration with **Sui** enables:  
+- decentralized ownership  
+- secure and scalable on-chain systems  
+- composability across game systems  
+- future-proof persistence for player creations  
+
+This is not blockchain for the sake of technology, it is a platform for genuine co-creation.
+
+## Build the Future of the EVE Universe
+
+By stepping into the Frontier ecosystem, you join a community empowered to shape the world at every level, from infrastructure to economics to systemic gameplay. Whether you are programming advanced Smart Assemblies, designing tools for other players, or building vast industrial complexes, Frontier gives you both the freedom and the framework to bring your ideas to life.
+
+**EVE Frontier is open, collaborative, and powered by the creativity of its builders.**  
+Together, we can define what it truly means to build in the EVE universe.
+
