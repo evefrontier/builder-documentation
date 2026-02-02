@@ -39,7 +39,7 @@ Frontier embraces a **community-driven, open in-game economy**. Builders can cre
 
 Every tool exists for players to shape the economic landscape, not just participate in it.
 
-## Powered by Smart Assemblies
+## Powered by The World Package
 
 The **World Package** extends Frontier's programmability far beyond structures. Any in-game entity can be represented on-chain and edited by player-written code, including:  
 - characters  
