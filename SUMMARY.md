@@ -3,7 +3,6 @@
 ## Welcome
 
 * [Why Build on EVE Frontier?](README.md)
-* [Understanding the EVE Frontier World](welcome/understanding-the-eve-frontier-world.md)
 * [Smart Infrastructure](welcome/smart-infrastructure.md)
 * [Contstraints](welcome/contstraints.md)
 * [Sui & Move Fundamentals](welcome/sui-and-move-fundamentals.md)
