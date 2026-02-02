@@ -1,2 +1,67 @@
-# Contstraints
+# Builder Constraints and Limitations
+
+While EVE Frontier is designed for unprecedented builder empowerment and programmability, there are important constraints and limitations—technical, design, and social—that all creators must understand when building for the live world.
+
+## 1. Blockchain/Smart Contract Constraints
+
+### - Resource and Gas Costs
+- Every on-chain operation (deployment, transactions, storage, execution) incurs gas costs. Inefficient or complex Smart Assemblies may become expensive to deploy and use.
+- Sui’s resource-oriented model enforces that each change has a computation and storage price.
+
+### - Execution & Storage Limits
+- Smart Assemblies have limits on computational resources per transaction (computation, stack depth, and execution time).
+- Storage per object or contract is limited to avoid chain bloat—large datasets or high-frequency state changes are discouraged.
+
+### - No Native Off-Chain Calls
+- Smart Infrastructure code cannot natively query data from off-chain web services. Builders must use on-chain or pre-approved data providers (“oracles”) to fetch real-world information.
+
+### - Upgradeability Limits
+- Code deployed on-chain is immutable by default. Upgrades or bug fixes require new module deployments and data migration patterns, which must be planned for in advance.
+
+### - Programming in Move
+- All on-chain logic must be written in Move, which differs from more common languages like Solidity or JavaScript.
+- Move's strict type and resource system means some design patterns from other blockchains may not directly transfer.
+
+---
+
+## 2. Gameplay and World Constraints
+
+### - Game Physics and Location
+- Assemblies and assets are anchored to specific in-game locations and are bound by EVE Frontier’s digital physics. They cannot act outside physical limitations (e.g., instant transport, infinite reach).
+
+### - Permissioning and Access
+- Actions taken by Smart Assemblies must respect game-enforced permissions (character ownership, access rights, proximity, etc.).
+- Some global or admin-level systems are still closed to player modification until future expansions.
+
+### - Interoperability Boundaries
+- Smart Assemblies interact with well-documented APIs, but there may be system features not yet exposed to builder code.
+- Some world-changing actions (region creation, global rule changes) may be reserved for core updates or require approval/community consensus.
+
+---
+
+## 3. Social and Security Limitations
+
+### - Security Review and Approval
+- Code affecting shared or public systems may require additional review or community voting processes before activation.
+- Malicious contracts (e.g., siphoning assets, infinite loops) will be disabled and banned.
+
+### - Documentation and Support
+- Some APIs, features, or event triggers may not have full documentation; “bleeding edge” builders should expect evolving best practices.
+
+### - Community Etiquette & Rules
+- All builder contributions must follow the EVE Frontier code of conduct and collaboration guidelines.
+- Actions intended to harass or grief others via programmable infrastructure are prohibited.
+
+---
+
+## 4. Future Expansion & Limitations
+
+Many of these constraints will change as EVE Frontier—and the Sui ecosystem—evolve. Builders are encouraged to:
+- Design for upgradeability and modularity.
+- Follow official changelogs and roadmaps for upcoming features or lifted restrictions.
+- Share feedback so high-impact pain points can be prioritized.
+
+--
+
+Staying informed of current constraints lets you build robust, future-ready systems in EVE Frontier and help shape the evolution of the world!# Contstraints
 
