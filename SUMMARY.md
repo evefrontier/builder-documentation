@@ -2,13 +2,23 @@
 
 ## Welcome
 
-* [Welcome](README.md)
-
-## Title
-
-## Examples
+* [Why Build on EVE Frontier?](README.md)
+* [Understanding the EVE Frontier World](welcome/understanding-the-eve-frontier-world.md)
+* [Smart Infrastructure](welcome/smart-infrastructure.md)
+* [Contstraints](welcome/contstraints.md)
+* [Sui & Move Fundamentals](welcome/sui-and-move-fundamentals.md)
+* [Wallets & Identity](welcome/wallets-and-identity.md)
 
 ## Tools
+
+* [Environment Setup](tools/environment-setup.md)
+
+## Hello World
+
+* [Your First Smart Assembly](hello-world/your-first-smart-assembly.md)
+* [Move for EVE Frontier Builders](hello-world/move-for-eve-frontier-builders.md)
+
+## Examples
 
 ## dApps
 
