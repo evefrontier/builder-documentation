@@ -14,6 +14,7 @@
 
 ## Smart Contracts
 
+* [EVE Frontier World Explainer](smart-contracts/eve-frontier-world-explainer.md)
 * [Development in the EVE Frontier World](smart-contracts/development-in-the-eve-frontier-world.md)
 * [Interfacing with the EVE Frontier World](smart-contracts/interfacing-with-the-eve-frontier-world.md)
 * [Building Pragmatics](smart-contracts/building-pragmatics.md)
