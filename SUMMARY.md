@@ -12,20 +12,46 @@
 
 * [Environment Setup](tools/environment-setup.md)
 
-## Hello World
+## Smart Contracts
 
-* [Your First Smart Assembly](hello-world/your-first-smart-assembly.md)
-* [Move for EVE Frontier Builders](hello-world/move-for-eve-frontier-builders.md)
+* [Development in the EVE Frontier World](smart-contracts/development-in-the-eve-frontier-world.md)
+* [Interfacing with the EVE Frontier World](smart-contracts/interfacing-with-the-eve-frontier-world.md)
+* [Building Pragmatics](smart-contracts/building-pragmatics.md)
 
-## Examples
+## Smart Assemblies
+
+* [Storage Unit](smart-assemblies/storage-unit/README.md)
+  * [Configure](smart-assemblies/storage-unit/configure.md)
+  * [Deploy](smart-assemblies/storage-unit/deploy.md)
+* [Turret](smart-assemblies/turret/README.md)
+  * [Configure](smart-assemblies/turret/configure.md)
+  * [Deploy](smart-assemblies/turret/deploy.md)
+* [Gate](smart-assemblies/gate/README.md)
+  * [Configure](smart-assemblies/gate/configure.md)
+  * [Deploy](smart-assemblies/gate/deploy.md)
 
 ## dApps
 
-## Smart Object Framework
+* [dApps Quick Start](dapps/dapps-quick-start.md)
+* [Connecting from an External Browser](dapps/connecting-from-an-external-browser.md)
+* [Customizing External dApps](dapps/customizing-external-dapps.md)
+* [Connecting In-Game](dapps/connecting-in-game.md)
 
-## PODs
+## EVE Vault
 
-## Apps
+* [Wallet Game Setup](eve-vault/wallet-game-setup.md)
+* [Browser Extension](eve-vault/browser-extension.md)
+* [GAS Faucet](eve-vault/gas-faucet.md)
+
+## Troubleshooting
+
+* [Builder](troubleshooting/builder.md)
+* [Player](troubleshooting/player.md)
+* [Wallet](troubleshooting/wallet.md)
+
+## Contributing
+
+* [Page 2](contributing/page-2.md)
 
 ## Archive
 
