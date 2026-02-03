@@ -22,7 +22,7 @@ Below is an overview of the key systems and their roles within the SUI-based EVE
 
 #### SmartDeployable
 
-**SmartDeployable** objects are player-built or managed game entities deployed into the world (e.g. structures, outposts, drones).
+**SmartDeployable** objects are player-built or managed game entities deployed into the world (e.g. base building structures).
 - States include `Unanchored`, `Anchored`, `Online`, and `Destroyed`, all enforced and tracked by Move structure fields and event emissions.
 - Deploying an object mints a new SmartDeployable Move object; ownership and control flow to the creator.
 - Interactions like bringing a deployable online/offline, fueling, and anchoring use Move entry functions and are gated by SUI's dynamic object permission model.
