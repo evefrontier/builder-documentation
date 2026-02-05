@@ -41,6 +41,7 @@
 
 ## EVE Vault
 
+* [Introduction to EVE Vault](eve-vault/introduction-to-eve-vault.md)
 * [Wallet Game Setup](eve-vault/wallet-game-setup.md)
 * [Browser Extension](eve-vault/browser-extension.md)
 * [GAS Faucet](eve-vault/gas-faucet.md)
