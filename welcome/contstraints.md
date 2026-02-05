@@ -5,7 +5,7 @@ While EVE Frontier is designed for unprecedented builder empowerment and program
 ## 1. Blockchain/Smart Contract Constraints
 
 ### - Resource and Gas Costs
-- Every on-chain operation (deployment, transactions, storage, execution) incurs gas costs. Inefficient or complex Smart Assemblies may become expensive to deploy and use.
+- Every on-chain operation (deployment, transactions, storage, execution) incurs gas costs.
 - Sui’s resource-oriented model enforces that each change has a computation and storage price.
 
 ### - Execution & Storage Limits
