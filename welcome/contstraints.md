@@ -63,5 +63,5 @@ Many of these constraints will change as EVE Frontier—and the Sui ecosystem—
 
 --
 
-Staying informed of current constraints lets you build robust, future-ready systems in EVE Frontier and help shape the evolution of the world!# Contstraints
+Staying informed of current constraints lets you build robust, future-ready systems in EVE Frontier and help shape the evolution of the world!
 
