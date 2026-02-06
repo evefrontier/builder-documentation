@@ -19,7 +19,7 @@ While EVE Frontier is designed for unprecedented builder empowerment and program
 - Published package code are immutable by default. Upgrades create new package versions on-chain (via UpgradeCap) and must respect layout compatibility; bug fixes or breaking changes may require data migration patterns, which should be planned in advance. refer https://docs.sui.io/guides/developer/packages/upgrade#upgrade-requirements for more details
 
 ### - Programming in Move
-- All on-chain logic must be written in Move, which differs from more common languages like Solidity or JavaScript.
+- All on-chain logic must be written in Move, which differs from previously supported EVM languages like Solidity.
 - Move's strict type and resource system means some design patterns from other blockchains may not directly transfer.
 
 ---
