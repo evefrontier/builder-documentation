@@ -20,7 +20,7 @@ Learn more: [Sui Documentation](https://docs.sui.io/concepts/what-is-sui)
 
 ## What is Move?
 
-**Move** is a next-generation smart contract language originally built for blockchain applications and now integral to the Sui ecosystem. Move prioritizes security, resource management, and flexibility, making it ideal for complex interactions in games.
+**Move** is a smart contract language originally built for blockchain applications and now integral to the Sui ecosystem. Move prioritizes security, resource management, and flexibility, making it ideal for complex interactions in games.
 
 **Key Move Features:**
 - **Resource-Oriented Programming:** Assets are treated as first-class resources. They can’t be duplicated or accidentally destroyed, preventing common bugs in digital asset management.
