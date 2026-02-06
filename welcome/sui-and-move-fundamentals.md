@@ -50,5 +50,3 @@ Explore: [Move by Example](https://docs.sui.io/build/move/move-examples)
 - [Learn Sui basics](https://docs.sui.io/concepts/what-is-sui)
 - [Try Move tutorials](https://docs.sui.io/build/move/quickstart)
 - [Explore Sui Dev Tools](https://docs.sui.io/build/devnet/build-tools)
-
-Harness the combined power of Sui and Move to build next-generation, programmable game worlds in EVE Frontier!
