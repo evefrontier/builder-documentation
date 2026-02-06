@@ -4,7 +4,7 @@
 
 EVE Frontier World leverages SUI Move smart contracts for a scalable, high-performance, and on-chain EVE experience. The new architecture takes advantage of SUI's object-centric model, improved asset management, and transparent, trustless, and programmable interactions between game logic and player activity.
 
-> Developers can find Move contract implementations and concrete integration examples within the [`evefrontier/world-contracts`](https://github.com/evefrontier/world-contracts) repository. The [`examples/`](https://github.com/evefrontier/world-contracts/tree/main/examples) directory contains tested scripts and patterns for interacting with the world, character, deployable, and storage unit systems.
+> Developers can find Eve Frontier World implementations and concrete integration examples within the [`evefrontier/world-contracts`](https://github.com/evefrontier/world-contracts) repository. The [`examples/`](https://github.com/evefrontier/world-contracts/tree/main/examples) directory contains tested scripts and patterns for interacting with the world, character, deployable, and storage unit systems.
 
 Below is an overview of the key systems and their roles within the SUI-based EVE Frontier World.
 
