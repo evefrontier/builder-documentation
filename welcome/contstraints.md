@@ -10,7 +10,7 @@ While EVE Frontier is designed for unprecedented builder empowerment and program
 
 ### - Execution & Storage Limits
 - Smart Assemblies are subject to Sui’s per-transaction limits (transactions exceeding the maximum computation units abort), and transaction and object size are capped (e.g 128KB transaction size, ~250KB object size).
-- Storage per object or contract is limited to avoid chain bloat—large datasets or high-frequency state changes are discouraged.
+- Storage per object is limited to avoid chain bloat—large datasets or high-frequency state changes are discouraged.
 
 ### - No Native Off-Chain Calls
 - Smart Infrastructure code cannot natively query data from off-chain web services. Builders must use on-chain or pre-approved data providers (“oracles”) to fetch real-world information.
