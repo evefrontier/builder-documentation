@@ -9,7 +9,7 @@ While EVE Frontier is designed for unprecedented builder empowerment and program
 - Sui’s resource-oriented model enforces that each change has a computation and storage price.
 
 ### - Execution & Storage Limits
-- Smart Assemblies have limits on computational resources per transaction (computation, stack depth, and execution time).
+- Smart Assemblies are subject to Sui’s per-transaction limits (transactions exceeding the maximum computation units abort), and transaction and object size are capped (e.g 128KB transaction size, ~250KB object size).
 - Storage per object or contract is limited to avoid chain bloat—large datasets or high-frequency state changes are discouraged.
 
 ### - No Native Off-Chain Calls
