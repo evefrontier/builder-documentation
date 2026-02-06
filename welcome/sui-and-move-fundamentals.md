@@ -41,7 +41,7 @@ Explore: [Move by Example](https://docs.sui.io/build/move/move-examples)
 **Example Use Cases:**
 - Programmable structures and base-building with resource ownership.
 - Player-driven trading systems and marketplaces.
-- Secure and flexible game logic for collaborative or competitive mechanics.
+- Secure and extendable on-chain game logic for collaborative or competitive mechanics.
 
 ---
 
