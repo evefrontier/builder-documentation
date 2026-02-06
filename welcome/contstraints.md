@@ -16,7 +16,7 @@ While EVE Frontier is designed for unprecedented builder empowerment and program
 - Smart Infrastructure code cannot natively query data from off-chain web services. Builders must use on-chain or pre-approved data providers (“oracles”) to fetch real-world information.
 
 ### - Upgradeability Limits
-- Code deployed on-chain is immutable by default. Upgrades or bug fixes require new module deployments and data migration patterns, which must be planned for in advance.
+- Published package code are immutable by default. Upgrades create new package versions on-chain (via UpgradeCap) and must respect layout compatibility; bug fixes or breaking changes may require data migration patterns, which should be planned in advance. refer https://docs.sui.io/guides/developer/packages/upgrade#upgrade-requirements for more details
 
 ### - Programming in Move
 - All on-chain logic must be written in Move, which differs from more common languages like Solidity or JavaScript.
