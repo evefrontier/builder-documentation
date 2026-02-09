@@ -2,7 +2,7 @@
 
 ### Overview
 
-The EVE Frontier World on SUI exposes Move smart contracts and on-chain modules for the game’s core systems. These contracts enable developers and builders to create, manage, and query in-game objects—such as characters, deployables, storage units, gates, and more—directly and securely on-chain.
+The EVE Frontier World on SUI exposes Move smart contracts and on-chain modules for the game’s core systems. These contracts enable developers and builders to create, manage, and query in-game objects—such as characters, deployables, storage units, gates securely on-chain.
 
 Developers interact with the world through two primary mechanisms:
 
@@ -13,9 +13,9 @@ The [`examples/`](https://github.com/evefrontier/world-contracts/tree/main/examp
 
 ---
 
-### Write Path: Move Entry Functions for System Actions
+### Write Path: Move Public Functions
 
-All game actions that alter state are expressed as public entry functions in the Move modules. Each object (character, deployable, storage unit, gate, etc.) is a unique Move object/resource. Interactions require referencing the related object(s) and holding appropriate permissions.
+All game actions that alter state are expressed as public functions in the Move modules. Each object (character, assembly, storage unit, gate, etc.) is a unique Move object/resource. Interactions require referencing the related object(s) and holding appropriate permissions.
 
 Some of the core operations and their integration patterns include:
 
@@ -95,7 +95,7 @@ getEvents({ eventType: '0x...::smartgate::JumpEvent' });
 
 #### Integration Reference
 
-- **Move Modules:** [`modules/`](https://github.com/evefrontier/world-contracts/tree/main/modules)
+- **Move Modules:** [`sources/`](https://github.com/evefrontier/world-contracts/tree/main/contracts/world/sources)
 - **Example Scripts:** [`examples/`](https://github.com/evefrontier/world-contracts/tree/main/examples)
 - **Module Documentation:** Docstrings and specifications in each module outline entry function signatures and logic.
 
@@ -107,7 +107,8 @@ getEvents({ eventType: '0x...::smartgate::JumpEvent' });
 // Example of a jump that may be extension-gated
 public entry fun jump(
     character: &signer,
-    gate: &mut SmartGate,
+    source_gate: &mut SmartGate,
+    destination_gate: &mut SmartGate,
     maybe_permit: Option<JumpPermit>,
     ...
 ) {
