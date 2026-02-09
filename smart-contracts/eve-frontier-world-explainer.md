@@ -77,7 +77,6 @@ Smart Gates are Move objects supporting these main features:
 - Deploy (anchor) a gate in a solar system/location
 - Link gates for player traversal routes
 - Use extension logic to require JumpPermit tickets
-- Jump between locations and emit on-chain proof
 
 ---
 
