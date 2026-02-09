@@ -12,9 +12,6 @@ While EVE Frontier is designed for unprecedented builder empowerment and program
 - Smart Assemblies are subject to Sui’s per-transaction limits (transactions exceeding the maximum computation units abort), and transaction and object size are capped (e.g 128KB transaction size, ~250KB object size).
 - Storage per object is limited to avoid chain bloat—large datasets or high-frequency state changes are discouraged.
 
-### - No Native Off-Chain Calls
-- Smart Infrastructure code cannot natively query data from off-chain web services. Builders must use on-chain or pre-approved data providers (“oracles”) to fetch real-world information.
-
 ### - Upgradeability Limits
 - Published package code are immutable by default. Upgrades create new package versions on-chain (via UpgradeCap) and must respect layout compatibility; bug fixes or breaking changes may require data migration patterns, which should be planned in advance. refer https://docs.sui.io/guides/developer/packages/upgrade#upgrade-requirements for more details
 
@@ -39,11 +36,7 @@ While EVE Frontier is designed for unprecedented builder empowerment and program
 
 ---
 
-## 3. Social and Security Limitations
-
-### - Security Review and Approval
-- Code affecting shared or public systems may require additional review or community voting processes before activation.
-- Malicious contracts (e.g., siphoning assets, infinite loops) will be disabled and banned.
+## 3. Documents and Community 
 
 ### - Documentation and Support
 - Some APIs, features, or event triggers may not have full documentation; “bleeding edge” builders should expect evolving best practices.
