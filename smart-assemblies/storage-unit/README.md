@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This guide describes the Smart Storage Unit (SSU) system for EVE Frontier deployed on the SUI blockchain. It explains the core design of SSUs as Move smart contract objects, how to interact with them as a developer or player, and how to test SSU workflows using up-to-date contracts and practical examples from the [`evefrontier/world-contracts`](https://github.com/evefrontier/world-contracts) repository.
+This guide describes the Smart Storage Unit (SSU) created on the SUI blockchain. It explains the core design of SSUs as Move smart contract objects, how to interact with them as a developer or player, and how to test SSU workflows using up-to-date contracts and practical examples from the [`evefrontier/world-contracts`](https://github.com/evefrontier/world-contracts) repository.
 
 You'll learn how to set up your environment, interface with SSU storage and permissions, and use scripts to simulate real gameplay scenarios including atomic asset transfers, access control, and collaborative interactions.
 
@@ -12,7 +12,7 @@ You'll learn how to set up your environment, interface with SSU storage and perm
 
 A Smart Storage Unit (SSU) in EVE Frontier is an on-chain storage facility that supports secure and programmable item storage and transfer.
 
-- Players can deposit and withdraw items from SSUs using permissioned Move entry functions.
+- Players can deposit and withdraw items from SSUs using permissioned Move functions.
 - SSUs allow configuration of approved access lists and transfer rules so trusted parties or additional logic can interact or trade.
 - Transfers between ephemeral (temporary, session-based) inventories and SSUs are supported for flexible trading and storage flows.
 - Events are emitted for every successful action, allowing game services and external tools to monitor inventory state and transactions.
