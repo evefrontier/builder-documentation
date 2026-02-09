@@ -20,15 +20,9 @@ Below is an overview of the key systems and their roles within the SUI-based EVE
 - Character creation and updates use Move entry functions (e.g., `create_character`, `update_profile`). See the Move module:  
   [`character.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/character/character.move)
 
-#### SmartDeployable
+#### SmartAssembly
 
-**SmartDeployable** objects are player-built or managed game entities deployed into the world (e.g. base building structures).
-- States include `Unanchored`, `Anchored`, `Online`, and `Destroyed`, all enforced and tracked by Move object changes and event emissions.
-- Deploying an object creates a new SmartDeployable Move object; ownership and control flow to the creator.
-- Interactions like bringing a deployable online/offline, fueling, and anchoring use Move entry functions and are gated by SUI's dynamic object permission model.
-- Example functions: `bring_online`, `bring_offline`, fuel/defuel.
-- See the Move module:  
-  [`modules/smart_deployable.move`](https://github.com/evefrontier/world-contracts/tree/main/modules/smart_deployable.move)
+//TODO 
 
 #### SmartStorageUnit (SSU)
 
@@ -40,25 +34,11 @@ The **Smart Storage Unit (SSU)** is a managed, upgradeable, and uniquely owned s
 
 ##### Inventory System
 
-- `deposit_to_inventory()`: Deposits items from on-chain (or game-linked) player inventory into a storage unit. Assets are *moved* into SSU ownership and tracked on-chain.
-- `withdraw_from_inventory()`: Withdraws/returns items to the player from the SSU. 
-- All inventory operations respect SUI's object ownership and are meta-transaction compatible for game–chain bridge actions.
-
-##### Ephemeral Inventory
-
-- Temporary "window" objects (ephemeral Move objects) allow transient item transfers, e.g. for trade, temporary loot, or mission hand-in.
-- Actions are analogous to “deposit” and “withdraw” routines, linked to user sessions and atomic game actions.
-- Ephemeral inventory references are always validated as part of transaction execution and revert out-of-bounds or expired usage.
-
-##### Inventory Interaction System
-
-- Enables direct transfer between SSU and ephemeral inventories (`inventory_to_ephemeral_transfer`, `ephemeral_to_inventory_transfer`).
-- Uses fine-grained access lists and transfer rights managed via Move resource fields.
-- Owners can set or update an access list to permit or restrict interactions for trusted accounts or roles (`set_approved_access`, etc).
+//TODO: add new bridging concept from game to chain and chain to game and different access control mechanism to access main inventory, ephemeral inventory and extension mechanism to transfer between inventories
 
 #### SmartGate System
 
-The **SmartGate** system enables on-chain star gates for world traversal and advanced movement mechanics in EVE Frontier.
+The **SmartGate** system enables on-chain gates for world traversal and advanced movement mechanics in EVE Frontier.
 
 Smart Gates are Move objects supporting these main features:
 - **Anchor/Unanchor:** Deploy gates throughout the world, making them active ("anchored") or inactive ("unanchored").
