@@ -18,7 +18,7 @@ Below is an overview of the key systems and their roles within the SUI-based EVE
 - Each character is a unique, on-chain Move object that links to their inventory, skills, and progression.
 - Ownership is mapped via SUI's native object ownership semantics; characters are non-transferrable (soulbound) for now, but future releases may enable trade/transfers using programmable object controls.
 - Character creation and updates use Move entry functions (e.g., `create_character`, `update_profile`). See the Move module:  
-  [`modules/smart_character.move`](https://github.com/evefrontier/world-contracts/tree/main/modules/smart_character.move)
+  [`character.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/character/character.move)
 
 #### SmartDeployable
 
@@ -33,10 +33,10 @@ Below is an overview of the key systems and their roles within the SUI-based EVE
 #### SmartStorageUnit (SSU)
 
 The **Smart Storage Unit (SSU)** is a managed, upgradeable, and uniquely owned storage facility for characters or groups.
-- SSUs extend deployable logic, adding fine-grained inventory and access management.
-- All inventory actions operate via composable Move functions and object references, enforcing in-game and on-chain resource safety.
+- SSUs extend assembly logic, adding fine-grained inventory and access management.
+- All SSU actions access controlled Move functions, enforcing in-game digital physics and on-chain resource safety.
 - See:  
-  [`modules/smart_storage_unit.move`](https://github.com/evefrontier/world-contracts/tree/main/modules/smart_storage_unit.move)
+  [`smart_storage_unit.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/storage_unit.move)
 
 ##### Inventory System
 
