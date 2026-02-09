@@ -25,13 +25,13 @@ To work with Smart Gates:
 - Follow the [Tools guide](../../Tools/) to set up your SUI development environment and all necessary dependencies.
 - Deploy or connect to an EVE Frontier World instance as described in the [World Setup guide](../../LocalWorldSetup/).
 - Familiarize yourself with Move modules and sample scripts in the [`evefrontier/world-contracts`](https://github.com/evefrontier/world-contracts) repo:
-  - Review the `modules/gate/` and `examples/gate/` directories for contract APIs and tested integration flows.
+  - Review the `world/source/assemblies/gate` and `examples/gate/` directories for contract APIs and tested integration flows.
 
 ---
 
 ## Building and Interfacing with Smart Gate Contracts
 
-Smart Gates are implemented as Move objects with public entry functions for setup, linking, control, and travel. Core operations include:
+Smart Gates are implemented as Move objects with public functions for setup, linking, configuring, and jump. Core operations include:
 
 ```move
 public entry fun anchor_gate(
