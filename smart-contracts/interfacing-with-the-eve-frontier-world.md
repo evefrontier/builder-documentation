@@ -19,38 +19,7 @@ All game actions that alter state are expressed as public functions in the Move 
 
 Some of the core operations and their integration patterns include:
 
-- **SmartCharacter and SmartDeployable:**  
-  State changes—such as character creation, bringing a deployable online, or managing inventory—are performed using Move entry functions that check object references and authorization.
-
-- **SmartStorageUnit (SSU):**  
-  Asset deposit, withdrawal, and transfer between SSU inventory and ephemeral inventory are managed by specific entry functions, ensuring only authorized users perform item operations.
-
-- **SmartGate System:**  
-  Gates can be anchored, brought online or offline, linked to other gates, and used for jumps.  
-  Gate jumps support two modes: a default open-access jump and an extension-gated mode where the user must present a single-use JumpPermit issued by custom builder logic for permissioned traversal.  
-  All gate operations, including linking and permit-validated jumps, are handled with atomic Move transactions.
-
-**Example - Gate and Jump Operations:**
-```move
-public entry fun bring_online(caller: &signer, gate: &mut SmartGate, ...) { ... }
-
-public entry fun link_gates(
-    caller: &signer,
-    source_gate: &mut SmartGate,
-    target_gate: &SmartGate,
-    ...
-) { ... }
-
-public entry fun jump(
-    character: &signer,
-    gate: &mut SmartGate,
-    maybe_permit: Option<JumpPermit>,
-    ...
-) { ... }
-```
-_See full usage examples in the [`examples/gate/`](https://github.com/evefrontier/world-contracts/tree/main/examples/gate) and builder extension scripts._
-
-All such entry functions are documented in the module sources regarding parameters, permissions, and operational details.
+//TODO explain: public general function interfaces with admin, sponsored and owner access controlled. Add how functions can be integrated using the ownerCap and Auth witness and how inventory transfers using character biometric works and gate configuration works
 
 ---
 
