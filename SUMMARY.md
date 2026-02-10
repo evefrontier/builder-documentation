@@ -54,7 +54,8 @@
 
 ## Contributing
 
-* [Page 2](contributing/page-2.md)
+* [A Work In Progress](contributing/a-work-in-progress.md)
+* [How to Contribute](contributing/page-2.md)
 
 ## Archive
 
@@ -106,5 +107,4 @@
   * [Builder](archive/troubleshooting/builder.md)
   * [Player](archive/troubleshooting/player.md)
   * [Wallet](archive/troubleshooting/wallet.md)
-* [A Work In Progress](archive/a-work-in-progress.md)
 * [Contributing](archive/contributing.md)
