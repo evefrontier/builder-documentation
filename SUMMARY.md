@@ -2,8 +2,7 @@
 
 ## Welcome
 
-* [A Work In Progress](README.md)
-* [Why Build on EVE Frontier?](<README (1).md>)
+* [Why Build on EVE Frontier?](README.md)
 * [Smart Infrastructure](welcome/smart-infrastructure.md)
 * [Contstraints](welcome/contstraints.md)
 * [Sui & Move Fundamentals](welcome/sui-and-move-fundamentals.md)
@@ -107,4 +106,5 @@
   * [Builder](archive/troubleshooting/builder.md)
   * [Player](archive/troubleshooting/player.md)
   * [Wallet](archive/troubleshooting/wallet.md)
+* [A Work In Progress](archive/a-work-in-progress.md)
 * [Contributing](archive/contributing.md)
