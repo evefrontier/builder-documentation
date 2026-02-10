@@ -1,4 +1,3 @@
-# Introduction to Smart Contracts
 # Introduction to Smart Contracts in EVE Frontier
 
 ## What are Smart Contracts?
