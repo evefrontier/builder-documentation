@@ -2,7 +2,8 @@
 
 ## Welcome
 
-* [Why Build on EVE Frontier?](README.md)
+* [A Work In Progress](README.md)
+* [Why Build on EVE Frontier?](<README (1).md>)
 * [Smart Infrastructure](welcome/smart-infrastructure.md)
 * [Contstraints](welcome/contstraints.md)
 * [Sui & Move Fundamentals](welcome/sui-and-move-fundamentals.md)
