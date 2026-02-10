@@ -7,21 +7,23 @@
 Smart Assemblies are special in-game infrastructure: programmable, player-built structures anchored to specific locations within the EVE Frontier universe. Each assembly can serve a unique mechanical purpose and exposes configurable interfaces for builders to innovate far beyond default gameplay features.
 
 Key examples include:
-- **Smart Storage Unit**: Storage and dispensing of items.
-- **Smart Turret**: Automated defense of zones and assets.
-- **Smart Gate**: Transportation or access control.
-- ...and many more to be designed, upgraded, and customized as the game continues to evolve.
+
+* **Smart Storage Unit**: Storage and dispensing of items.
+* **Smart Turret**: Automated defense of zones and assets.
+* **Smart Gate**: Transportation or access control.
+* ...and many more to be designed, upgraded, and customized as the game continues to evolve.
 
 ## Builder Agency and Expression
 
 Smart Assemblies are at the heart of EVE Frontier’s open-world philosophy. Every base, turret, shop, or gate can be programmed with new logic, interfaces, and behaviors. As a builder, you can evolve a storage unit into a real-time marketplace, a quest dispensing kiosk, or a mini-game terminal. The underlying rules are transparent, verifiable, and persistent—once deployed, your innovations become part of the simulation and its history.
 
 What can you enable?
-- **New game mechanics** (trading, missions, rewards)
-- **Advanced asset management** (locking, dispensing, tokenization)
-- **Player-driven economies** and custom rulesets
-- **Automation** and real-time reactions to world events
-- ...and much, much more.
+
+* **New game mechanics** (trading, missions, rewards)
+* **Advanced asset management** (locking, dispensing, tokenization)
+* **Player-driven economies** and custom rulesets
+* **Automation** and real-time reactions to world events
+* ...and much, much more.
 
 ## The Technology: Sui and Move
 
@@ -31,16 +33,17 @@ Smart Assemblies are built and managed on the Sui blockchain, leveraging its uni
 
 ## Building and Deploying
 
-- Write and test your code locally
-- Package your assembly logic as a Move module
-- Deploy it on Sui to bring your innovation to the live persistent world
-- Share, upgrade, and collaborate with other builders
+* Write and test your code locally
+* Package your assembly logic as a Move module
+* Deploy it on Sui to bring your innovation to the live persistent world
+* Share, upgrade, and collaborate with other builders
 
 ## Ready to Begin?
 
 Check out the available Smart Assemblies for inspiration, or dive into tutorials on creating your own. The frontier is shaped by you—each code contribution is a lasting addition to the living universe!
 
 Explore:
-- [Smart Storage Unit](../../SmartAssemblies/SmartStorageUnit/) — expand, automate, trade
-- [Smart Turret](../../SmartAssemblies/SmartTurret/) — defend, alert, customize
-- [Smart Gate](../../SmartAssemblies/SmartGate/) — transport, restrict, innovate
+
+* [Smart Storage Unit](https://github.com/evefrontier/builder-documentation/blob/Main/SmartAssemblies/SmartStorageUnit/README.md) — expand, automate, trade
+* [Smart Turret](https://github.com/evefrontier/builder-documentation/blob/Main/SmartAssemblies/SmartTurret/README.md) — defend, alert, customize
+* [Smart Gate](https://github.com/evefrontier/builder-documentation/blob/Main/SmartAssemblies/SmartGate/README.md) — transport, restrict, innovate

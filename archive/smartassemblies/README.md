@@ -12,9 +12,9 @@ import { Callout } from 'nextra-theme-docs'
 
 ### Different Smart Assemblies
 
-* [Smart Storage Unit](../../SmartAssemblies/SmartStorageUnit/) - Storage and dispensing of items.
-* [Smart Turret](../../SmartAssemblies/SmartTurret/) - Defense of an area.
-* [Smart Gate](../../SmartAssemblies/SmartGate/) - Transport Smart Assembly.
+* [Smart Storage Unit](https://github.com/evefrontier/builder-documentation/blob/Main/SmartAssemblies/SmartStorageUnit/README.md) - Storage and dispensing of items.
+* [Smart Turret](https://github.com/evefrontier/builder-documentation/blob/Main/SmartAssemblies/SmartTurret/README.md) - Defense of an area.
+* [Smart Gate](https://github.com/evefrontier/builder-documentation/blob/Main/SmartAssemblies/SmartGate/README.md) - Transport Smart Assembly.
 
 ### What can players do with Smart Assemblies?
 

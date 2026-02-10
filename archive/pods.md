@@ -171,10 +171,10 @@ In the future, we will have additional PODs available to players.
 
 ### Creation
 
-If you want to create your own POD with custom data, for example if you want to create a security level badge for your corporation to secure certain services and actions, then you can use the [Creating and Verifying](../creating-and-verifying/) guide.
+If you want to create your own POD with custom data, for example if you want to create a security level badge for your corporation to secure certain services and actions, then you can use the [Creating and Verifying](https://github.com/evefrontier/builder-documentation/blob/Main/creating-and-verifying/README.md) guide.
 
 ### Verification
 
 The easiest way to verify a POD for EVE Frontier is by using our API. You can simply POST to https://blockchain-gateway-stillness.live.tech.evefrontier.com/pod/verify with the POD in the body of the request and you can get verification information.
 
-You can verify PODs from outside of EVE Frontier using the [Creating and Verifying](../creating-and-verifying/) guide.
+You can verify PODs from outside of EVE Frontier using the [Creating and Verifying](https://github.com/evefrontier/builder-documentation/blob/Main/creating-and-verifying/README.md) guide.

@@ -16,6 +16,6 @@ Construct to Expand, Program to Dominate: By constructing infrastructure you wil
 
 ### What items can you program as a Builder
 
-Check out the [Smart Assemblies](../SmartAssemblies/) list of connected structures that enable you to enhance the game.
+Check out the [Smart Assemblies](https://github.com/evefrontier/builder-documentation/blob/Main/SmartAssemblies/README.md) list of connected structures that enable you to enhance the game.
 
 In time, player-programmed infrastructure will increase in variety and scope with regards to the options available. The **Smart Object Framework** allows for any in-game entity to be represented on-chain and thus managed and edited by player-written code. **Smart Objects** can be physical or logical objects, such as characters, ships, items, skill systems, rules of production, marketplaces and more.

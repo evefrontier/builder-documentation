@@ -6,9 +6,9 @@ import { Steps } from "nextra/components" import { Callout } from "nextra/compon
 
 To quickly setup the world, you need to use [Docker](https://www.docker.com/). Follow this guide to setup a local instance of the world.
 
-#### Step 1 - Follow the [Tools Guide](../Tools/)
+#### Step 1 - Follow the [Tools Guide](https://github.com/evefrontier/builder-documentation/blob/Main/Tools/README.md)
 
-If you haven't already, follow the [Tools Guide](../Tools/) to setup your tools and get the Builder Examples.
+If you haven't already, follow the [Tools Guide](https://github.com/evefrontier/builder-documentation/blob/Main/Tools/README.md) to setup your tools and get the Builder Examples.
 
 #### Step 2 - Install [Docker](https://docs.docker.com/get-docker/)
 
@@ -71,4 +71,4 @@ This will take a few minutes and is complete when the Progress in the terminal d
 
 ## Next Steps
 
-If you already know the [MUD framework](https://mud.dev/), the Smart Object Framework, and the details of the EVE World (or you simply learn better by doing), you can skip straight to the builder examples [here](../SmartStorageUnit/).
+If you already know the [MUD framework](https://mud.dev/), the Smart Object Framework, and the details of the EVE World (or you simply learn better by doing), you can skip straight to the builder examples [here](https://github.com/evefrontier/builder-documentation/blob/Main/SmartStorageUnit/README.md).

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This guide will walk you through the process of building contracts for the [**Smart Turret**](../../SmartAssemblies/SmartTurret/) example, deploying them into an existing world running in Docker, and testing their functionality by executing scripts.
+This guide will walk you through the process of building contracts for the [**Smart Turret**](https://github.com/evefrontier/builder-documentation/blob/Main/SmartAssemblies/SmartTurret/README.md) example, deploying them into an existing world running in Docker, and testing their functionality by executing scripts.
 
 ## Example Functionality
 
@@ -15,4 +15,4 @@ This example alters the Smart Turret to have two specific behaviors:
 
 ## Pre-Requisites
 
-Make sure you have setup your tools with [this guide](../../Tools/) and your world if you are testing locally with [this guide](../../LocalWorldSetup/).
+Make sure you have setup your tools with [this guide](https://github.com/evefrontier/builder-documentation/blob/Main/Tools/README.md) and your world if you are testing locally with [this guide](https://github.com/evefrontier/builder-documentation/blob/Main/LocalWorldSetup/README.md).
