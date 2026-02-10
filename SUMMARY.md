@@ -55,7 +55,7 @@
 ## Contributing
 
 * [A Work In Progress](contributing/a-work-in-progress.md)
-* [How to Contribute](contributing/page-2.md)
+* [How to Contribute](contributing/how-to-contribute.md)
 
 ## Archive
 
