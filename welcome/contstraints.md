@@ -9,8 +9,8 @@ While EVE Frontier is designed for unprecedented builder empowerment and program
 - Sui’s resource-oriented model enforces that each change has a computation and storage price.
 
 ### - Execution & Storage Limits
-- Smart Assemblies are subject to Sui’s per-transaction limits (transactions exceeding the maximum computation units abort), and transaction and object size are capped (e.g 128KB transaction size, ~250KB object size).
-- Storage per object is limited to avoid chain bloat—large datasets or high-frequency state changes are discouraged.
+- Smart Assemblies are subject to Sui’s per-transaction limits: transactions exceeding the maximum computation units abort, and transaction and object size are capped (Move objects max out at 250KB). Current limits are defined in [Sui protocol config](https://docs.sui.io/concepts/transactions#limits-on-transactions-objects-and-data).
+- Large datasets or high-frequency state changes are discouraged to avoid chain bloat.
 
 ### - Upgradeability Limits
 - Published package code are immutable by default. Upgrades create new package versions on-chain (via UpgradeCap) and must respect layout compatibility; bug fixes or breaking changes may require data migration patterns, which should be planned in advance. refer https://docs.sui.io/guides/developer/packages/upgrade#upgrade-requirements for more details
@@ -49,7 +49,7 @@ While EVE Frontier is designed for unprecedented builder empowerment and program
 
 ## 4. Future Expansion & Limitations
 
-Many of these constraints will change as EVE Frontier—and the Sui ecosystem—evolve. Builders are encouraged to:
+Many of these constraints will change as EVE Frontier and the Sui ecosystem—evolve. Builders are encouraged to:
 - Design for upgradeability and modularity.
 - Follow official changelogs and roadmaps for upcoming features or lifted restrictions.
 - Share feedback so high-impact pain points can be prioritized.
