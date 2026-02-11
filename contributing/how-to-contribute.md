@@ -18,31 +18,31 @@ If you are unsure, submit a small PR first. We can iterate from there.
 
 {% stepper %}
 {% step %}
-### Open the page you want to change
+#### Open the page you want to change
 
 Navigate to the exact page in the docs. Scroll to the section you want to improve.
 {% endstep %}
 
 {% step %}
-### Click **Edit on GitHub**
+#### Click **Edit on GitHub**
 
 Open the page menu (top-right dropdown). Select **Edit on GitHub**. Sign in to GitHub if prompted. GitHub will open the source file for that page.
 {% endstep %}
 
 {% step %}
-### Edit in GitHub
+#### Edit in GitHub
 
 Click the pencil icon to edit the file. If you do not have access, GitHub will fork first. Make your changes in the editor. Use the preview tab to sanity check formatting.
 {% endstep %}
 
 {% step %}
-### Propose the change
+#### Propose the change
 
 Scroll to the bottom of the editor. Write a clear commit message. Keep it short and specific. Select the option to create a new branch. Use a descriptive branch name. Click **Propose changes**.
 {% endstep %}
 
 {% step %}
-### Open a pull request
+#### Open a pull request
 
 GitHub will suggest creating a PR. Fill in:
 
@@ -55,13 +55,13 @@ Then click **Create pull request**.
 {% endstep %}
 
 {% step %}
-### Respond to review
+#### Respond to review
 
 You may get comments or requested edits. Update the same branch. GitHub will update the PR automatically.
 {% endstep %}
 
 {% step %}
-### Merge and publish
+#### Merge and publish
 
 After approval, a maintainer will merge the PR. This site will sync and publish shortly after. If you do not see updates, wait a few minutes.
 {% endstep %}

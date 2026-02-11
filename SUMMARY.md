@@ -4,7 +4,7 @@
 
 * [Why Build on EVE Frontier?](README.md)
 * [Smart Infrastructure](welcome/smart-infrastructure.md)
-* [Contstraints](welcome/contstraints.md)
+* [Constraints](welcome/contstraints.md)
 * [Sui & Move Fundamentals](welcome/sui-and-move-fundamentals.md)
 * [Wallets & Identity](welcome/wallets-and-identity.md)
 
@@ -16,8 +16,8 @@
 
 * [Introduction to Smart Contracts](smart-contracts/introduction-to-smart-contracts.md)
 * [EVE Frontier World Explainer](smart-contracts/eve-frontier-world-explainer.md)
-* [Development in the EVE Frontier World](smart-contracts/development-in-the-eve-frontier-world.md)
 * [Interfacing with the EVE Frontier World](smart-contracts/interfacing-with-the-eve-frontier-world.md)
+* [Development in the EVE Frontier World](smart-contracts/development-in-the-eve-frontier-world.md)
 * [Building Pragmatics](smart-contracts/building-pragmatics.md)
 
 ## Smart Assemblies
