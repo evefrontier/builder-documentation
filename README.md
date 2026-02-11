@@ -9,7 +9,7 @@ In **EVE Frontier**, survival is only the starting point. What truly defines thi
 
 At the core of Frontier are **Smart Assemblies**, physical and programmable structures anchored in space. These are not just buildings, they are the foundation of a living infrastructure layer that players can design, modify, automate, and optimize. Turrets, markets, storage facilities, refineries, logistics hubs, and defensive networks become active components of your strategy. Your constructions do not just exist in the world, they act within it.
 
-Frontier is designed as a true open environment. The world evolves not only through player actions, but also through server-side, real-time editing by the community. This is a game where builders can directly influence the systems that govern it.
+Frontier is designed as a true open environment. The world evolves not only through player actions, but also through server-side, real-time modding by the community. This is a game where builders can directly influence the systems that govern it.
 
 ## Construct to Expand, Program to Dominate
 
@@ -39,9 +39,9 @@ Frontier embraces a **community-driven, open in-game economy**. Builders can cre
 
 Every tool exists for players to shape the economic landscape, not just participate in it.
 
-## Powered by The World Package
+## Powered by Eve Frontier World Smart Contracts
 
-The **World Package** extends Frontier's programmability far beyond structures. Any in-game entity can be represented on-chain and edited by player-written code, including:  
+The **World Contracts** extends Frontier's programmability far beyond structures. Any in-game entity can be represented on-chain and edited by player-written code, including:  
 - characters  
 - ships  
 - items  
@@ -54,13 +54,13 @@ This creates a composable and extensible universe where emergent gameplay is not
 
 ## Building on Sui, A Foundation for the Future
 
-Frontier's integration with **Sui** enables:  
+Frontier's integration with [**Sui**](https://docs.sui.io/concepts) enables:  
 - decentralized ownership  
 - secure and scalable on-chain systems  
 - composability across game systems  
 - future-proof persistence for player creations  
 
-This is not blockchain for the sake of technology, it is a platform for genuine co-creation.
+Frontier’s use of blockchain is not for the sake of technology, it enables a platform for genuine co-creation.
 
 ## Build the Future of the EVE Universe
 
