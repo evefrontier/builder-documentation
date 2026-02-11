@@ -1,5 +1,7 @@
 # Smart Infrastructure
 
+<figure><img src="../.gitbook/assets/banner5.png" alt=""><figcaption></figcaption></figure>
+
 **Smart Infrastructure** in EVE Frontier transforms the game world into a truly programmable sandbox. As a builder, you’re empowered to create, extend, and customize persistent in-game structures (Smart Assemblies) using modern on-chain technology—centered now on the Sui blockchain and its language, Move.
 
 ## What Are Smart Assemblies?
