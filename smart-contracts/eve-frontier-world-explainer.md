@@ -2,78 +2,153 @@
 
 <figure><img src="../.gitbook/assets/banner4.png" alt=""><figcaption></figcaption></figure>
 
-### The EVE Frontier World on SUI
+The EVE Frontier world runs on [Sui](https://sui.io/) as Move smart contracts that define in-game structures, physics, and rules. The design stresses **composition over inheritance**: small building blocks combine into assemblies, which players can extend with custom logic.
 
-EVE Frontier World leverages SUI Move smart contracts for a scalable, high-performance, and on-chain EVE experience. The new architecture takes advantage of SUI's object-centric model, improved asset management, and transparent, trustless, and programmable interactions between game logic and player activity.
+---
 
-> Developers can find Eve Frontier World implementations and concrete integration examples within the [`evefrontier/world-contracts`](https://github.com/evefrontier/world-contracts) repository. The [`examples/`](https://github.com/evefrontier/world-contracts/tree/main/examples) directory contains tested scripts and patterns for interacting with the world, character, deployable, and storage unit systems.
+## The Three-Layer Architecture
 
-Below is an overview of the key systems and their roles within the SUI-based EVE Frontier World.
+The world contracts use a three-layer architecture:
 
-***
+```mermaid
+flowchart TB
+    subgraph L3 [Layer 3: Player Extensions]
+        direction LR
+        Ext[Third-Party Smart Contracts]
+    end
 
-### Systems Overview
+    subgraph L2 [Layer 2: Smart Assemblies]
+        direction LR
+        SU[Storage Unit] --- Gate[Stargate] --- Turret[Turret] --- network_node[network_node.move]
+    end
 
-#### SmartCharacter
+    subgraph L1 [Layer 1: Primitives]
+        direction LR
+        status[status.move] --- loc[location.move] --- inv[inventory.move] --- fuel[fuel.move] --- energy[energy.move]
+    end
 
-**SmartCharacter** is a Move object representing a player's in-game persona and owned assets on the SUI blockchain.
+    L3 --> L2
+    L2 --> L1
+```
 
-* Each character is a unique, on-chain Move object that links to their inventory, skills, and progression.
-* Ownership is mapped via SUI's native object ownership semantics; characters are non-transferrable (soulbound) for now, but future releases may enable trade/transfers using programmable object controls.
-* Character creation and updates use Move entry functions (e.g., `create_character`, `update_profile`). See the Move module:\
-  [`character.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/character/character.move)
+**Layer 1: Primitives** — Low-level Move modules that implement the "digital physics" of the game. They are small, focused, and designed for reusability without circular dependencies. Examples: `location.move`, `inventory.move`, `fuel.move`, `status.move`, `network_node.move`.
 
-#### SmartAssembly
+**Layer 2: Assemblies** — Composed structures that players interact with (Storage Unit, Gate, Turret). Each assembly is a Sui shared object, enabling concurrent access by the game server and players. Assemblies combine primitives and expose public functions protected by capabilities or witnesses.
 
-//TODO
+**Layer 3: Player Extensions** — Custom smart contracts built by players that extend assembly behavior. Extensions register with assemblies via the typed authentication witness pattern and are authorized by type identity.
 
-#### SmartStorageUnit (SSU)
+Assemblies compose primitives. Player extensions authenticate via the [typed witness pattern](https://move-book.com/programmability/witness-pattern) when calling Layer 2.
 
-The **Smart Storage Unit (SSU)** is a managed, upgradeable, and uniquely owned storage facility for characters or groups.
+---
 
-* SSUs extend assembly logic, adding fine-grained inventory and access management.
-* All SSU actions access controlled Move functions, enforcing in-game digital physics and on-chain resource safety.
-* See:\
-  [`smart_storage_unit.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/storage_unit.move)
+## Layer 1: Primitives
 
-**Inventory System**
+Primitives are small, focused Move modules that implement basic mechanics:
 
-//TODO: add new bridging concept from game to chain and chain to game and different access control mechanism to access main inventory, ephemeral inventory and extension mechanism to transfer between inventories
+- **`location.move`** — Spatial positioning and hashed location storage (for privacy).
+- **`inventory.move`** — Item storage and transfers.
+- **`fuel.move`** — Energy and resource consumption mechanics.
+- **`status.move`** — Lifecycle of assembly (Anchored, Online, Offline).
+- **`energy.move`** — Power generation and reservation.
 
-#### SmartGate System
+Primitives expose `public(package)` functions, so only modules in the same package can mutate them. Players do not call primitives directly; assemblies use them internally. Primitive access is restricted to Frontier-designed assemblies.
 
-The **SmartGate** system enables on-chain gates for world traversal and advanced movement mechanics in EVE Frontier.
+**How assemblies use primitives** (example: Storage Unit):
 
-Smart Gates are Move objects supporting these main features:
+```mermaid
+flowchart TD
+    status --> SU[Storage Unit]
+    inventory --> SU
+    location --> SU
+    fuel --> SU
+    network_node --> SU
+```
 
-* **Anchor/Unanchor:** Deploy gates throughout the world, making them active ("anchored") or inactive ("unanchored").
-* **Online/Offline:** Set gates online/offline, controlling access and operational state.
-* **Link/Unlink:** Gates can be linked to each other, enabling networked travel between locations.
-* **Jump:** Characters can execute a "jump" through a gate, which emits a `JumpEvent` with relevant context and participants.
+Other assemblies compose subsets of these primitives (e.g., Gate = status + location + fuel + network_node).
 
-**Security & Extension logic:**
+---
 
-* Jump mechanics support extension gating: if a gate is configured with a builder extension, jumps require presenting a single-use `JumpPermit` issued by extension logic. Otherwise, gates allow default jump access.
-* This enables custom gameplay permissioning (e.g. ticketed/private gates, faction gating).
+## Layer 2: Smart Assemblies
 
-**Events:**
+Assemblies are in-game structures (storage units, gates and turrets) that players deploy and interact with. Each assembly is a **Sui shared object**, allowing concurrent access by the game and multiple players.
 
-* Gate state changes and jumps emit events for tracking and external indexing.
+**Storage Unit** — Programmable on-chain storage. Supports extensions (via typed witness) and direct owner access.
 
-**Example Operations:**
+**Gate (Stargate)** — Handles traversal between gates. Supports extensions (via typed witness).
 
-* Deploy (anchor) a gate in a solar system/location
-* Link gates for player traversal routes
-* Use extension logic to require JumpPermit tickets
+**Turret** — Programmable structure for defense and targeting. Supports extensions (via typed witness).
 
-***
+Assemblies orchestrate primitives, enforce "digital physics" (e.g., proximity checks before withdraw), and expose public functions. 
 
-### Integration Resources
+---
 
-* **Move Contract Repository & Examples:**
-  * [evefrontier/world-contracts](https://github.com/evefrontier/world-contracts)
-  * [`examples/`](https://github.com/evefrontier/world-contracts/tree/main/examples): Scripts and usage patterns for most major systems.
+## Layer 3: Player Extensions (Moddability)
 
-For further system details, consult the Move module docstrings and integration scripts within the `examples/` directory.
+Players extend assembly behavior by deploying custom Move packages that register with assemblies through a **typed authentication witness** pattern. The assembly keeps an allowlist of registered extension `TypeName`s. A builder registers their witness type; only that module can create instances of it, so only that extension can call the assembly's authenticated entry points.
 
-***
+**Flow:**
+1. Owner registers a witness type (e.g., `Builder::Auth`) from the builder's package.
+2. Assembly adds the `TypeName` to its allowlist.
+3. Builder's module calls assembly functions by passing its witness; the assembly verifies the type is registered.
+
+```move
+// World: assembly maintains allowlist of registered extension types
+module world::assembly {
+    public struct Assembly has key {
+        id: UID,
+        allowed_extensions: Option<TypeName>,
+        // ... other fields
+    }
+
+    public fun perform_op<Auth: drop>(assembly: &mut Assembly, _auth: Auth) {
+        // Verify Auth type is registered in allowed_extensions
+        // ... business logic
+    }
+
+    public fun register_extension<Auth: drop>(assembly: &mut Assembly, owner_cap: &OwnerCap) {
+        // Add extension_type to allowed_extensions
+    }
+}
+
+// Builder: custom extension defines a witness type
+module builder::custom_extension {
+    public struct Auth has drop {} // Witness type — only this module can create it
+
+    public entry fun swap_items(assembly: &mut world::assembly::Assembly) {
+        world::assembly::perform_op(assembly, Auth {})
+    }
+}
+
+// Owner registers the extension type (requires owner_cap)
+assembly::register_extension<builder::custom_extension::Auth>(assembly, owner_cap);
+
+// Players can then call the custom extension's entry points
+builder::custom_extension::swap_items(assembly);
+```
+
+**Benefits:** Type-based authorization; dynamic registration without redeploying assemblies; builders add custom logic while assemblies enforce authorization by type identity.
+
+---
+
+## Privacy: Location Obfuscation
+
+To support mechanics that require information asymmetry (e.g., hidden bases):
+
+- **Hashed locations** — On-chain locations are stored as cryptographic hashes, not cleartext coordinates.
+- **Proximity verification** — Interactions require proof that entities are at the same or adjacent locations. Current implementation uses signatures from a trusted game server; future implementations may use zero-knowledge proofs.
+
+---
+
+## Security Model
+
+- **Admin operations** — Require `AdminCap` for core state mutations.
+- **Owner operations** — Require ownership certificates (e.g., `OwnerCap`) for assembly-specific changes.
+- **Extension operations** — Use the witness type's `TypeName` to ensure calls come from registered third-party modules.
+
+---
+
+## Next Steps
+To start building, skip to the assembly-specific guides:
+- [Storage Unit](../smart-assemblies/storage-unit/README.md), [Gate](../smart-assemblies/gate/README.md), [Turret](../smart-assemblies/turret/README.md) — Assembly-specific guides.
+- [Interfacing with the EVE Frontier World](interfacing-with-the-eve-frontier-world.md) — How to read and write on-chain state.
+- [World Contracts](https://github.com/evefrontier/world-contracts) — Source code and [ADR](https://github.com/evefrontier/world-contracts/blob/main/docs/architechture.md).
