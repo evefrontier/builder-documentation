@@ -31,7 +31,7 @@ What can you enable?
 
 Smart Assemblies are built and managed on the Sui blockchain, leveraging its unique features for developer access, composability, and security. Programming is done in [Move](https://move-language.github.io/move/), a language designed for safe, flexible on-chain interactions.
 
-> **Note:** You do not need to be a Move expert to get started—many tools, templates, and builder guides simplify the process, letting you focus on gameplay, not boilerplate.
+> **Note:** You do not need to be a Move expert to get started. Many tools, templates, and builder guides simplify the process, letting you focus on gameplay, not boilerplate.
 
 ## Building and Deploying
 
@@ -42,7 +42,7 @@ Smart Assemblies are built and managed on the Sui blockchain, leveraging its uni
 
 ## Ready to Begin?
 
-Check out the available Smart Assemblies for inspiration, or dive into tutorials on creating your own. The frontier is shaped by you—each code contribution is a lasting addition to the living universe!
+Check out the available Smart Assemblies for inspiration, or dive into tutorials on creating your own. The frontier is shaped by you. Each code contribution is a lasting addition to the living universe!
 
 Explore:
 
