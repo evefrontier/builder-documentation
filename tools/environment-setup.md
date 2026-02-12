@@ -41,9 +41,29 @@ Install [Git for Windows](https://git-scm.com/download/win) if you haven't alrea
 
 suiup is the recommended way to install and manage Sui CLI. It is a cross-compiled native executable for Windows.
 
-1. Download the latest Windows release from [suiup releases](https://github.com/MystenLabs/suiup/releases) (choose the Windows x86_64 archive).
-2. Unzip the archive and move the `suiup` executable to a folder on your `PATH` (e.g. `%LOCALAPPDATA%\bin`), or add the folder containing `suiup` to your `PATH`.
-3. Restart your terminal so the updated `PATH` is picked up.
+1. **Download** the latest Windows release from [suiup releases](https://github.com/MystenLabs/suiup/releases). Choose the archive for Windows x86_64 (e.g. `suiup-vX.X.X-windows-x86_64.zip`).
+
+2. **Unzip** the archive. You'll get a folder containing the `suiup.exe` executable.
+
+3. **Add suiup to your PATH** — choose one:
+
+   **Option A — Use a dedicated bin folder (recommended)**
+
+   - Create `%LOCALAPPDATA%\bin` if it doesn't exist (on most systems this is `C:\Users\<YourUsername>\AppData\Local\bin`).
+   - Move `suiup.exe` into that folder.
+   - Add this folder to your user PATH:
+     - Press `Win + R`, type `sysdm.cpl`, press Enter.
+     - Go to **Advanced** → **Environment Variables**.
+     - Under **User variables**, select **Path** → **Edit** → **New**.
+     - Add `%LOCALAPPDATA%\bin` (or the full path: `C:\Users\<YourUsername>\AppData\Local\bin`).
+     - Confirm with OK.
+
+   **Option B — Use the extracted folder**
+
+   - Leave `suiup.exe` in the folder where you unzipped it.
+   - Add that folder to your user PATH using the same steps as Option A (Environment Variables → Path → New).
+
+4. **Restart** your terminal (PowerShell or Command Prompt) so the updated PATH is picked up. Test with `suiup --version`.
 
 ## Step 3: Install Sui CLI
 
