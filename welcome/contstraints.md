@@ -10,6 +10,8 @@ While EVE Frontier is designed for unprecedented builder empowerment and program
 
 ### - Execution & Storage Limits
 - Smart Assemblies are subject to Sui’s per-transaction limits: transactions exceeding the maximum computation units abort, and transaction and object size are capped (Move objects max out at 250KB). Current limits are defined in [Sui protocol config](https://docs.sui.io/concepts/transactions#limits-on-transactions-objects-and-data).
+- Move structs can have at most 32 fields.
+- A maximum of 1024 dynamic fields can be accessed in a single transaction. See [Sui forums](https://forums.sui.io/t/how-does-the-size-limit-of-a-single-sui-move-object-work/45398) for details.
 - Large datasets or high-frequency state changes are discouraged to avoid chain bloat.
 
 ### - Upgradeability Limits
