@@ -46,6 +46,6 @@ Check out the available Smart Assemblies for inspiration, or dive into tutorials
 
 Explore:
 
-* [Smart Storage Unit](https://github.com/evefrontier/builder-documentation/blob/Main/SmartAssemblies/SmartStorageUnit/README.md) — expand, automate, trade
-* [Smart Turret](https://github.com/evefrontier/builder-documentation/blob/Main/SmartAssemblies/SmartTurret/README.md) — defend, alert, customize
-* [Smart Gate](https://github.com/evefrontier/builder-documentation/blob/Main/SmartAssemblies/SmartGate/README.md) — transport, restrict, innovate
+* [Smart Storage Unit](../smart-assemblies/storage-unit/README.md) — store, automate, trade
+* [Smart Turret](../smart-assemblies/turret/README.md) — defend, alert, customize
+* [Smart Gate](../smart-assemblies/gate/README.md) — transport, restrict, innovate
