@@ -41,13 +41,11 @@ Every tool exists for players to shape the economic landscape, not just particip
 
 ## Powered by Eve Frontier World Smart Contracts
 
-The **World Contracts** extends Frontier's programmability far beyond structures. Any in-game entity can be represented on-chain and edited by player-written code, including:  
-- characters  
-- ships  
-- items  
-- skill systems  
-- production rules  
-- marketplaces  
+The **World Contracts** extend Frontier's programmability far beyond structures. Any in-game entity can be represented on-chain and edited by player-written code, including:  
+- characters
+- assemblies
+- items
+- killmails          
 - and more  
 
 This creates a composable and extensible universe where emergent gameplay is not just allowed, it is inevitable.
