@@ -51,12 +51,7 @@ suiup is the recommended way to install and manage Sui CLI. It is a cross-compil
 
    - Create `%LOCALAPPDATA%\bin` if it doesn't exist (on most systems this is `C:\Users\<YourUsername>\AppData\Local\bin`).
    - Move `suiup.exe` into that folder.
-   - Add this folder to your user PATH:
-     - Press `Win + R`, type `sysdm.cpl`, press Enter.
-     - Go to **Advanced** → **Environment Variables**.
-     - Under **User variables**, select **Path** → **Edit** → **New**.
-     - Add `%LOCALAPPDATA%\bin` (or the full path: `C:\Users\<YourUsername>\AppData\Local\bin`).
-     - Confirm with OK.
+   - Add this folder to your user PATH in Environment Variables:
 
    **Option B — Use the extracted folder**
 
