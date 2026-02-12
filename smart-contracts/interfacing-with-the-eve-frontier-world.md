@@ -5,7 +5,9 @@
 You interact with the EVE Frontier world in two ways:
 
 - **Write path** — Submit transactions to Move public functions to mutate on-chain state (create assemblies, bring them online, deposit items, etc.).
-- **Read path** — Query on-chain state and events via [Sui JSON-RPC](https://docs.sui.io/references/sui-api), [GraphQL](https://docs.sui.io/guides/developer/accessing-data/query-with-graphql), [gRPC](https://docs.sui.io/guides/developer/accessing-data/grpc-overview), or custom indexers.
+- **Read path** — Query on-chain state and events via [GraphQL](https://docs.sui.io/guides/developer/accessing-data/query-with-graphql), [gRPC](https://docs.sui.io/guides/developer/accessing-data/grpc-overview), [JSON-RPC](https://docs.sui.io/references/sui-api), or custom indexers. 
+
+Note: Sui is moving from JSON-RPC to gRPC and GraphQL;
 
 ---
 
@@ -109,11 +111,11 @@ Try it: [GraphQL Testnet IDE](https://graphql.testnet.sui.io/graphql). Pass vari
 
 ### JSON-RPC
 
-Use `sui_getObject` and `sui_getOwnedObjects` for direct object lookup by ID or owner. See [Sui RPC reference](https://docs.sui.io/references/sui-api).
+Use `sui_getObject` and `sui_getOwnedObjects` for direct object lookup by ID or owner. See [Sui RPC reference](https://docs.sui.io/references/sui-api). **Note:** Sui is deprecating JSON-RPC in favor of gRPC and GraphQL; avoid building new integrations on JSON-RPC alone.
 
 ### gRPC
 
-For higher throughput and streaming (e.g., checkpoints), use [gRPC](https://docs.sui.io/guides/developer/accessing-data/grpc-overview). Requires a gRPC-enabled Sui full node. Example services: `LedgerService`, `StateService`, `SubscriptionService`.
+For higher throughput and streaming (e.g., checkpoints), use [gRPC](https://docs.sui.io/guides/developer/accessing-data/grpc-overview)—Sui's preferred read path. Requires a gRPC-enabled Sui full node.
 
 ```bash
 # List objects owned by an address
