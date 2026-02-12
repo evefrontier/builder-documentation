@@ -32,7 +32,7 @@ Explore: [Move by Example](https://docs.sui.io/build/move/move-examples)
 
 ---
 
-## How Sui and Move Work Together
+## How Frontier and Sui Work Together
 
 - **Assets-as-Objects:** On Sui, every in-game item or assembly can be represented as a unique Sui object, tracked and manipulated with Move programs.
 - **Ownership & Access Control:** Move enforces secure access, ensuring players control only the assets and assemblies they own.

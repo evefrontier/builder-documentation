@@ -17,8 +17,6 @@
 * [Introduction to Smart Contracts](smart-contracts/introduction-to-smart-contracts.md)
 * [EVE Frontier World Explainer](smart-contracts/eve-frontier-world-explainer.md)
 * [Interfacing with the EVE Frontier World](smart-contracts/interfacing-with-the-eve-frontier-world.md)
-* [Development in the EVE Frontier World](smart-contracts/development-in-the-eve-frontier-world.md)
-* [Building Pragmatics](smart-contracts/building-pragmatics.md)
 
 ## Smart Assemblies
 

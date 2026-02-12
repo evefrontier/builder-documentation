@@ -1,89 +1,150 @@
 # Interfacing with the EVE Frontier World
 
-### Overview
+## Overview
 
-The EVE Frontier World on SUI exposes Move smart contracts and on-chain modules for the game’s core systems. These contracts enable developers and builders to create, manage, and query in-game objects—such as characters, deployables, storage units, gates securely on-chain.
+You interact with the EVE Frontier world in two ways:
 
-Developers interact with the world through two primary mechanisms:
-
-- **Write Path:** Submitting transactions to Move entry functions to mutate on-chain state and drive gameplay.
-- **Read Path:** Querying on-chain object state and events via SUI RPC endpoints or indexers.
-
-The [`examples/`](https://github.com/evefrontier/world-contracts/tree/main/examples) directory provides TypeScript and Move scripts demonstrating integration with all major systems, including gate operations and builder extension-based workflows.
+- **Write path** — Submit transactions to Move public functions to mutate on-chain state (create assemblies, bring them online, deposit items, etc.).
+- **Read path** — Query on-chain state and events via [Sui JSON-RPC](https://docs.sui.io/references/sui-api), [GraphQL](https://docs.sui.io/guides/developer/accessing-data/query-with-graphql), [gRPC](https://docs.sui.io/guides/developer/accessing-data/grpc-overview), or custom indexers.
 
 ---
 
-### Write Path: Move Public Functions
+## Writing to the World Contracts
 
-All game actions that alter state are expressed as public functions in the Move modules. Each object (character, assembly, storage unit, gate, etc.) is a unique Move object/resource. Interactions require referencing the related object(s) and holding appropriate permissions.
+Write operations use the [Sui TypeScript SDK](https://docs.sui.io/build/ts-sdk) to build and submit transactions. The [world-contracts ts-scripts](https://github.com/evefrontier/world-contracts/tree/main/ts-scripts) provide examples on how to interact with the EVE Frontier world. You can also use other SDKs (e.g., [Rust](https://docs.sui.io/references/rust-sdk) or [community Go SDK](https://docs.sui.io/references/sui-sdks)) based on your tech stack. 
 
-Some of the core operations and their integration patterns include:
+### Example: Bring Assembly Online
 
-//TODO explain: public general function interfaces with admin, sponsored and owner access controlled. Add how functions can be integrated using the ownerCap and Auth witness and how inventory transfers using character biometric works and gate configuration works
+This script borrows `OwnerCap` from a character, calls the assembly `online` function, then returns the cap:
 
----
-
-### Read Path: Querying On-Chain State and Events
-
-All chains of state and interactions are publicly queryable using SUI RPC, SDK, or indexer tools:
-
-- **Object Inspection:**  
-  Retrieve a game object’s fields (e.g., a character, deployable, storage unit, or gate) by SUI object ID.
-
-- **Event Querying:**  
-  Modules emit events such as `JumpEvent` (for gate traversal), `KillmailCreatedEvent` (for PVP loss records), and updates to inventories or deployments.  
-  Events can be filtered by type or participant, supporting analytics, dashboards, and gameplay histories.
-
-- **Integration Patterns:**  
-  The example TypeScript and Move scripts automatically hydrate world object IDs, perform real-time queries, and log key events after transactions.
-
-**Example (Pseudocode):**
 ```typescript
-// Fetching an object by SUI object ID
-getObject({ objectId: '0xSOME_ID...' });
+import { Transaction } from "@mysten/sui/transactions";
 
-// Query for all "JumpEvent" entries
-getEvents({ eventType: '0x...::smartgate::JumpEvent' });
+// 1. Borrow OwnerCap from character
+const [ownerCap] = tx.moveCall({
+  target: `${config.packageId}::character::borrow_owner_cap`,
+  typeArguments: [`${config.packageId}::assembly::Assembly`],
+  arguments: [tx.object(characterId), tx.object(ownerCapId)],
+});
+
+// 2. Bring assembly online
+tx.moveCall({
+  target: `${config.packageId}::assembly::online`,
+  arguments: [
+    tx.object(assemblyId),
+    tx.object(networkNodeId),
+    tx.object(config.energyConfig),
+    ownerCap,
+  ],
+});
+
+// 3. Return OwnerCap to character
+tx.moveCall({
+  target: `${config.packageId}::character::return_owner_cap`,
+  typeArguments: [`${config.packageId}::assembly::Assembly`],
+  arguments: [tx.object(characterId), ownerCap],
+});
 ```
 
+See [ts-scripts/assembly/online.ts](https://github.com/evefrontier/world-contracts/blob/main/ts-scripts/assembly/online.ts) for the full script.
+
+### Example: Sponsored Transactions
+
+Many world operations require server-side validation (e.g., proximity checks). These use **sponsored transactions** — the player signs the intent, and an authorized sponsor (e.g., EVE Frontier) pays gas and submits:
+
+```typescript
+tx.setSender(playerAddress);
+tx.setGasOwner(adminAddress);  // Sponsor pays gas
+
+// ... moveCall to game_item_to_chain_inventory, etc.
+
+const result = await executeSponsoredTransaction(
+  tx, client, playerKeypair, adminKeypair,
+  playerAddress, adminAddress,
+  { showEvents: true }
+);
+```
+
+See [ts-scripts/storage-unit/deposit-to-ephemeral-inventory.ts](https://github.com/evefrontier/world-contracts/blob/main/ts-scripts/storage-unit/deposit-to-ephemeral-inventory.ts) for a full example.
+
+
+
 ---
 
-### Utilities & Best Practices
+## Reading from the World Contracts
 
-- **Object IDs:**  
-  Each game object is a unique SUI on-chain object, referenced by its SUI object ID and protected by SUI’s ownership model.
+### GraphQL
 
-- **Permissions:**  
-  Write calls enforce owner or role-based access; extension logic can further restrict actions, such as requiring a JumpPermit for certain gate operations.
+Use Sui's [GraphQL RPC](https://docs.sui.io/guides/developer/accessing-data/query-with-graphql) to query objects by type, owner, or filters. 
 
-- **Atomicity:**  
-  All operations are atomic per transaction, referencing all required Move objects and arguments.
+**Example: Get objects by type**
 
-- **Integration Support:**  
-  The [`examples/`](https://github.com/evefrontier/world-contracts/tree/main/examples) directory offers patterns for configuring, hydrating, and invoking both system-level and permissioned flows, with robust error handling and output.
-
-#### Integration Reference
-
-- **Move Modules:** [`sources/`](https://github.com/evefrontier/world-contracts/tree/main/contracts/world/sources)
-- **Example Scripts:** [`examples/`](https://github.com/evefrontier/world-contracts/tree/main/examples)
-- **Module Documentation:** Docstrings and specifications in each module outline entry function signatures and logic.
-
----
-
-### Example: Permissioned Gate Jump
-
-```move
-// Example of a jump that may be extension-gated
-public entry fun jump(
-    character: &signer,
-    source_gate: &mut SmartGate,
-    destination_gate: &mut SmartGate,
-    maybe_permit: Option<JumpPermit>,
-    ...
-) {
-    // Logic verifies JumpPermit if the gate extension requires it; emits JumpEvent
+```graphql
+query GetObjectsByType($type: String!, $first: Int) {
+  objects(filter: { type: $type }, first: $first) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    nodes {
+      address
+      asMoveObject {
+        contents {
+          json
+        }
+      }
+    }
+  }
 }
 ```
-See the builder extension examples for setting up custom JumpPermit logic or permissioned jump flows.
+
+Try it: [GraphQL Testnet IDE](https://graphql.testnet.sui.io/graphql). Pass variables in the IDE's Variables panel, e.g.:
+
+```json
+{
+  "type": "0x2ff3e06b96eb830bdcffbc6cae9b8fe43f005c3b94cef05d9ec23057df16f107::network_node::NetworkNode",
+  "first": 10
+}
+```
+
+### JSON-RPC
+
+Use `sui_getObject` and `sui_getOwnedObjects` for direct object lookup by ID or owner. See [Sui RPC reference](https://docs.sui.io/references/sui-api).
+
+### gRPC
+
+For higher throughput and streaming (e.g., checkpoints), use [gRPC](https://docs.sui.io/guides/developer/accessing-data/grpc-overview). Requires a gRPC-enabled Sui full node. Example services: `LedgerService`, `StateService`, `SubscriptionService`.
+
+```bash
+# List objects owned by an address
+grpcurl -d '{ "owner": "<Sui_address>" }' <full_node_url>:443 sui.rpc.v2.StateService/ListOwnedObjects
+```
+
+### Events
+
+State changes emit events on transactions. Use [suix_queryEvents](https://docs.sui.io/guides/developer/accessing-data/using-events) to filter by module, type, or sender:
+
+```bash
+curl -X POST https://fullnode.mainnet.sui.io:443 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "suix_queryEvents",
+    "params": [{
+      "MoveEventType": "0x...::smartgate::JumpEvent"
+    }, null, 10, false]
+  }'
+```
+
+World events include `JumpEvent` (gate traversal), inventory updates, and deployment changes. Store and subscribe to events off-chain for dashboards, analytics, or game services.
 
 ---
+
+## References
+
+- [world-contracts ts-scripts](https://github.com/evefrontier/world-contracts/tree/main/ts-scripts) — TypeScript examples for world interactions
+- [Sui GraphQL](https://docs.sui.io/guides/developer/accessing-data/query-with-graphql)
+- [Sui gRPC](https://docs.sui.io/guides/developer/accessing-data/grpc-overview)
+- [Sui Events](https://docs.sui.io/guides/developer/accessing-data/using-events)
+- [EVE Frontier World Explainer](eve-frontier-world-explainer.md)
