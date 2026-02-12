@@ -31,68 +31,39 @@ If you prefer to install tools directly on your system, follow the steps for you
 
 {% tab title="Windows" %}
 
-This guide is for **Windows** users. Sui CLI installs via shell scripts, so you need WSL (Windows Subsystem for Linux). Run commands in PowerShell or Command Prompt with Admin privileges where noted.
+This guide is for **Windows** users. [suiup](https://github.com/MystenLabs/suiup) is a native Windows executable. Run commands in PowerShell or Command Prompt.
 
-## Step 1: Setup WSL
+## Step 1: Install Git
 
-### Step 1.1: Install WSL
+Install [Git for Windows](https://git-scm.com/download/win) if you haven't already.
 
-```bash
-wsl --install
-```
+## Step 2: Install suiup
 
-If you get an error about virtualization not being enabled, enable it through this [help article](https://support.microsoft.com/en-gb/windows/enable-virtualization-on-windows-c5578302-6e43-4b4b-a449-8ced115f58e1) and try again.
+suiup is the recommended way to install and manage Sui CLI. It is a cross-compiled native executable for Windows.
 
-### Step 1.2: Update WSL
+1. Download the latest Windows release from [suiup releases](https://github.com/MystenLabs/suiup/releases) (choose the Windows x86_64 archive).
+2. Unzip the archive and move the `suiup` executable to a folder on your `PATH` (e.g. `%LOCALAPPDATA%\bin`), or add the folder containing `suiup` to your `PATH`.
+3. Restart your terminal so the updated `PATH` is picked up.
 
-```bash
-wsl --update
-```
+## Step 3: Install Sui CLI
 
-### Step 1.3: Install Ubuntu
-
-```bash
-wsl --install -d Ubuntu-24.04
-```
-
-### Step 1.4: Access WSL
-
-```bash
-wsl -d Ubuntu-24.04
-```
-
-## Step 2: Install Git
-
-```bash
-sudo apt-get install git curl
-```
-
-## Step 3: Install Sui CLI via suiup
-
-[suiup](https://github.com/MystenLabs/suiup) is the recommended installer for Sui. It lets you install and switch between Sui CLI versions.
-
-```bash
-curl -sSfL https://raw.githubusercontent.com/MystenLabs/suiup/main/install.sh | sh
-```
-
-Restart your shell, then install Sui for testnet:
-
-```bash
+```powershell
 suiup install sui@testnet
 ```
 
 Verify:
 
-```bash
+```powershell
 sui --version
 ```
 
+suiup installs binaries to `%LOCALAPPDATA%\bin`. Ensure this folder is on your `PATH`.
+
 ## Step 4 (Optional): Node.js and PNPM
 
-For interaction using typescript sdk:
+For interaction using the TypeScript SDK, install [Node.js](https://nodejs.org/) (LTS) and then:
 
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash && . ~/.bashrc && nvm install 24
+```powershell
 npm install -g pnpm
 ```
 
