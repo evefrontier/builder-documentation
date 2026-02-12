@@ -19,7 +19,7 @@ flowchart TB
 
     subgraph L2 [Layer 2: Smart Assemblies]
         direction LR
-        SU[Storage Unit] --- Gate[Stargate] --- Turret[Turret] --- network_node[network_node.move]
+        SU[Storage Unit] --- Gate[Gate] --- Turret[Turret] --- Network Node[Network Node]
     end
 
     subgraph L1 [Layer 1: Primitives]
