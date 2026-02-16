@@ -1,6 +1,6 @@
 # Sui & Move Fundamentals
 
-EVE Frontier runs on the [Sui](https://sui.io/) blockchain, leveraging the power and security of the [Move](https://docs.sui.io/concepts/move) programming language. Understanding Sui’s architecture and Move’s unique features will unlock the full potential of developing Smart Assemblies and interactive systems for players.
+EVE Frontier runs on the [Sui](https://sui.io/) blockchain, leveraging the power and security of the [Move](https://docs.sui.io/concepts/sui-move-concepts) programming language. Understanding Sui’s architecture and Move’s unique features will unlock the full potential of developing Smart Assemblies and interactive systems for players.
 
 ---
 
@@ -28,7 +28,7 @@ Learn more: [Sui Documentation](https://docs.sui.io/concepts)
 - **Strong Typing:** Move enforces strict type and ownership checks at compile-time and runtime.
 - **Upgradeable and Composable:** Contracts can be designed for modular upgrades and extensibility.
 
-Explore: [Move by Example](https://docs.sui.io/guides/developer/first-app/)
+Explore: [Move by Example](https://docs.sui.io/guides/developer/getting-started)
 
 ---
 
