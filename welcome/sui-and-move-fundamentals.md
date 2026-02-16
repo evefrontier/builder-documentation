@@ -1,6 +1,6 @@
 # Sui & Move Fundamentals
 
-EVE Frontier runs on the [Sui](https://sui.io/) blockchain, leveraging the power and security of the [Move](https://docs.sui.io/concepts/move) programming language. Understanding Sui’s architecture and Move’s unique features will unlock the full potential of developing Smart Assemblies and interactive systems for players.
+EVE Frontier runs on the [Sui](https://sui.io/) blockchain, leveraging the power and security of the [Move](https://docs.sui.io/concepts/sui-move-concepts) programming language. Understanding Sui’s architecture and Move’s unique features will unlock the full potential of developing Smart Assemblies and interactive systems for players.
 
 ---
 
@@ -14,7 +14,7 @@ EVE Frontier runs on the [Sui](https://sui.io/) blockchain, leveraging the power
 - **Object-Centric Model:** Accounts own unique objects, not just balances.
 - **Native Support for Games:** Built with composability and upgradability in mind.
 
-Learn more: [Sui Documentation](https://docs.sui.io/concepts/what-is-sui)
+Learn more: [Sui Documentation](https://docs.sui.io/concepts)
 
 ---
 
@@ -28,7 +28,7 @@ Learn more: [Sui Documentation](https://docs.sui.io/concepts/what-is-sui)
 - **Strong Typing:** Move enforces strict type and ownership checks at compile-time and runtime.
 - **Upgradeable and Composable:** Contracts can be designed for modular upgrades and extensibility.
 
-Explore: [Move by Example](https://docs.sui.io/build/move/move-examples)
+Explore: [Move by Example](https://docs.sui.io/guides/developer/getting-started)
 
 ---
 
@@ -47,6 +47,6 @@ Explore: [Move by Example](https://docs.sui.io/build/move/move-examples)
 
 ## Getting Started
 
-- [Learn Sui basics](https://docs.sui.io/concepts/what-is-sui)
-- [Try Move tutorials](https://docs.sui.io/build/move/quickstart)
-- [Explore Sui Dev Tools](https://docs.sui.io/build/devnet/build-tools)
+- [Learn Sui basics](https://docs.sui.io/concepts)
+- [Try Move tutorials](https://docs.sui.io/guides/developer/getting-started/)
+- [Explore Sui Dev Tools](https://docs.sui.io/references/sui-sdks)
