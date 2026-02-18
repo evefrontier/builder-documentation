@@ -1,8 +1,7 @@
 # How to Contribute
-{% hint style="warning" %}
-NOTE: Community contribution is not yet available, the repo will be made public in the near future.
-{% endhint %}
+{% hint style="info" %}
 This site is synced to GitHub. You can propose changes from any page. Use **Edit on GitHub** to open a pull request.
+{% endhint %}
 
 ### What you can contribute
 
