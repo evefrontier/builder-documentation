@@ -39,6 +39,10 @@
 * [Customizing External dApps](dapps/customizing-external-dapps.md)
 * [Connecting In-Game](dapps/connecting-in-game.md)
 
+## dapp-kit SDK
+
+* [@evefrontier/dapp-kit](dapp-kit/dapp-kit.md)
+
 ## EVE Vault
 
 * [Introduction to EVE Vault](eve-vault/introduction-to-eve-vault.md)
