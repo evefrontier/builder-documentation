@@ -20,7 +20,7 @@ Getting started in EVE Frontier begins with securing your wallet and establishin
 
 EVE Vault leverages **zkLogin**—a zero-knowledge login protocol native to Sui—to give you effortless, privacy-preserving authentication:
 
-- **No Seed Phrases Needed:** Create your EVE Vault wallet using your EVE Frontier SSO, Google, Apple, or Twitch account.
+- **No Seed Phrases Needed:** Create your EVE Vault wallet using your EVE Frontier SSO account.
 - **Zero-Knowledge Proof:** zkLogin lets you prove ownership of your account to dApps and the EVE Vault, without the OAuth provider or anyone else learning your blockchain address or secrets.
 - **Fast & Private:** You get a secure Sui wallet, instantly ready for game and dApp use, with complete privacy and full control.
 
