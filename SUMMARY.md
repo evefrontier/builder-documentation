@@ -18,18 +18,19 @@
 * [Introduction to Smart Contracts](smart-contracts/introduction-to-smart-contracts.md)
 * [EVE Frontier World Explainer](smart-contracts/eve-frontier-world-explainer.md)
 * [Interfacing with the EVE Frontier World](smart-contracts/interfacing-with-the-eve-frontier-world.md)
+* [Object Model](smart-contracts/object-model.md)
+* [Ownership Model](./smart-contracts/ownership-model.md)
 
 ## Smart Assemblies
-
+* [Introduction to Modding Smart Assemblies](smart-assemblies/introduction.md)
+* [Smart Character](smart-assemblies/smart-character.md)
+* [Network Node](smart-assemblies/network-node.md)
 * [Storage Unit](smart-assemblies/storage-unit/README.md)
-  * [Configure](smart-assemblies/storage-unit/configure.md)
-  * [Deploy](smart-assemblies/storage-unit/deploy.md)
+  * [Build](smart-assemblies/storage-unit/build.md)
 * [Turret](smart-assemblies/turret/README.md)
-  * [Configure](smart-assemblies/turret/configure.md)
-  * [Deploy](smart-assemblies/turret/deploy.md)
+  * [Build](smart-assemblies/turret/build.md)
 * [Gate](smart-assemblies/gate/README.md)
-  * [Configure](smart-assemblies/gate/configure.md)
-  * [Deploy](smart-assemblies/gate/deploy.md)
+  * [Build](smart-assemblies/gate/build.md)
 
 ## dApps
 
