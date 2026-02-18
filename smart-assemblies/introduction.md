@@ -18,14 +18,13 @@ Prerequisites to customize a smart assembly:
 
 5. **Bring the Assembly Online** — the assembly reserves energy from the network node and becomes operational.
 
-6. **Deploy Custom Logic** — write a custom Move contract and configure it as an extension on your smart assembly.
 
 > For local development and testing, all the above steps can be simulated using scripts. Refer to [builder-scaffold](https://github.com/evefrontier/builder-scaffold) so you have everything you need to directly write custom logic for your smart assembly.
 
 ## Programmable Assemblies
 
-Each assembly type has its own extension pattern. Refer to the relevant section:
+Each assembly type has its own extension pattern. Each section has a **concept overview** (how the assembly works and its API) and a **build guide** (step-by-step instructions to write, publish, and test a custom extension):
 
-- [Smart Gate](./gate/README.md) — custom rules for space travel (e.g., toll gates, access lists)
-- [Smart Storage Unit](./storage-unit/README.md) — custom rules for item deposits and withdrawals (e.g., vending machines, trade hubs)
-- [Smart Turret](./turret/README.md) — custom targeting logic
+- [Smart Gate](./gate/README.md) — custom rules for space travel (e.g., toll gates, access lists) · [Build](./gate/build.md)
+- [Smart Storage Unit](./storage-unit/README.md) — custom rules for item deposits and withdrawals (e.g., vending machines, trade hubs) · [Build](./storage-unit/build.md)
+- [Smart Turret](./turret/README.md) — custom targeting logic · [Build](./turret/build.md)
