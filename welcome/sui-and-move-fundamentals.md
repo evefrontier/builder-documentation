@@ -11,10 +11,10 @@ EVE Frontier runs on the [Sui](https://sui.io/) blockchain, leveraging the power
 **Key Sui Features:**
 - **Low Latency:** Extremely fast transaction finality, suitable for real-time interactions.
 - **High Throughput:** Scales horizontally by processing transactions in parallel, not just one at a time.
-- **Object-Centric Model:** Accounts own unique objects, not just balances.
+- **Object-Centric Model:** Every asset is a unique on-chain object with its own identity, ownership, and history.
 - **Native Support for Games:** Built with composability and upgradability in mind.
 
-Learn more: [Sui Documentation](https://docs.sui.io/concepts)
+Learn more: [Sui Documentation](https://docs.sui.io/concepts) — [Understanding Sui's architecture](https://docs.sui.io/concepts/architecture)
 
 ---
 
@@ -35,7 +35,7 @@ Explore: [Move by Example](https://docs.sui.io/guides/developer/getting-started)
 ## How Frontier and Sui Work Together
 
 - **Assets-as-Objects:** On Sui, every in-game item or assembly can be represented as a unique Sui object, tracked and manipulated with Move programs.
-- **Ownership & Access Control:** Move enforces secure access, ensuring players control only the assets and assemblies they own.
+- **Ownership & Access Control:** Move natively protects owned assets, while shared objects like assemblies can define programmable access rules — letting builders decide exactly who can interact and how.
 - **Game Logic on-Chain:** Smart Assembly functions (storage, trading, combat, etc.) are securely programmed with Move, enabling safe and customizable gameplay.
 
 **Example Use Cases:**
