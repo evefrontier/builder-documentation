@@ -5,15 +5,13 @@
 You interact with the EVE Frontier world in two ways:
 
 - **Write path** — Submit transactions to Move public functions to mutate on-chain state (create assemblies, bring them online, deposit items, etc.).
-- **Read path** — Query on-chain state and events via [GraphQL](https://docs.sui.io/guides/developer/accessing-data/query-with-graphql), [gRPC](https://docs.sui.io/guides/developer/accessing-data/grpc-overview), [JSON-RPC](https://docs.sui.io/references/sui-api), or custom indexers. 
-
-Note: Sui is moving from JSON-RPC to gRPC and GraphQL;
+- **Read path** — Query on-chain state and events via [GraphQL](https://docs.sui.io/guides/developer/accessing-data/query-with-graphql), [gRPC](https://docs.sui.io/guides/developer/accessing-data/grpc-overview), or custom indexers.
 
 ---
 
 ## Writing to the World Contracts
 
-Write operations use the [Sui TypeScript SDK](https://docs.sui.io/build/ts-sdk) to build and submit transactions. The [world-contracts ts-scripts](https://github.com/evefrontier/world-contracts/tree/main/ts-scripts) provide examples on how to interact with the EVE Frontier world. You can also use other SDKs (e.g., [Rust](https://docs.sui.io/references/rust-sdk) or [community Go SDK](https://docs.sui.io/references/sui-sdks)) based on your tech stack. 
+Write operations use the [Sui TypeScript SDK](https://sdk.mystenlabs.com/typescript) to build and submit transactions. The [world-contracts ts-scripts](https://github.com/evefrontier/world-contracts/tree/main/ts-scripts) provide examples on how to interact with the EVE Frontier world. You can also use other SDKs (e.g., [Rust](https://docs.sui.io/references/rust-sdk) or [community Go SDK](https://docs.sui.io/references/sui-sdks)) based on your tech stack. 
 
 ### Example: Bring Assembly Online
 
@@ -75,6 +73,8 @@ See [ts-scripts/storage-unit/deposit-to-ephemeral-inventory.ts](https://github.c
 
 ## Reading from the World Contracts
 
+**SuiClient** is the main entry point for read operations in the [TypeScript SDK](https://sdk.mystenlabs.com/typescript). It connects to a Sui full node and exposes methods for querying objects, events, and transactions without submitting any transaction. Use it when you need to read state programmatically — for example, fetching an assembly's current config or checking ownership before building a transaction.
+
 ### GraphQL
 
 Use Sui's [GraphQL RPC](https://docs.sui.io/guides/developer/accessing-data/query-with-graphql) to query objects by type, owner, or filters. 
@@ -108,10 +108,6 @@ Try it: [GraphQL Testnet IDE](https://graphql.testnet.sui.io/graphql). Pass vari
   "first": 10
 }
 ```
-
-### JSON-RPC
-
-Use `sui_getObject` and `sui_getOwnedObjects` for direct object lookup by ID or owner. See [Sui RPC reference](https://docs.sui.io/references/sui-api). **Note:** Sui is deprecating JSON-RPC in favor of gRPC and GraphQL; avoid building new integrations on JSON-RPC alone.
 
 ### gRPC
 
