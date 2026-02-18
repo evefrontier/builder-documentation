@@ -52,7 +52,7 @@ This creates a composable and extensible universe where emergent gameplay is not
 
 ## Building on Blockchain: A Foundation for Player Ownership
 
-- **True ownership of your creations** — every structure, and item you build is verifiably yours, not stored on a centralized server that can be shut down.
+- **True ownership of your creations** — your assets are verifiably yours, not stored on a centralized server that can be shut down.
 - **A persistent universe** — your contributions endure on-chain, creating a living history that outlasts any single play session, update, or game cycle.
 - **An open, composable economy** — player-built systems, markets, and tools can interact with each other, enabling a co-created world rather than a developer-dictated one.
 
