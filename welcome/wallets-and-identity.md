@@ -20,7 +20,7 @@ Getting started in EVE Frontier begins with securing your wallet and establishin
 
 EVE Vault leverages **zkLogin**—a zero-knowledge login protocol native to SUI—to give you effortless, privacy-preserving authentication:
 
-- **No Seed Phrases Needed:** Create your EVE Vault wallet using a familiar OAuth provider (Google, Apple, etc.)—no complicated key management.
+- **No Seed Phrases Needed:** Create your EVE Vault wallet using your EVE Frontier SSO account.
 - **Zero-Knowledge Proof:** zkLogin lets you prove ownership of your account to dApps and the EVE Vault, without the OAuth provider or anyone else learning your blockchain address or secrets.
 - **Fast & Private:** You get a secure SUI wallet, instantly ready for game and dApp use, with complete privacy and full control.
 
@@ -28,15 +28,15 @@ EVE Vault leverages **zkLogin**—a zero-knowledge login protocol native to SUI�
 
 ## Your Identity Inside and Outside the Client
 
-- **In-Game:** Log in with EVE Vault to link your character, assets, and progression on-chain. Inventory, tokens, and other property are visible and accessible through the wallet.
-- **Out-of-Game dApps:** The EVE Vault extension allows you to authenticate and interact with external EVE Frontier dApps, marketplaces, community tools, and integrations. Each connection is permissioned, using your wallet as the anchor of your identity—never re-using or exposing your login elsewhere.
+- **In-Game:** Log in with EVE Vault to link your character, assets, and progression on-chain. Tokens, and other on chain property are visible and accessible through the wallet.
+- **Out-of-Game dApps:** The EVE Vault extension allows you to authenticate and interact with external EVE Frontier dApps, marketplaces, community tools, and integrations. Each connection is permissioned, using your wallet as the anchor of your identity, never re-using or exposing your login elsewhere.
 
 ---
 
 ## High-Level Flow
 
-1. **Install EVE Vault extension** from [vault.evefrontier.com](https://vault.evefrontier.com/) or the Chrome Web Store.
-2. **Create your wallet** with a single OAuth login—no secret phrases or manual backups.
+1. **Install EVE Vault extension** from [evefrontier/evevault/releases/download](https://github.com/evefrontier/evevault/releases/download/v0.0.2/eve-vault-chrome.zip)
+2. **Create your wallet** with a single sign on login — no secret phrases or manual backups.
 3. **Authorize dApps** and the EVE Frontier game client to interact with your wallet and identity as needed.
 4. **Transact, play, and participate** using EVE Vault as your only identity, both in and out of game.
 
