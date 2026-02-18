@@ -50,15 +50,21 @@ The **World Contracts** extend Frontier's programmability far beyond structures.
 
 This creates a composable and extensible universe where emergent gameplay is not just allowed, it is inevitable.
 
-## Building on Sui, A Foundation for the Future
+## Building on Blockchain: A Foundation for Player Ownership
 
-Frontier's integration with [**Sui**](https://docs.sui.io/concepts) enables:  
-- decentralized ownership  
-- secure and scalable on-chain systems  
-- composability across game systems  
-- future-proof persistence for player creations  
+- **True ownership of your creations** — every structure, and item you build is verifiably yours, not stored on a centralized server that can be shut down.
+- **A persistent universe** — your contributions endure on-chain, creating a living history that outlasts any single play session, update, or game cycle.
+- **An open, composable economy** — player-built systems, markets, and tools can interact with each other, enabling a co-created world rather than a developer-dictated one.
 
-Frontier’s use of blockchain is not for the sake of technology, it enables a platform for genuine co-creation.
+## Why Sui: Built for a Universe of This Scale
+
+Frontier's integration with [**Sui**](https://www.sui.io/intro-to-sui) is not a cosmetic technical choice — it directly enables the kind of world Frontier is designed to be.
+
+- **Objects, not accounts** — Sui treats every asset as an individual object with its own identity, history, and ownership record.
+- **Safe player modding at scale** — Smart Assemblies let anyone deploy code into a shared universe. Sui's Move language makes entire categories of exploits structurally impossible, so player creativity doesn't come at the cost of world stability.
+- **Systems that talk to each other** — player-built structures, contracts, and tools can natively compose and extend one another, meaning what you build can plug into what others build.
+- **No wallet, no gas, no friction** — Sui's zkLogin lets you sign in with your account credentials, and sponsored transactions mean you never need to buy tokens just to play. The blockchain is there, but you don't have to think about it.
+- **Speed that matches gameplay** — sub-second transaction finality and parallel execution mean on-chain actions feel instant, not like waiting for a confirmation screen.
 
 ## Build the Future of the EVE Universe
 
