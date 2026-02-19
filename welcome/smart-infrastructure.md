@@ -25,6 +25,8 @@ What can you enable?
 * **Advanced asset management** (locking, dispensing, tokenization)
 * **Player-driven economies** and custom rulesets
 * **Automation** and real-time reactions to world events
+* **Composable systems that extend other builders' creations** — your marketplace can use someone else's currency, your gate can reference another player's access list
+* **External dApps and tools** that interact with the game world from outside the client
 * ...and much, much more.
 
 ## The Technology: Sui and Move
@@ -35,7 +37,7 @@ Smart Assemblies are built and managed on the Sui blockchain, leveraging its uni
 
 ## Building and Deploying
 
-* Write and test your code locally
+* Write and test your code locally — new to Move? Start with the [Hello World example](https://docs.sui.io/guides/developer/getting-started/hello-world)
 * Package your assembly logic as a Move module
 * Deploy it on Sui to bring your innovation to the live persistent world
 * Share, upgrade, and collaborate with other builders

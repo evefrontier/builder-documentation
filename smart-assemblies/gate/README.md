@@ -28,7 +28,9 @@ public struct JumpPermit has key, store {
 }
 ```
 
-The `route_hash` is direction-agnostic — a permit issued for Gate A → Gate B also works for Gate B → Gate A.
+The `route_hash` is direction-agnostic a permit issued for Gate A → Gate B also works for Gate B → Gate A.
+
+For a full working example, see the [Custom Smart Gate Example](https://github.com/evefrontier/builder-scaffold/tree/main/move-contracts/smart_gate).
 
 ## Linking Gates
 

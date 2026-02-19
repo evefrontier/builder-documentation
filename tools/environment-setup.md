@@ -14,10 +14,10 @@ Use the EVE Frontier builder-scaffold localnet setup:
 
 ```bash
 git clone -b build https://github.com/evefrontier/builder-scaffold.git
-cd builder-scaffold/localnet-setup/docker
+cd builder-scaffold/docker
 ```
 > Note:  This link needs to will be updated soon
-2. Follow the instructions in the [localnet-setup/docker](https://github.com/evefrontier/builder-scaffold/tree/build/localnet-setup/docker) directory.
+2. Follow the instructions in the [localnet-setup/docker](https://github.com/evefrontier/builder-scaffold/blob/main/docker/readme.md) directory.
 
 This gives you a pre-configured Sui localnet and development environment without installing Sui CLI, WSL, or platform-specific tools.
 
@@ -31,11 +31,17 @@ If you prefer to install tools directly on your system, follow the steps for you
 
 {% tab title="Windows" %}
 
-This guide is for **Windows** users. [suiup](https://github.com/MystenLabs/suiup) is a native Windows executable. Run commands in PowerShell or Command Prompt.
+This guide is for **Windows** users. [suiup](https://github.com/MystenLabs/suiup) is a native Windows executable. Run commands in PowerShell, Command Prompt, or **Git Bash** (recommended if you prefer using the bash install script).
 
 ## Step 1: Install Git
 
-Install [Git for Windows](https://git-scm.com/download/win) if you haven't already.
+Install [Git for Windows](https://git-scm.com/download/win) if you haven't already. Git Bash (included with the install) lets you run the suiup bash install script directly without needing to download the binary manually:
+
+```bash
+curl -sSfL https://raw.githubusercontent.com/MystenLabs/suiup/main/install.sh | sh
+```
+
+Then continue from Step 3 below. If you prefer the manual binary install, follow Steps 2–3 instead.
 
 ## Step 2: Install suiup
 

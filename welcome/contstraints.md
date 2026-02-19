@@ -5,8 +5,8 @@ While EVE Frontier is designed for unprecedented builder empowerment and program
 ## 1. Blockchain/Smart Contract Constraints
 
 ### - Resource and Gas Costs
-- Every on-chain operation (deployment, transactions, storage, execution) incurs gas costs.
-- Sui’s resource-oriented model enforces that each change has a computation and storage price.
+- Every on-chain WRITE operation (deployment, transactions, storage) incurs gas costs. Reading state off-chain via gRPC or an indexer is free and efficient.
+- Sui's resource-oriented model enforces that each change has a computation and storage price.
 
 ### - Execution & Storage Limits
 - Smart Assemblies are subject to Sui’s per-transaction limits: transactions exceeding the maximum computation units abort, and transaction and object size are capped (Move objects max out at 250KB). Current limits are defined in [Sui protocol config](https://docs.sui.io/concepts/transactions#limits-on-transactions-objects-and-data).
