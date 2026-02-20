@@ -27,14 +27,14 @@ For any on-chain interaction, items must first be available on-chain. Players de
 
 ### 2. On-Chain Deposit & Withdraw
 
-Once items are on-chain, the owner can deposit and withdraw directly using their `OwnerCap`. Requires a **proximity proof** (server-signed proof that the player is near the storage unit). Since these are public functions, the owner can call them directly from a dApp via [Programmable Transaction Blocks](https://docs.sui.io/concepts/transactions/prog-txn-blocks) — no custom contract required.
-
+Once items are on-chain, the owner can deposit and withdraw directly using their `OwnerCap`. Requires a **proximity proof** (server-signed proof that the player is near the storage unit) and an **authorized sponsored transaction** (validated via `AdminACL`). AdminACL will be removed once the proximity proof signed by server is exposed via a public service. 
 ```move
 public fun deposit_by_owner<T: key>(
     storage_unit: &mut StorageUnit,
     item: Item,
     server_registry: &ServerAddressRegistry,
     character: &Character,
+    admin_acl: &AdminACL,
     owner_cap: &OwnerCap<T>,
     proximity_proof: vector<u8>,
     clock: &Clock,
@@ -45,6 +45,7 @@ public fun withdraw_by_owner<T: key>(
     storage_unit: &mut StorageUnit,
     server_registry: &ServerAddressRegistry,
     character: &Character,
+    admin_acl: &AdminACL,
     owner_cap: &OwnerCap<T>,
     type_id: u64,
     proximity_proof: vector<u8>,
