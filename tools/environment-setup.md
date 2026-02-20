@@ -13,10 +13,10 @@ Use the EVE Frontier builder-scaffold localnet setup:
 1. Clone the builder-scaffold repo and navigate to the Docker setup:
 
 ```bash
-git clone -b build https://github.com/evefrontier/builder-scaffold.git
+git clone https://github.com/evefrontier/builder-scaffold.git
 cd builder-scaffold/docker
 ```
-> Note:  This link needs to will be updated soon
+
 2. Follow the instructions in the [localnet-setup/docker](https://github.com/evefrontier/builder-scaffold/blob/main/docker/readme.md) directory.
 
 This gives you a pre-configured Sui localnet and development environment without installing Sui CLI, WSL, or platform-specific tools.

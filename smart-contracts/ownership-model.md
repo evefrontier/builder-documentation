@@ -2,16 +2,16 @@
 
 EVE Frontier uses a **capability-based** access control system. Instead of relying on wallet addresses for ownership, transferable capability objects (`OwnerCap`) grant access to on-chain objects.
 
-## Capability Hierarchy
+## Access Hierarchy
 
 ```
 GovernorCap  (deployer — top-level authority)
-    └── AdminCap  (game server — creates objects, manages config)
+    └── AdminACL  (shared object — authorized sponsor addresses)
             └── OwnerCap<T>  (player — mutates a specific object)
 ```
 
-- **`GovernorCap`** — created at deploy time. Can create/revoke `AdminCap`s.
-- **`AdminCap`** — granted to the game server. Can create objects and mint `OwnerCap`s.
+- **`GovernorCap`** — created at deploy time. Can add/remove sponsors in `AdminACL`.
+- **`AdminACL`** — a shared object containing a list of authorized sponsor addresses. Functions protected by `AdminACL` call `verify_sponsor(ctx)`, which checks the transaction sponsor.
 - **`OwnerCap<T>`** — a typed "keycard" that authorizes mutation of **one specific object**.
 
 ```move

@@ -141,7 +141,7 @@ To support mechanics that require information asymmetry (e.g., hidden bases):
 
 ## Security Model
 
-- **Admin operations** — Require `AdminCap` for core state mutations.
+- **AdminACL operations** — Require the transaction to be sponsored by a authorised server.
 - **Owner operations** — Require ownership certificates (e.g., `OwnerCap`) for assembly-specific changes.
 - **Extension operations** — Use the witness type's `TypeName` to ensure calls come from registered third-party modules.
 

@@ -38,6 +38,7 @@ Two gates must be **linked** before anyone can jump between them. Requirements:
 - Both gates must be owned by the same character
 - Both gates must be online
 - Gates must be at least 20km apart (verified with a server-signed distance proof)
+- Must be an **authorized sponsored transaction** (validated via `AdminACL`)
 
 ## Gate API
 
