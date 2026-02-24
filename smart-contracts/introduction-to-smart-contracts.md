@@ -2,7 +2,7 @@
 
 ## What are Smart Contracts?
 
-Smart contracts are programs that execute on the blockchain. They enforce persistent rules, manage assets, automate actions, and run shared logic in a secure, deterministic, and verifiable way. In EVE Frontier, smart contracts are the foundation for Smart Assembly functionality and on-chain business logic. Contracts are written in [Move](https://move-book.com/) and deployed to [Sui](https://sui.io/).
+Smart contracts are programs that execute on the blockchain. They enforce persistent rules, manage assets, automate actions, and run shared logic in a secure, deterministic, and verifiable way. In EVE Frontier, smart contracts are the foundation for Smart Assembly functionality and on-chain business logic. Contracts are written in [Move](https://docs.sui.io/concepts/sui-move-concepts) and deployed to [Sui](https://sui.io/).
 
 Sui validators compile and verify Move modules, execute transactions on the Move VM, and persist the resulting state on-chain. This ensures that all business logic runs deterministically and that any participant can verify correctness.
 
