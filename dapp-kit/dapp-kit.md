@@ -2,6 +2,8 @@
 
 > React SDK for building EVE Frontier dApps on the Sui blockchain
 
+**Full API documentation (TypeDoc): [http://sui-docs.evefrontier.com/](http://sui-docs.evefrontier.com/)**
+
 ## Features
 
 - 🔌 **Wallet Connection** - Easy integration with EVE Vault and Sui wallets
@@ -23,6 +25,8 @@ pnpm add @evefrontier/dapp-kit
 ```bash
 npm install @tanstack/react-query react
 ```
+
+> Keep your app’s versions of **react**, **@mysten/dapp-kit-react**, and **@mysten/sui** in sync with the versions used by this package to avoid type or runtime mismatches. Check `package.json` for the current ranges.
 
 ## Quick Start
 
@@ -47,45 +51,32 @@ function App() {
 
 ### 2. Configure Assembly ID
 
-Set the assembly ID via environment variable or URL parameter:
+Set the assembly ID via URL parameter:
 
-```env
-# .env
-VITE_SMARTASSEMBLY_ID=0x123...
-```
-
-Or via URL: `https://yourdapp.com/?assemblyId=0x123...`
+`https://yourdapp.com/?tenant=utopia&itemId=...`
 
 ### 3. Use the Hooks
 
 ```tsx
-import { useConnection, useSmartObject, useNotification } from "@evefrontier/dapp-kit";
+import { EveFrontierProvider, useConnection, useSmartObject } from "@evefrontier/dapp-kit";
+import { QueryClient } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
+
+function App() {
+  return (
+    <EveFrontierProvider queryClient={queryClient}>
+      <MyDapp />
+    </EveFrontierProvider>
+  );
+}
 
 function MyDapp() {
-  // Wallet connection
-  const { isConnected, walletAddress, handleConnect, handleDisconnect } = useConnection();
-  
-  // Assembly data
-  const { assembly, character, loading, error, refetch } = useSmartObject();
-  
-  // Notifications
-  const { notify } = useNotification();
-
-  if (!isConnected) {
-    return <button onClick={handleConnect}>Connect Wallet</button>;
-  }
-
+  const { isConnected, handleConnect } = useConnection();
+  const { assembly, loading } = useSmartObject();
+  if (!isConnected) return <button onClick={handleConnect}>Connect</button>;
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-
-  return (
-    <div>
-      <p>Wallet: {walletAddress}</p>
-      <p>Assembly: {assembly?.name}</p>
-      <p>Owner: {character?.name}</p>
-      <button onClick={handleDisconnect}>Disconnect</button>
-    </div>
-  );
+  return <div>{assembly?.name}</div>;
 }
 ```
 
@@ -97,21 +88,20 @@ function MyDapp() {
 |------|-------------|
 | `useConnection()` | Wallet connection state and methods |
 | `useSmartObject()` | Current assembly data with auto-polling |
-| `useSponsoredTransaction()` | Execute gas-sponsored transactions (EVE Frontier) |
 | `useNotification()` | Display user notifications |
 | `dAppKit.signTransaction()` | Sign a transaction (from @mysten/dapp-kit-react) |
 | `dAppKit.signAndExecuteTransaction()` | Sign and execute a transaction |
 
 ### Standard Transactions (via dAppKit)
 
-For custom transactions that are **not** sponsored, use the `dAppKit` object which wraps Mysten's `@mysten/dapp-kit-react`:
+For normal transactions, use the `dAppKit` object which wraps Mysten's `@mysten/dapp-kit-react`:
 
 ```tsx
-import { dAppKit } from "@evefrontier/dapp-kit";
+import { useDAppKit } from "@mysten/dapp-kit-react";
 import { Transaction } from "@mysten/sui/transactions";
 
 function CustomTransactionButton() {
-  const signAndExecute = dAppKit.signAndExecuteTransaction();
+  const dAppKit = useDAppKit();
 
   const handleCustomTx = async () => {
     // Build your transaction
@@ -122,7 +112,7 @@ function CustomTransactionButton() {
     });
 
     // Sign and execute
-    const result = await signAndExecute.mutateAsync({
+    const result = await dAppKit.signAndExecute({
       transaction: tx,
     });
 
@@ -130,34 +120,10 @@ function CustomTransactionButton() {
   };
 
   return (
-    <button onClick={handleCustomTx} disabled={signAndExecute.isPending}>
-      {signAndExecute.isPending ? "Signing..." : "Execute Custom Tx"}
+    <button onClick={handleCustomTx}>
+      Execute Tx
     </button>
   );
-}
-```
-
-#### Sign Only (without execution)
-
-```tsx
-import { dAppKit } from "@evefrontier/dapp-kit";
-
-function SignOnlyExample() {
-  const signTx = dAppKit.signTransaction();
-
-  const handleSign = async () => {
-    const tx = new Transaction();
-    // ... build transaction
-
-    const { signature, bytes } = await signTx.mutateAsync({
-      transaction: tx,
-    });
-
-    console.log("Signature:", signature);
-    // Execute later or send to backend
-  };
-
-  return <button onClick={handleSign}>Sign Transaction</button>;
 }
 ```
 
@@ -176,39 +142,6 @@ Assemblies.NetworkNode
 Assemblies.Manufacturing
 Assemblies.Refinery
 ```
-
-### Sponsored Transactions
-
-Execute gas-free transactions:
-
-```tsx
-import { useSponsoredTransaction, SponsoredTransactionActions } from "@evefrontier/dapp-kit";
-
-function BringOnlineButton() {
-  const { mutateAsync: sendTx, isPending } = useSponsoredTransaction();
-
-  const handleClick = async () => {
-    const result = await sendTx({
-      txAction: SponsoredTransactionActions.BRING_ONLINE,
-      chain: "sui:testnet",
-    });
-    console.log("Transaction:", result.digest);
-  };
-
-  return (
-    <button onClick={handleClick} disabled={isPending}>
-      {isPending ? "Processing..." : "Bring Online"}
-    </button>
-  );
-}
-```
-
-Available actions:
-- `SponsoredTransactionActions.BRING_ONLINE`
-- `SponsoredTransactionActions.BRING_OFFLINE`
-- `SponsoredTransactionActions.EDIT_UNIT`
-- `SponsoredTransactionActions.LINK_SMART_GATE`
-- `SponsoredTransactionActions.UNLINK_SMART_GATE`
 
 ## GraphQL API
 
@@ -246,20 +179,6 @@ import {
 // Shorten address for display
 abbreviateAddress("0x1234567890abcdef"); // "0x123...cdef"
 
-// Check ownership
-if (isOwner(assembly, currentAccount?.address)) {
-  // Show owner controls
-}
-
-// Format storage capacity
-formatM3(BigInt("1000000000000000000")); // 1.0
-
-// Format burn time
-formatDuration(3665); // "01h 01m 05s"
-
-// Get transaction URL
-getTxUrl("sui:testnet", txHash); // Suiscan URL
-
 // Fetch item metadata
 const info = await getDatahubGameInfo(83463);
 console.log(info.name, info.iconUrl);
@@ -267,38 +186,4 @@ console.log(info.name, info.iconUrl);
 
 ## API Reference
 
-### Exports
-
-```typescript
-// Provider
-export { EveFrontierProvider } from "./providers";
-
-// Hooks
-export { useConnection, useSmartObject, useSponsoredTransaction, useNotification } from "./hooks";
-
-// dAppKit (Mysten's dapp-kit-react wrapper)
-export { dAppKit } from "./config";
-// Usage: dAppKit.signTransaction(), dAppKit.signAndExecuteTransaction()
-
-// GraphQL
-export { 
-  executeGraphQLQuery,
-  getAssemblyWithOwner,
-  getObjectWithJson,
-  getObjectsByType,
-  // ... more
-} from "./graphql";
-
-// Types
-export { Assemblies, AssemblyType, State, /* ... */ } from "./types";
-
-// Utilities
-export { abbreviateAddress, isOwner, formatM3, /* ... */ } from "./utils";
-
-// Wallet
-export { 
-  walletSupportsSponsoredTransaction,
-  getSponsoredTransactionFeature,
-  EVEFRONTIER_SPONSORED_TRANSACTION,
-} from "./wallet";
-```
+**Full API documentation (TypeDoc): [http://sui-docs.evefrontier.com/](http://sui-docs.evefrontier.com/)**
