@@ -35,16 +35,9 @@ Smart Assemblies are built and managed on the Sui blockchain, leveraging its uni
 
 > **Note:** You do not need to be a Move expert to get started. Many tools, templates, and builder guides simplify the process, letting you focus on gameplay, not boilerplate.
 
-## Building and Deploying
-
-* Write and test your code locally — new to Move? Start with the [Hello World example](https://docs.sui.io/guides/developer/getting-started/hello-world)
-* Package your assembly logic as a Move module
-* Deploy it on Sui to bring your innovation to the live persistent world
-* Share, upgrade, and collaborate with other builders
-
 ## Ready to Begin?
 
-Check out the available Smart Assemblies for inspiration, or dive into tutorials on creating your own. The frontier is shaped by you. Each code contribution is a lasting addition to the living universe!
+Check out the available Smart Assemblies for inspiration, or dive into tutorials on creating your own.
 
 Explore:
 
