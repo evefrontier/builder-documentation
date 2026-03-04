@@ -9,7 +9,7 @@
 
 ## Quickstart
 
-* [Environment Setup](tools/environment-setup.md)
+* [Environment Setup](quickstart/environment-setup.md)
 
 ## Smart Contracts
 
@@ -44,10 +44,8 @@
 * [Browser Extension](eve-vault/browser-extension.md)
 
 ## Tools
-
-### dapp-kit SDK
-
-* [@evefrontier/dapp-kit](dapp-kit/dapp-kit.md)
+* [dApp kit](dapp-kit/dapp-kit.md)
+* [Debugging Tools](./debugging.md)
 
 ## Troubleshooting
 
