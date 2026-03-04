@@ -28,7 +28,7 @@ Learn more: [Sui Documentation](https://docs.sui.io/concepts) — [Understanding
 - **Strong Typing:** Move enforces strict type and ownership checks at compile-time and runtime.
 - **Upgradeable and Composable:** Contracts can be designed for modular upgrades and extensibility.
 
-Explore: [Move by Example](https://docs.sui.io/guides/developer/getting-started)
+New to Move? Start with the [Hello World example](https://docs.sui.io/guides/developer/getting-started/hello-world)
 
 ---
 
