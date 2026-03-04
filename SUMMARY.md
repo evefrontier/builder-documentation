@@ -7,7 +7,7 @@
 * [Sui & Move Fundamentals](welcome/sui-and-move-fundamentals.md)
 * [Wallets & Identity](welcome/wallets-and-identity.md)
 
-## Tools
+## Quickstart
 
 * [Environment Setup](tools/environment-setup.md)
 
@@ -37,15 +37,17 @@
 * [Customizing External dApps](dapps/customizing-external-dapps.md)
 * [Connecting In-Game](dapps/connecting-in-game.md)
 
-## dapp-kit SDK
-
-* [@evefrontier/dapp-kit](dapp-kit/dapp-kit.md)
-
 ## EVE Vault
 
 * [Introduction to EVE Vault](eve-vault/introduction-to-eve-vault.md)
 * [Wallet Game Setup](eve-vault/wallet-game-setup.md)
 * [Browser Extension](eve-vault/browser-extension.md)
+
+## Tools
+
+### dapp-kit SDK
+
+* [@evefrontier/dapp-kit](dapp-kit/dapp-kit.md)
 
 ## Troubleshooting
 
