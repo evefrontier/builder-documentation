@@ -80,13 +80,6 @@ public fun jump_with_permit(
 )
 ```
 
-## Energy & Lifecycle
-
-Gates follow the same energy model as all assemblies:
-- Must be connected to a [Network Node](../network-node.md) for energy
-- Must be brought **online** (reserves energy) before they can be used
-- Going **offline** releases the reserved energy
-
 ## Next Steps
 
 Build and test a custom smart gate end-to-end: [Build Guide](./build.md)
