@@ -10,7 +10,6 @@
 ## Tools
 
 * [Environment Setup](tools/environment-setup.md)
-* [GAS Faucet](eve-vault/gas-faucet.md)
 
 ## Smart Contracts
 

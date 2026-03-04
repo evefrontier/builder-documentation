@@ -32,8 +32,6 @@ Explore: [Move by Example](https://docs.sui.io/guides/developer/getting-started)
 
 ---
 
----
-
 ## Getting Started
 
 - [Learn Sui basics](https://docs.sui.io/concepts)
