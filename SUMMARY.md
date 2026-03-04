@@ -16,7 +16,6 @@
 * [Introduction to Smart Contracts](smart-contracts/introduction-to-smart-contracts.md)
 * [Move Patterns in Frontier](smart-contracts/move-patterns-in-frontier.md)
 * [EVE Frontier World Explainer](smart-contracts/eve-frontier-world-explainer.md)
-* [Interfacing with the EVE Frontier World](smart-contracts/interfacing-with-the-eve-frontier-world.md)
 * [Object Model](smart-contracts/object-model.md)
 * [Ownership Model](./smart-contracts/ownership-model.md)
 
@@ -30,6 +29,7 @@
   * [Build](smart-assemblies/turret/build.md)
 * [Gate](smart-assemblies/gate/README.md)
   * [Build](smart-assemblies/gate/build.md)
+* [Interfacing with the EVE Frontier World](smart-assemblies/interfacing-with-the-eve-frontier-world.md)
 
 ## dApps
 
