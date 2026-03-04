@@ -73,3 +73,4 @@ By stepping into the Frontier ecosystem, you join a community empowered to shape
 **EVE Frontier is open, collaborative, and powered by the creativity of its builders.**  
 Together, we can define what it truly means to build in the EVE universe.
 
+To start building refer [Modding](./smart-assemblies/introduction.md)
