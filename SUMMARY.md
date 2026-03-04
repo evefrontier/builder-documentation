@@ -14,6 +14,7 @@
 ## Smart Contracts
 
 * [Introduction to Smart Contracts](smart-contracts/introduction-to-smart-contracts.md)
+* [Move Patterns in Frontier](smart-contracts/move-patterns-in-frontier.md)
 * [EVE Frontier World Explainer](smart-contracts/eve-frontier-world-explainer.md)
 * [Interfacing with the EVE Frontier World](smart-contracts/interfacing-with-the-eve-frontier-world.md)
 * [Object Model](smart-contracts/object-model.md)
