@@ -25,6 +25,15 @@ actualConsumptionRate = burnRateInMs × (fuelEfficiency / 100)
 | 3600s (1 hour) | 50% | 30 minutes |
 | 7200s (2 hours) | 70% | 84 minutes |
 
+In-game fuel efficiency is represented by fuel type:
+
+| Fuel type   | Efficiency |
+| ----------- | ---------- |
+| EU-90 Fuel  | 90%        |
+| SOF-80 Fuel | 80%        |
+| EU-40 Fuel  | 40%        |
+| D2 FUEL     | 15%        |
+
 ### Fuel Lifecycle
 
 1. **Deposit** — add fuel to the network node

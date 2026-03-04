@@ -2,7 +2,7 @@
 
 # Introduction to Modding Smart Assemblies
 
-Some EVE Frontier smart assemblies are **programmable** — you can customize their behavior in-game by deploying custom Move contracts.
+Some EVE Frontier smart assemblies are **programmable** — you can customize their in-game behavior by deploying custom Move contracts.
 
 ## Getting Started
 
