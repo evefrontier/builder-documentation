@@ -1,6 +1,6 @@
 # Environment Setup
 
-To start building on Sui and EVE Frontier, follow the steps below to set up your local development tools. If you already have the tools, make sure they are the correct version to avoid difficulties running examples and building.
+To start building on EVE Frontier, follow the steps below to set up your local development tools. If you already have the tools, make sure they are the correct version to avoid difficulties building.
 
 ## Recommended: Docker (any OS)
 
@@ -13,6 +13,7 @@ Use the EVE Frontier builder-scaffold localnet setup:
 1. Clone the builder-scaffold repo and navigate to the Docker setup:
 
 ```bash
+mkdir -p workspace && cd workspace
 git clone https://github.com/evefrontier/builder-scaffold.git
 cd builder-scaffold/docker
 ```
