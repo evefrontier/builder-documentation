@@ -5,7 +5,6 @@
 * [Why Build on EVE Frontier?](README.md)
 * [Smart Infrastructure](welcome/smart-infrastructure.md)
 * [Sui & Move Fundamentals](welcome/sui-and-move-fundamentals.md)
-* [Wallets & Identity](welcome/wallets-and-identity.md)
 
 ## Quickstart
 
@@ -40,6 +39,7 @@
 
 ## EVE Vault
 
+* [Wallets & Identity](eve-vault/wallets-and-identity.md)
 * [Introduction to EVE Vault](eve-vault/introduction-to-eve-vault.md)
 * [Wallet Game Setup](eve-vault/wallet-game-setup.md)
 * [Browser Extension](eve-vault/browser-extension.md)

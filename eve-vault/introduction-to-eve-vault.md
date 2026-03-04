@@ -1,19 +1,12 @@
 # Introduction to EVE Vault
 
-**EVE Vault** is a next-generation inventory and wallet management tool for EVE Frontier, available via web browser and as a Chrome extension at [https://github.com/evefrontier/evevault](https://github.com/evefrontier/evevault). Powered by the Sui blockchain, it leverages zkLogin authentication and implements the Sui Wallet Standard for secure, seamless integration with EVE Frontier dApps.
-
-***
-
-EVE Vault is designed to safeguard your Sui assets, tokens, and character-linked accounts, while streamlining dApp onboarding and gameplay operations. zkLogin authentication offers private, no-seed login using trusted OAuth providers, and FusionAuth OAuth lets you link your EVE Frontier account and manage in-game identity.
+**EVE Vault** is the official wallet and inventory manager for EVE Frontier on Sui, available as a [web app and Chrome extension](https://github.com/evefrontier/evevault). For what it is, how to install it, and how wallet and identity work (including zkLogin), see [Wallets & Identity](wallets-and-identity.md).
 
 **Features:**
 
-* Secure wallet and inventory management for all Sui-based EVE Frontier assets, including tokens, NFTs, and game items.
-* zkLogin-powered, seedless authentication via Google, Apple, Twitch, or other OAuth providers.
 * Sui Wallet Standard compliance for fast, safe, cross-dApp integration.
-* FusionAuth OAuth support for linking in-game character and Frontier identity to your wallet.
-* Chrome extension for native integration with EVE Frontier dApps in your browser, plus a full-featured web interface.
-* Permissioned dApp access: Easily connect wallet to player-made dApps and tools, protecting your infomorph's identity—even if your clone is destroyed.
+* FusionAuth OAuth support for linking your EVE Frontier account and in-game character to your wallet.
+* Permissioned dApp access: connect to player-made dApps and tools while protecting your infomorph's identity—even if your clone is destroyed.
 
 ***
 
