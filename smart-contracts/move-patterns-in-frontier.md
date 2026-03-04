@@ -1,6 +1,6 @@
 # Move Patterns in Frontier
 
-This page summarizes key Move patterns used in the EVE Frontier world contracts.
+Key Move patterns used in the EVE Frontier world contracts:
 
 ---
 
@@ -52,7 +52,7 @@ OwnerCaps are **borrowed** from the Character object for a single transaction us
 
 ## Dynamic fields
 
-**Dynamic fields** let you attach key–value data to an object without changing the object’s type. Frontier uses them for ephemeral, per-session data (e.g. temporary inventories) that can be added and removed at runtime.
+**Dynamic fields** let you attach key–value data to an object without changing the object’s type. Frontier uses them for ephemeral (e.g. temporary inventories) that can be added and removed at runtime.
 
 **More:** [Move book: Dynamic fields](https://move-book.com/programmability/dynamic-fields).
 

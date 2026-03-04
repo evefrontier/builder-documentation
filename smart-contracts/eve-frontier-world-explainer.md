@@ -148,7 +148,16 @@ To support mechanics that require information asymmetry (e.g., hidden bases):
 ---
 
 ## Next Steps
-To start building, skip to the assembly-specific guides:
-- [Storage Unit](../smart-assemblies/storage-unit/README.md), [Gate](../smart-assemblies/gate/README.md), [Turret](../smart-assemblies/turret/README.md) — Assembly-specific guides.
-- [Interfacing with the EVE Frontier World](interfacing-with-the-eve-frontier-world.md) — How to read and write on-chain state.
-- [World Contracts](https://github.com/evefrontier/world-contracts) — Source code and [ADR](https://github.com/evefrontier/world-contracts/blob/main/docs/architechture.md).
+
+**Learn more (Smart Contracts)** :
+- [Object Model](object-model.md) - how objects are derived and shared.
+- [Ownership Model](ownership-model.md) — understand access control.
+- [Move Patterns in Frontier](move-patterns-in-frontier.md) — Key patterns used in the world contracts.
+
+**Start Building** :
+- Assembly-specific build guides: [Storage Unit](../smart-assemblies/storage-unit/README.md), [Gate](../smart-assemblies/gate/README.md), [Turret](../smart-assemblies/turret/README.md) 
+- [Interfacing with the EVE Frontier World](../smart-assemblies/interfacing-with-the-eve-frontier-world.md) — How to read and write on-chain state.
+
+**Reference** 
+- [World Contracts](https://github.com/evefrontier/world-contracts) 
+- [ADR](https://github.com/evefrontier/world-contracts/blob/main/docs/architechture.md)

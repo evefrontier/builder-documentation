@@ -13,10 +13,10 @@
 ## Smart Contracts
 
 * [Introduction to Smart Contracts](smart-contracts/introduction-to-smart-contracts.md)
-* [Move Patterns in Frontier](smart-contracts/move-patterns-in-frontier.md)
 * [EVE Frontier World Explainer](smart-contracts/eve-frontier-world-explainer.md)
 * [Object Model](smart-contracts/object-model.md)
-* [Ownership Model](./smart-contracts/ownership-model.md)
+* [Ownership Model](smart-contracts/ownership-model.md)
+* [Move Patterns in Frontier](smart-contracts/move-patterns-in-frontier.md)
 
 ## Smart Assemblies
 * [Introduction to Modding Smart Assemblies](smart-assemblies/introduction.md)
@@ -45,8 +45,8 @@
 * [Browser Extension](eve-vault/browser-extension.md)
 
 ## Tools
-* [dApp kit](dapp-kit/dapp-kit.md)
-* [Debugging Tools](./debugging.md)
+* [dApp kit](tools/dapp-kit.md)
+* [Debugging Tools](tools/debugging.md)
 
 ## Troubleshooting
 
