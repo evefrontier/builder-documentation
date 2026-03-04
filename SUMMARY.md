@@ -4,7 +4,6 @@
 
 * [Why Build on EVE Frontier?](README.md)
 * [Smart Infrastructure](welcome/smart-infrastructure.md)
-* [Constraints](welcome/contstraints.md)
 * [Sui & Move Fundamentals](welcome/sui-and-move-fundamentals.md)
 * [Wallets & Identity](welcome/wallets-and-identity.md)
 
