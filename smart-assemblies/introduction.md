@@ -25,7 +25,9 @@ Prerequisites to customize a smart assembly:
 5. **Bring the Assembly Online** — the assembly reserves energy from the network node and becomes operational.
 
 
-> For local development and testing, all the above steps can be simulated using scripts. Refer to [builder-scaffold](https://github.com/evefrontier/builder-scaffold) so you have everything you need to directly write custom logic for your smart assembly.
+> For local development and testing, refer to [builder-scaffold](https://github.com/evefrontier/builder-scaffold) so you have everything you need to directly write custom logic for your smart assembly. 
+
+> For a one-command automated setup, see the community tool [efctl](https://frontier.scetrov.live/links/efctl/) ([docs](../tools/efctl.md)).
 
 ## Programmable Assemblies
 

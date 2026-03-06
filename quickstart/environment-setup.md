@@ -2,6 +2,12 @@
 
 To start building on EVE Frontier, follow the steps below to set up your local development tools. If you already have the tools, make sure they are the correct version to avoid difficulties building.
 
+## Community tool: efctl (one-command setup)
+
+The community CLI **[efctl](https://frontier.scetrov.live/links/efctl/)** automates the full local setup.
+
+---
+
 ## Recommended: Docker (any OS)
 
 The fastest way to get a Sui local development environment is with Docker. This works on Windows, Linux, and macOS with a single prerequisite.
