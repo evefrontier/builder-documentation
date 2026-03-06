@@ -50,7 +50,7 @@ See [ts-scripts/assembly/online.ts](https://github.com/evefrontier/world-contrac
 
 ### Example: Sponsored Transactions
 
-Many world operations require server-side validation (e.g., proximity checks). These use **sponsored transactions** — the player signs the intent, and an authorized sponsor (e.g., EVE Frontier) pays gas and submits:
+Many world operations require server-side validation (e.g., proximity checks, sponsor checks). These use **sponsored transactions** — the player signs the intent, and an authorized sponsor (e.g., EVE Frontier) pays gas and submits:
 
 ```typescript
 tx.setSender(playerAddress);
@@ -68,7 +68,6 @@ const result = await executeSponsoredTransaction(
 See [ts-scripts/storage-unit/deposit-to-ephemeral-inventory.ts](https://github.com/evefrontier/world-contracts/blob/main/ts-scripts/storage-unit/deposit-to-ephemeral-inventory.ts) for a full example.
 
 
-
 ---
 
 ## Reading from the World Contracts
@@ -77,7 +76,7 @@ See [ts-scripts/storage-unit/deposit-to-ephemeral-inventory.ts](https://github.c
 
 ### GraphQL
 
-Use Sui's [GraphQL RPC](https://docs.sui.io/guides/developer/accessing-data/query-with-graphql) to query objects by type, owner, or filters. 
+Use Sui's [GraphQL](https://docs.sui.io/guides/developer/accessing-data/query-with-graphql) to query objects by type, owner, or filters. 
 
 **Example: Get objects by type**
 
@@ -139,10 +138,9 @@ World events include `JumpEvent` (gate traversal), inventory updates, and deploy
 
 ---
 
-## References
+## Reading from the World
 
-- [world-contracts ts-scripts](https://github.com/evefrontier/world-contracts/tree/main/ts-scripts) — TypeScript examples for world interactions
-- [Sui GraphQL](https://docs.sui.io/guides/developer/accessing-data/query-with-graphql)
-- [Sui gRPC](https://docs.sui.io/guides/developer/accessing-data/grpc-overview)
-- [Sui Events](https://docs.sui.io/guides/developer/accessing-data/using-events)
-- [EVE Frontier World Explainer](eve-frontier-world-explainer.md)
+- **TypeScript** — [SuiClient](https://sdk.mystenlabs.com/typescript) for objects, events, and transactions.
+- **GraphQL** — [Query by type, owner, or filters](https://docs.sui.io/guides/developer/accessing-data/query-with-graphql); [Testnet IDE](https://graphql.testnet.sui.io/graphql).
+- **gRPC** — [Higher throughput and streaming](https://docs.sui.io/guides/developer/accessing-data/grpc-overview) (requires gRPC-enabled full node).
+- **Events** — [suix_queryEvents](https://docs.sui.io/guides/developer/accessing-data/using-events) for Move events (e.g. gate jumps, inventory updates).

@@ -28,7 +28,6 @@
   * [Build](smart-assemblies/turret/build.md)
 * [Gate](smart-assemblies/gate/README.md)
   * [Build](smart-assemblies/gate/build.md)
-* [Interfacing with the EVE Frontier World](smart-assemblies/interfacing-with-the-eve-frontier-world.md)
 
 ## dApps
 
@@ -45,6 +44,7 @@
 * [Browser Extension](eve-vault/browser-extension.md)
 
 ## Tools
+* [Interfacing with the EVE Frontier World](tools/interfacing-with-the-eve-frontier-world.md)
 * [dApp kit](tools/dapp-kit.md)
 * [Debugging Tools](tools/debugging.md)
 

@@ -156,7 +156,7 @@ To support mechanics that require information asymmetry (e.g., hidden bases):
 
 **Start Building** :
 - Assembly-specific build guides: [Storage Unit](../smart-assemblies/storage-unit/README.md), [Gate](../smart-assemblies/gate/README.md), [Turret](../smart-assemblies/turret/README.md) 
-- [Interfacing with the EVE Frontier World](../smart-assemblies/interfacing-with-the-eve-frontier-world.md) — How to read and write on-chain state.
+- [Interfacing with the EVE Frontier World](../tools/interfacing-with-the-eve-frontier-world.md) — How to read and write on-chain state.
 
 **Reference** 
 - [World Contracts](https://github.com/evefrontier/world-contracts) 

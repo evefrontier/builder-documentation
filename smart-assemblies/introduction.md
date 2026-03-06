@@ -28,3 +28,5 @@ Each assembly type has its own extension pattern. Each section has a **concept o
 - [Smart Gate](./gate/README.md) — custom rules for space travel (e.g., toll gates, access lists) · [Build](./gate/build.md)
 - [Smart Storage Unit](./storage-unit/README.md) — custom rules for item deposits and withdrawals (e.g., vending machines, trade hubs) · [Build](./storage-unit/build.md)
 - [Smart Turret](./turret/README.md) — custom targeting logic · [Build](./turret/build.md)
+
+To read and write world state from code (SDK, GraphQL, gRPC), see [Interfacing with the EVE Frontier World](../tools/interfacing-with-the-eve-frontier-world.md).
