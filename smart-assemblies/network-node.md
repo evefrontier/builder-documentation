@@ -67,6 +67,8 @@ public struct EnergyConfig has key {
 
 If the network node runs out of fuel, it goes **offline** — all connected assemblies are automatically brought offline.
 
+<!-- TODO: Add a diagram -->
+
 ## Assembly Connection
 
 Assemblies connect to a network node when they are anchored. The network node powers all connected assemblies:
