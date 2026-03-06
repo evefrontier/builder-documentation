@@ -4,6 +4,12 @@
 
 Some EVE Frontier smart assemblies are **programmable** — you can customize their in-game behavior by deploying custom Move contracts.
 
+<!-- TODO: Add a high level builder journey, eg: if you are builder interested in building smart contracts check out .. 
+if you are somone interested in building tools check out ..
+If you are somone who builds dapps check out this 
+if you are philospoher/great thinker interested in creating new ideas check out ...
+  -->
+
 ## Getting Started
 
 Prerequisites to customize a smart assembly:
