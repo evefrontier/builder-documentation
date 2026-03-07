@@ -109,13 +109,6 @@ public fun buy_item(
 }
 ```
 
-## Energy & Lifecycle
-
-Storage Units follow the same energy model as all assemblies:
-- Must be connected to a [Network Node](../network-node.md) for energy
-- Must be brought **online** (reserves energy) before inventory operations are allowed
-- Going **offline** releases the reserved energy
-
 **Reference:**
 - [`storage_unit.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/storage_unit.move)
 - [`inventory.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/primitives/inventory.move)

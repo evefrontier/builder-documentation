@@ -28,20 +28,7 @@ Learn more: [Sui Documentation](https://docs.sui.io/concepts) — [Understanding
 - **Strong Typing:** Move enforces strict type and ownership checks at compile-time and runtime.
 - **Upgradeable and Composable:** Contracts can be designed for modular upgrades and extensibility.
 
-Explore: [Move by Example](https://docs.sui.io/guides/developer/getting-started)
-
----
-
-## How Frontier and Sui Work Together
-
-- **Assets-as-Objects:** On Sui, every in-game item or assembly can be represented as a unique Sui object, tracked and manipulated with Move programs.
-- **Ownership & Access Control:** Move natively protects owned assets, while shared objects like assemblies can define programmable access rules — letting builders decide exactly who can interact and how.
-- **Game Logic on-Chain:** Smart Assembly functions (storage, trading, combat, etc.) are securely programmed with Move, enabling safe and customizable gameplay.
-
-**Example Use Cases:**
-- Programmable structures and base-building with resource ownership.
-- Player-driven trading systems and marketplaces.
-- Secure and extendable on-chain game logic for collaborative or competitive mechanics.
+New to Move? Start with the [Hello World example](https://docs.sui.io/guides/developer/getting-started/hello-world)
 
 ---
 

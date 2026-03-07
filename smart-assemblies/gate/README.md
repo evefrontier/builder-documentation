@@ -36,7 +36,6 @@ For a full working example, see the [Custom Smart Gate Example](https://github.c
 
 Two gates must be **linked** before anyone can jump between them. Requirements:
 - Both gates must be owned by the same character
-- Both gates must be online
 - Gates must be at least 20km apart (verified with a server-signed distance proof)
 - Must be an **authorized sponsored transaction** (validated via `AdminACL`)
 
@@ -79,13 +78,6 @@ public fun jump_with_permit(
     ctx: &mut TxContext,
 )
 ```
-
-## Energy & Lifecycle
-
-Gates follow the same energy model as all assemblies:
-- Must be connected to a [Network Node](../network-node.md) for energy
-- Must be brought **online** (reserves energy) before they can be used
-- Going **offline** releases the reserved energy
 
 ## Next Steps
 

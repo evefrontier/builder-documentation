@@ -1,3 +1,0 @@
-# GAS Faucet
-
-//TODO

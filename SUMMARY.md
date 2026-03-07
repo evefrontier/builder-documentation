@@ -4,22 +4,19 @@
 
 * [Why Build on EVE Frontier?](README.md)
 * [Smart Infrastructure](welcome/smart-infrastructure.md)
-* [Constraints](welcome/contstraints.md)
 * [Sui & Move Fundamentals](welcome/sui-and-move-fundamentals.md)
-* [Wallets & Identity](welcome/wallets-and-identity.md)
 
-## Tools
+## Quickstart
 
-* [Environment Setup](tools/environment-setup.md)
-* [GAS Faucet](eve-vault/gas-faucet.md)
+* [Environment Setup](quickstart/environment-setup.md)
 
 ## Smart Contracts
 
 * [Introduction to Smart Contracts](smart-contracts/introduction-to-smart-contracts.md)
 * [EVE Frontier World Explainer](smart-contracts/eve-frontier-world-explainer.md)
-* [Interfacing with the EVE Frontier World](smart-contracts/interfacing-with-the-eve-frontier-world.md)
 * [Object Model](smart-contracts/object-model.md)
-* [Ownership Model](./smart-contracts/ownership-model.md)
+* [Ownership Model](smart-contracts/ownership-model.md)
+* [Move Patterns in Frontier](smart-contracts/move-patterns-in-frontier.md)
 
 ## Smart Assemblies
 * [Introduction to Modding Smart Assemblies](smart-assemblies/introduction.md)
@@ -39,15 +36,18 @@
 * [Customizing External dApps](dapps/customizing-external-dapps.md)
 * [Connecting In-Game](dapps/connecting-in-game.md)
 
-## dapp-kit SDK
-
-* [@evefrontier/dapp-kit](dapp-kit/dapp-kit.md)
-
 ## EVE Vault
 
+* [Wallets & Identity](eve-vault/wallets-and-identity.md)
 * [Introduction to EVE Vault](eve-vault/introduction-to-eve-vault.md)
 * [Wallet Game Setup](eve-vault/wallet-game-setup.md)
 * [Browser Extension](eve-vault/browser-extension.md)
+
+## Tools
+* [Interfacing with the EVE Frontier World](tools/interfacing-with-the-eve-frontier-world.md)
+* [efctl (community)](tools/efctl.md) — CLI to automate builder-scaffold setup
+* [dApp kit](tools/dapp-kit.md)
+* [Debugging Tools](tools/debugging.md)
 
 ## Troubleshooting
 

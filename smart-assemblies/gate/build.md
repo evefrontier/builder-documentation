@@ -1,12 +1,13 @@
 # Build a Custom Smart Gate
 
-End-to-end build guide: write a gate extension, publish it, and test the full jump flow.
+End-to-end build guide: write a gate extension, publish it, and test the complete jump flow.
 
 ## Prerequisites
 
-- Sui CLI, Node.js, and pnpm installed
-- [builder-scaffold](https://github.com/evefrontier/builder-scaffold) cloned and `.env` configured
-- World contracts deployed and test resources created — see [builder flow setup](https://github.com/evefrontier/builder-scaffold/blob/main/docs/builder-flow-host.md)
+    - Follow [environment-setup](../../quickstart/environment-setup.md)
+    - Complete step by step instructions can be found in [builder-scaffold](https://github.com/evefrontier/builder-scaffold/blob/main/docs/builder-flow.md)
+
+Below is the high level understanding: 
 
 ## 1. Understand the example contract
 
