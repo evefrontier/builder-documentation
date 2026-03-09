@@ -34,21 +34,7 @@ User Wallet
             └── ...
 ```
 
-When a Smart Assembly is created, its `OwnerCap` is minted and [transferred to the `Character` object](https://docs.sui.io/guides/developer/objects/transfers/transfer-to-object) (transfer to object). If the user has access to the character, they have access to all its capabilities.
-
-## PlayerProfile and wallet-based discovery
-
-Characters are shared objects; ownership is via capabilities, not wallet. To let clients **discover a character from a wallet address**, a **PlayerProfile** is created at character creation and transferred to the player’s wallet(`character_address`). It holds only `character_id`, so querying objects owned by the wallet (by type `PlayerProfile`) yields the character reference.
-
-```move
-/// One per character; transferred to character_address so clients can query by wallet.
-public struct PlayerProfile has key {
-    id: UID,
-    character_id: ID,
-}
-```
-
-For GraphQL and code examples to get character details by wallet address, see [Interfacing with the EVE Frontier World](../tools/interfacing-with-the-eve-frontier-world.md#query-character-by-wallet-address).
+When a Smart Assembly is created, its `OwnerCap` is minted and [transferred to the `Character` object](https://docs.sui.io/guides/developer/objects/transfers/transfer-to-object) (transfer to object). If the user has access to the character, they have access to all its capabilities. To discover a character from a wallet address, see [Smart Character — Discovering character from wallet address](../smart-assemblies/smart-character.md#discovering-character-from-wallet-address).
 
 ## Borrow-Use-Return Pattern
 
