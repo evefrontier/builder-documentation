@@ -108,6 +108,42 @@ Try it: [GraphQL Testnet IDE](https://graphql.testnet.sui.io/graphql). Pass vari
 }
 ```
 
+### Query character by wallet address
+
+A [PlayerProfile](https://github.com/evefrontier/world-contracts/blob/8edd7e441daec68afab0558e80574efd6a241ce8/contracts/world/sources/character/character.move#L50) is created at character creation and transferred to the player’s wallet (`character_address`). Query objects owned by the wallet with type `PlayerProfile` to get `character_id`, then fetch the full `Character` if needed.
+
+Use your network’s GraphQL endpoint and the world package ID for that network. Set `address` to the wallet (Sui address) and `profileType` to `0x<WORLD_PACKAGE_ID>::character::PlayerProfile` (package ID is network-specific; see your deployment or [world-contracts](https://github.com/evefrontier/world-contracts)).
+
+```graphql
+query GetCharacterDetails($address: SuiAddress!, $profileType: String!) {
+  address(address: $address) {
+    objects(last: 10, filter: { type: $profileType }) {
+      nodes {
+        contents {
+          ... on MoveObject {
+            contents {
+              type { repr }
+              json
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+Variables:
+
+```json
+{
+  "address": "0x...",
+  "profileType": "0x<WORLD_PACKAGE_ID>::character::PlayerProfile"
+}
+```
+
+Each node’s `json` includes `character_id`. Use that ID to load the full `Character` (e.g. query `objects` by that ID).
+
 ### gRPC
 
 For higher throughput and streaming (e.g., checkpoints), use [gRPC](https://docs.sui.io/guides/developer/accessing-data/grpc-overview)—Sui's preferred read path. Requires a gRPC-enabled Sui full node.
