@@ -20,95 +20,33 @@ Items in inventories are on-chain representations of in-game resources.
 
 ### 1. Bridging Items (Game to Chain)
 
-For any on-chain interaction, items must first be available on-chain. Players deposit items from in-game to the chain, and can withdraw them back to the game.
+For any on-chain interaction, items must first be available on-chain. Players move items from in-game into the chain, and can move them back out to the game.
 
-- **Game → Chain** (`game_item_to_chain_inventory`) — mints on-chain items from in-game data
-- **Chain → Game** (`chain_item_to_game_inventory`) — burns on-chain items and returns them to the game (requires proximity proof)
+- **Game → Chain** — items are minted on-chain from in-game data.
+- **Chain → Game** — on-chain items are burned and returned to the game.
 
-### 2. On-Chain Deposit & Withdraw
+### 2. Owner Deposit & Withdraw
 
-Once items are on-chain, the owner can deposit and withdraw directly using their `OwnerCap`. Currently requires an **authorized sponsored transaction** (validated via `AdminACL`) as a temporary access check. This will be replaced with a proximity proof once a location service is available for signed server proofs. Since these are public functions, the owner can call them directly from a dApp via [Programmable Transaction Blocks](https://docs.sui.io/concepts/transactions/prog-txn-blocks) — no custom contract required.
-
-```move
-public fun deposit_by_owner<T: key>(
-    storage_unit: &mut StorageUnit,
-    item: Item,
-    character: &Character,
-    admin_acl: &AdminACL,
-    owner_cap: &OwnerCap<T>,
-    ctx: &mut TxContext,
-)
-
-public fun withdraw_by_owner<T: key>(
-    storage_unit: &mut StorageUnit,
-    character: &Character,
-    admin_acl: &AdminACL,
-    owner_cap: &OwnerCap<T>,
-    type_id: u64,
-    ctx: &mut TxContext,
-): Item
-```
+Once items are on-chain, the owner can deposit and withdraw directly using their owner capability. The owner signs the transaction and proves access with their `OwnerCap`; They can perform these actions from a dApp.
 
 ### 3. Custom Logic via Extensions
 
-Players can build intersting use cases by deploying custom contracts. The extension uses the **typed witness pattern** — same as the [Gate extension pattern](../gate/README.md#extension-pattern).
+The owner can deploy custom rules (a [Move contract](https://github.com/evefrontier/world-contracts)) and register it as the storage unit’s extension. After that, the extension controls how items are deposited or withdrawn — for example:
 
-**Authorize the extension:**
+- **Vending machine** — players pay (e.g. in tokens) and receive an item from the unit.
+- **Trade hub** — custom rules for listing, buying, and exchanging items.
+- **Gated access** — only characters that meet certain conditions can deposit or withdraw.
+- **Extension-to-owned** — the extension can deposit items into a specific player’s owned inventory (e.g. async delivery, guild hangars, rewards); the recipient does not need to be the transaction sender.
 
-```move
-public fun authorize_extension<Auth: drop>(
-    storage_unit: &mut StorageUnit,
-    owner_cap: &OwnerCap<StorageUnit>,
-)
-```
+The extension uses the same pattern as the [Gate](../gate/README.md): the owner authorizes a contract type on the storage unit, and that contract’s logic runs when players interact. For API details and build steps, see the [Storage Unit Build Guide](./build.md).
 
-Once authorized, the custom contract can call `deposit_item` / `withdraw_item` using its `Auth` witness:
+## Next Steps
 
-```move
-public fun deposit_item<Auth: drop>(
-    storage_unit: &mut StorageUnit,
-    character: &Character,
-    item: Item,
-    _: Auth,
-    _: &mut TxContext,
-)
-
-public fun withdraw_item<Auth: drop>(
-    storage_unit: &mut StorageUnit,
-    character: &Character,
-    _: Auth,
-    type_id: u64,
-    _: &mut TxContext,
-): Item
-```
-
-**Example: Vending Machine**
-
-```move
-module custom::vending_machine;
-
-public struct VendingAuth has drop {}
-
-public fun buy_item(
-    storage_unit: &mut StorageUnit,
-    character: &Character,
-    payment: Coin<SUI>,
-    type_id: u64,
-    ctx: &mut TxContext,
-): Item {
-    // Custom logic: verify payment, check inventory, etc.
-    // ...
-
-    storage_unit::withdraw_item(
-        storage_unit,
-        character,
-        VendingAuth {},
-        type_id,
-        ctx,
-    )
-}
-```
+Build a custom storage unit extension: [Build Guide](./build.md)
 
 **Reference:**
-- [`storage_unit.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/storage_unit.move)
-- [`inventory.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/primitives/inventory.move)
+- [world-contracts](https://github.com/evefrontier/world-contracts) — EVE Frontier Sui Move contracts
+- [storage_unit.move](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/storage_unit.move) — core storage unit module
+- [inventory.move](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/primitives/inventory.move) — inventory primitives
+- [contracts/world](https://github.com/evefrontier/world-contracts/tree/main/contracts/world) — world contract package
+- [world-contracts releases](https://github.com/evefrontier/world-contracts/releases)
