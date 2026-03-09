@@ -1,13 +1,57 @@
 # Build a Custom Smart Gate
 
-End-to-end build guide: write a gate extension, publish it, and test the complete jump flow.
+End-to-end build guide: write a gate extension, publish it, and test the complete jump flow. For concepts and behaviour, see the [Gate README](./README.md).
 
 ## Prerequisites
 
-    - Follow [environment-setup](../../quickstart/environment-setup.md)
-    - Complete step by step instructions can be found in [builder-scaffold](https://github.com/evefrontier/builder-scaffold/blob/main/docs/builder-flow.md)
+- Follow [environment-setup](../../quickstart/environment-setup.md)
+- Complete step-by-step instructions: [builder-scaffold builder-flow](https://github.com/evefrontier/builder-scaffold/blob/main/docs/builder-flow.md)
 
-Below is the high level understanding: 
+## Gate API
+
+Custom contracts use the **typed witness pattern**: define a witness struct (`Auth`) and register it on the gate. The [world gate module](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/gate.move) verifies the type at runtime.
+
+**Authorize an extension:**
+
+```move
+public fun authorize_extension<Auth: drop>(
+    gate: &mut Gate,
+    owner_cap: &OwnerCap<Gate>,
+)
+```
+
+**Issue a jump permit (called by your extension):**
+
+```move
+public fun issue_jump_permit<Auth: drop>(
+    source_gate: &Gate,
+    destination_gate: &Gate,
+    character: &Character,
+    _: Auth,
+    expires_at_timestamp_ms: u64,
+    ctx: &mut TxContext,
+)
+```
+
+**Jump with a permit:**
+
+```move
+public fun jump_with_permit(
+    source_gate: &Gate,
+    destination_gate: &Gate,
+    character: &Character,
+    jump_permit: JumpPermit,
+    admin_acl: &AdminACL,
+    clock: &Clock,
+    ctx: &mut TxContext,
+)
+```
+
+**JumpPermit** (from the world module): contains `character_id`, `route_hash`, and `expires_at_timestamp_ms`. The `route_hash` is direction-agnostic — a permit for Gate A → Gate B also works for Gate B → Gate A.
+
+---
+
+Below is the high-level understanding: 
 
 ## 1. Understand the example contract
 
@@ -160,4 +204,11 @@ Other ideas:
 - **Allowlist** — check a stored list of approved characters
 - **Bounty gate** — require depositing an item to earn passage (see `corpse_gate_bounty.move` in the scaffold)
 
-See the [Gate API](./README.md#gate-api) for the full function signatures.
+See the [Gate API](#gate-api) above for the full function signatures.
+
+## Reference
+
+- [world-contracts](https://github.com/evefrontier/world-contracts) — EVE Frontier Sui Move contracts
+- [gate.move](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/gate.move) — core gate module
+- [builder-scaffold smart_gate](https://github.com/evefrontier/builder-scaffold/tree/main/move-contracts/smart_gate) — example gate extension
+- [contracts/world](https://github.com/evefrontier/world-contracts/tree/main/contracts/world) — world contract package
