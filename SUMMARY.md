@@ -54,6 +54,7 @@
 * [Builder](troubleshooting/builder.md)
 * [Player](troubleshooting/player.md)
 * [Wallet](troubleshooting/wallet.md)
+* [Sandbox Access](troubleshooting/sandbox-access.md)
 
 ## Contributing
 
