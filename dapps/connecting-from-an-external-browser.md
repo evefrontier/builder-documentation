@@ -1,10 +1,10 @@
 # Navigating in an external browser
 
-The DApp uses the [Sui Wallet Standard](https://docs.sui.io/standards/wallet-standard) to enable discoverability with Sui wallets. The only wallet currently supported with the EVE Frontier dapps is [Eve Vault](/EveVault).
+The dApp uses the [Sui Wallet Standard](https://docs.sui.io/standards/wallet-standard) to enable discoverability with Sui wallets. The only wallet currently supported with the EVE Frontier dApps is [Eve Vault](/EveVault).
 
 Open a browser and connect to [https://dapps.evefrontier.com/?tenant=stillness](https://test.dapps.evefrontier.com/?tenant=stillness) (Stillness) or [https://uat.dapps.evefrontier.com/?tenant=utopia](https://uat.dapps.evefrontier.com/?tenant=utopia) (Utopia).
 
-![Eve DApp Connect View](./images/connect-evevault.png)
+![Eve dApp Connect View](./images/connect-evevault.png)
 
 Click on Connect with EVE Vault. This will prompt your EVE Vault extension to connect. If EVE Vault is currently locked, you will see a pop-up with a prompt to enter your PIN.
 

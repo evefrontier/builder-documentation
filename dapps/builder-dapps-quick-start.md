@@ -29,7 +29,12 @@ Change the .env variables to be:
 VITE_OBJECT_ID=
 
 # World package id and graphql endpoint
-VITE_EVE_WORLD_PACKAGE_ID="0xf115375112eab1dcc1bb4af81a37d47ca7e95c2eb990cefa1f12f82d689e9543"
+## Stillness (TBA)
+VITE_EVE_WORLD_PACKAGE_ID=""
+## OR 
+## Utopia
+VITE_EVE_WORLD_PACKAGE_ID="0xd12a70c74c1e759445d6f209b01d43d860e97fcf2ef72ccbbd00afd828043f75"
+
 VITE_SUI_GRAPHQL_ENDPOINT="https://graphql.testnet.sui.io/graphql"
 ```
 
