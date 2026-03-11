@@ -6,9 +6,7 @@ Install the Eve Vault browser extension to use the vault from Chrome.
 
 Get the latest extension from the release:
 
-**[Eve Vault v0.0.4 - Stillness](https://github.com/evefrontier/evevault/releases/download/v0.0.4/eve-vault-stillness.zip)**
-
-**[Eve Vault v0.0.4 - Utopia](https://github.com/evefrontier/evevault/releases/download/v0.0.4/eve-vault-utopia.zip)**
+**[Eve Vault v0.0.5](https://github.com/evefrontier/evevault/releases/download/v0.0.5/eve-vault-chrome-v0.0.5.zip)**
 
 Download the zip asset from the release page.
 
