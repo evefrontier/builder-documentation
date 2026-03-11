@@ -1,6 +1,6 @@
 # Ownership Model
 
-EVE Frontier uses a **capability-based** access control system. Instead of relying on wallet addresses for ownership, transferable capability objects (`OwnerCap`) grant access to on-chain objects.
+EVE Frontier uses a [**capability-based**](move-patterns-in-frontier#capability-pattern) access control system. Instead of relying on wallet addresses for ownership, transferable capability objects (`OwnerCap`) grant access to on-chain objects.
 
 ## Access Hierarchy
 
@@ -106,9 +106,11 @@ So you can hand off an assembly access to another player, or to an address that 
 - **Centralized ownership** — manage all capabilities from a single character object
 - **Granular access** — each `OwnerCap<T>` only authorizes one specific object
 - **Delegatable** — transfer an `OwnerCap` without moving the underlying assembly
-- **Composable** — the borrow-use-return pattern works within programmable transactions
+- **Composable** — the borrow-use-return pattern works within [programmable transactions](https://docs.sui.io/guides/developer/transactions/ptbs/prog-txn-blocks)
 
 **Reference:**
 - [Transfer to Object (Sui docs)](https://docs.sui.io/guides/developer/objects/transfers/transfer-to-object)
 - [`access_control.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/access/access_control.move)
 - [`character.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/character/character.move)
+
+**More:** [`access_control.move` deep-dive](https://frontier.scetrov.live/develop/world-contracts/access/access_control.move/)

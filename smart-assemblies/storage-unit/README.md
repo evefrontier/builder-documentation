@@ -10,9 +10,9 @@ The Smart Storage Unit (SSU) is a **programmable, on-chain storage structure**. 
 A storage unit has two types of inventories:
 
 - **Primary inventory** — owned by the storage unit owner, accessed via the storage unit's `OwnerCap`. This is the main inventory for the owner's items.
-- **Ephemeral inventories** — temporary, per-character inventories for players other than the owner. Used for trading, deposits, etc. Ephemeral inventories have a smaller capacity than the primary inventory to prevent abuse of the owner's storage unit.
+- **Ephemeral/Owned inventories** — per-character inventories for players other than the owner. Used for trading, deposits, etc. Owned inventories have a smaller capacity than the primary inventory to prevent abuse of the owner's storage unit.
 
-Ephemeral inventories are created on-demand and stored as dynamic fields keyed by the character's `OwnerCap` ID. Each ephemeral inventory is accessed by the interacting character's own `OwnerCap`, like biometric authentication for temporary access. This avoids minting separate `OwnerCap`s just for ephemeral inventory access.
+Owned inventories are created on-demand and stored as [dynamic fields](../smart-contracts/move-patterns-in-frontier#dynamic-fields) keyed by the character's `OwnerCap` ID. Each ephemeral/owned inventory is accessed by the interacting character's own `OwnerCap`, as a kind of biometric authentication for temporary access.
 
 Items in inventories are on-chain representations of in-game resources.
 
@@ -31,14 +31,14 @@ Once items are on-chain, the owner can deposit and withdraw directly using their
 
 ### 3. Custom Logic via Extensions
 
-The owner can deploy custom rules (a [Move contract](https://github.com/evefrontier/world-contracts)) and register it as the storage unit’s extension. After that, the extension controls how items are deposited or withdrawn — for example:
+The owner can deploy custom rules (a [Move contract](https://github.com/evefrontier/world-contracts)) and register it as an extension on thier storage unit. After that, the extension controls how items are deposited or withdrawn — for example:
 
-- **Vending machine** — players pay (e.g. in tokens) and receive an item from the unit.
+- **Supply unit** — players pay (e.g. in tokens) and receive an item from the unit.
 - **Trade hub** — custom rules for listing, buying, and exchanging items.
 - **Gated access** — only characters that meet certain conditions can deposit or withdraw.
-- **Extension-to-owned** — the extension can deposit items into a specific player’s owned inventory (e.g. async delivery, guild hangars, rewards); the recipient does not need to be the transaction sender.
+- **Deposit to owned inventory** — the extension can deposit items into a specific player’s owned inventory (e.g. async item delivery, guild hangars, rewards); the recipient does not need to be the transaction sender.
 
-The extension uses the same pattern as the [Gate](../gate/README.md): the owner authorizes a contract type on the storage unit, and that contract’s logic runs when players interact. For API details and build steps, see the [Storage Unit Build Guide](./build.md).
+The extension pattern is the same for all extendable functionality: the owner [authorizes a contract type](../smart-contracts/eve-frontier-world-explainer#layer-3-player-extensions-moddability) on the storage unit, and thereafter that extension contract’s logic runs when players interact. For API details and build steps, see the [Storage Unit Build Guide](./build.md).
 
 ## Next Steps
 
@@ -50,3 +50,5 @@ Build a custom storage unit extension: [Build Guide](./build.md)
 - [inventory.move](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/primitives/inventory.move) — inventory primitives
 - [contracts/world](https://github.com/evefrontier/world-contracts/tree/main/contracts/world) — world contract package
 - [world-contracts releases](https://github.com/evefrontier/world-contracts/releases)
+
+**More:** [Storage Unit deep-dive](https://frontier.scetrov.live/develop/world-contracts/assemblies/storage_unit.move/) - for understanding the storage unit architecture and interaction.

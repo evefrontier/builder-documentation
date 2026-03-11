@@ -75,7 +75,7 @@ Assemblies connect to a network node when they are anchored. The network node po
 
 ### Hot Potato Pattern
 
-Critical operations use **hot potato structs** to enforce atomicity within a single transaction:
+Critical operations use **[hot potato](../smart-contracts/move-patterns-in-frontier#hot-potato) structs** to enforce atomicity within a single transaction:
 
 - **`OfflineAssemblies`** — returned when a network node goes offline. Every connected assembly must be offlined in the same transaction.
 - **`UpdateEnergySources`** — returned when assemblies are connected. Each assembly's energy source must be updated in the same transaction.
@@ -85,3 +85,5 @@ Critical operations use **hot potato structs** to enforce atomicity within a sin
 - [`network_node.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/network_node/network_node.move)
 - [`fuel.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/primitives/fuel.move)
 - [`energy.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/primitives/energy.move)
+
+**More:** [Network Node deep-dive](https://frontier.scetrov.live/develop/world-contracts/assemblies/network-node/network_node.move/)

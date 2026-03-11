@@ -15,7 +15,7 @@ A **non-singleton** item is uniquely identified by `type_id + tenant`.
 
 ## Deterministic ID Derivation
 
-On-chain object IDs are derived deterministically from the in-game identifiers using Sui's [derived objects](https://docs.sui.io/guides/developer/objects/derived-objects). This ensures a 1:1 mapping between in-game items and on-chain objects.
+On-chain object IDs are derived deterministically from the in-game identifiers using Sui's [derived objects](move-patterns-in-frontier#derived-object-id). This ensures a 1:1 mapping between in-game items and on-chain objects.
 
 The derivation key is a `TenantItemId`:
 
@@ -45,7 +45,7 @@ Since the derivation is deterministic, the object ID can be **pre-computed** off
 
 ## Shared Objects
 
-Most on-chain objects (characters, assemblies, network nodes) are [shared objects](https://docs.sui.io/concepts/object-ownership/shared). This allows both the game server (admin) and the character owner to mutate the same object without ownership transfers.
+Most on-chain objects (characters, assemblies, network nodes) are [shared objects](https://docs.sui.io/concepts/object-ownership/shared). This allows the game server (admin), the character (owner), and publicly exposed functions, to mutate the same object without ownership transfers.
 
 **Reference:**
 - [`object_registry.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/registry/object_registry.move)

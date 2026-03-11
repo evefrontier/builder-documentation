@@ -37,7 +37,7 @@ flowchart TB
 
 **Layer 3: Player Extensions** — Custom smart contracts built by players that extend assembly behavior. Extensions register with assemblies via the typed authentication witness pattern and are authorized by type identity.
 
-Assemblies compose primitives. Player extensions authenticate via the [typed witness pattern](https://move-book.com/programmability/witness-pattern) when calling Layer 2.
+Assemblies compose primitives. Player extensions can be authenticated on an assembly by the assembly [OwnerCap](ownership-model.md) holder via the [typed witness pattern](https://move-book.com/programmability/witness-pattern) when calling Layer 2.
 
 ---
 
@@ -45,11 +45,11 @@ Assemblies compose primitives. Player extensions authenticate via the [typed wit
 
 Primitives are small, focused Move modules that implement basic mechanics:
 
-- **`location.move`** — Spatial positioning and hashed location storage (for privacy).
-- **`inventory.move`** — Item storage and transfers.
-- **`fuel.move`** — Energy and resource consumption mechanics.
-- **`status.move`** — Lifecycle of assembly (Anchored, Online, Offline).
-- **`energy.move`** — Power generation and reservation.
+- **`location.move`** — Spatial positioning; locations are stored as hashes by default (for privacy). Optionally, assembly owners can reveal plain-text coordinates on-chain (see [Optional: Public location reveal](#optional-public-location-reveal)). ([location.move deep-dive](https://frontier.scetrov.live/develop/world-contracts/primitives/location.move/))
+- **`inventory.move`** — Item storage and transfers. ([`inventory.move` deep-dive](https://frontier.scetrov.live/develop/world-contracts/primitives/inventory.move/))
+- **`fuel.move`** — Energy and resource consumption mechanics. ([`fuel.move` deep-dive](https://frontier.scetrov.live/develop/world-contracts/primitives/fuel.move/))
+- **`status.move`** — Lifecycle of assembly (Anchored, Online, Offline). ([`status.move` deep-dive](https://frontier.scetrov.live/develop/world-contracts/primitives/status.move/))
+- **`energy.move`** — Power generation and reservation. ([`energy.move` deep-dive](https://frontier.scetrov.live/develop/world-contracts/primitives/energy.move/))
 
 Primitives expose `public(package)` functions, so only modules in the same package can mutate them. Players do not call primitives directly; assemblies use them internally. Primitive access is restricted to Frontier-designed assemblies.
 
@@ -70,13 +70,13 @@ Other assemblies compose subsets of these primitives (e.g., Gate = status + loca
 
 ## Layer 2: Smart Assemblies
 
-Assemblies are in-game structures (storage units, gates and turrets) that players deploy and interact with. Each assembly is a **Sui shared object**, allowing concurrent access by the game and multiple players.
+Assemblies are in-game structures (storage units, gates and turrets) that players deploy and interact with. Each assembly is a [**Sui shared object**](object-model#shared-objects), allowing concurrent access by the game and multiple players.
 
-**Storage Unit** — Programmable on-chain storage. Supports extensions (via typed witness) and direct owner access.
+[**Storage Unit**](../smart-assemblies/storage-unit) — Programmable on-chain storage. Supports extensions (via typed witness) and direct owner access.
 
-**Gate (Stargate)** — Handles traversal between gates. Supports extensions (via typed witness).
+[**Gate (Stargate)**](../smart-assemblies/gate) — Handles traversal between gates. Supports extensions (via typed witness).
 
-**Turret** — Programmable structure for defense and targeting. Supports extensions (via typed witness).
+[**Turret**](../smart-assemblies/turret) — Programmable structure for defense and targeting. Supports extensions (via typed witness).
 
 Assemblies orchestrate primitives, enforce "digital physics" (e.g., proximity checks before withdraw), and expose public functions. 
 
@@ -84,7 +84,7 @@ Assemblies orchestrate primitives, enforce "digital physics" (e.g., proximity ch
 
 ## Layer 3: Player Extensions (Moddability)
 
-Players extend assembly behavior by deploying custom Move packages that register with assemblies through a **typed authentication witness** pattern. The assembly keeps an allowlist of registered extension `TypeName`s. A builder registers their witness type; only that module can create instances of it, so only that extension can call the assembly's authenticated entry points.
+Players extend assembly behavior by deploying custom Move packages that register with assemblies through a **typed authentication witness** pattern. The assembly keeps an allowlist of registered extension `TypeName`s. A builder registers their witness type; Sui [TypeName](https://docs.sui.io/references/framework/sui_std/type_name#std_type_name_TypeName)s track the extension package id and module of the witness type; hence only that extension module (in that extension package) can create instances of it, and resultingly only approved extensions can call the assembly's authenticated entry points.
 
 **Flow:**
 1. Owner registers a witness type (e.g., `Builder::Auth`) from the builder's package.
@@ -134,16 +134,12 @@ builder::custom_extension::swap_items(assembly);
 
 To support mechanics that require information asymmetry (e.g., hidden bases):
 
-- **Hashed locations** — On-chain locations are stored as cryptographic hashes, not cleartext coordinates.
+- **Hashed locations** — On-chain locations are stored as cryptographic hashes by default, not cleartext coordinates.
 - **Proximity verification** — Interactions require proof that entities are at the same or adjacent locations. Current implementation uses signatures from a trusted game server; future implementations may use zero-knowledge proofs.
 
----
+## Optional: Public location reveal
 
-## Security Model
-
-- **AdminACL operations** — Require the transaction to be sponsored by a authorised server.
-- **Owner operations** — Require ownership certificates (e.g., `OwnerCap`) for assembly-specific changes.
-- **Extension operations** — Use the witness type's `TypeName` to ensure calls come from registered third-party modules.
+Players can optionally **reveal** the plain-text location of an assembly (solarsystem, x, y, z) on-chain. This is done via `reveal_location(assembly, registry, admin_acl, solarsystem, x, y, z, ctx)` on the assembly (Storage Unit, Gate, Turret, Network Node). The call is gated by the [AdminACL](ownership-model.md#access-hierarchy) (sponsored transaction). Revealed coordinates are stored in a shared `LocationRegistry` and can be queried (e.g. by dApps for route maps or discovery). This is a **temporary** solution; the long-term plan is an offchain location-reveal service. Until then, use `reveal_location` only when you want to enable location-based use cases publicly.
 
 ---
 
@@ -155,7 +151,7 @@ To support mechanics that require information asymmetry (e.g., hidden bases):
 - [Move Patterns in Frontier](move-patterns-in-frontier.md) — Key patterns used in the world contracts.
 
 **Start Building** :
-- Assembly-specific build guides: [Storage Unit](../smart-assemblies/storage-unit/README.md), [Gate](../smart-assemblies/gate/README.md), [Turret](../smart-assemblies/turret/README.md) 
+- Assembly-specific build guides: [Storage Unit](../smart-assemblies/storage-unit/build.md), [Gate](../smart-assemblies/gate/build.md), [Turret](../smart-assemblies/turret/build.md) 
 - [Interfacing with the EVE Frontier World](../tools/interfacing-with-the-eve-frontier-world.md) — How to read and write on-chain state.
 
 **Reference** 

@@ -1,4 +1,4 @@
-# Gate
+# Smart Gate
 
 <figure><img src="../../.gitbook/assets/Gate.png" alt=""><figcaption></figcaption></figure>
 

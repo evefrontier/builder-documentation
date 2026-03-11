@@ -89,7 +89,7 @@ suiup installs binaries to `%LOCALAPPDATA%\bin`. Ensure this folder is on your `
 
 ## Step 4 (Optional): Node.js and PNPM
 
-For interaction using the TypeScript SDK, install [Node.js](https://nodejs.org/) (LTS) and then:
+For interaction using the [TypeScript SDK](https://sdk.mystenlabs.com/sui), install [Node.js](https://nodejs.org/) (LTS) and then:
 
 ```powershell
 npm install -g pnpm
@@ -129,7 +129,7 @@ sui --version
 
 ## Step 3 (Optional): Node.js and PNPM
 
-For interaction using typescript sdk:
+For interaction using the [TypeScript SDK](https://sdk.mystenlabs.com/sui):
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash && . ~/.bashrc && nvm install 24
@@ -188,7 +188,7 @@ sui --version
 
 ## Step 4 (Optional): Node.js and PNPM
 
-For interaction using typescript sdk:
+For interaction using the [TypeScript SDK](https://sdk.mystenlabs.com/sui):
 
 ```sh
 brew install node@24

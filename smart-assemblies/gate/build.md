@@ -7,7 +7,19 @@ End-to-end build guide: write a gate extension, publish it, and test the complet
 - Follow [environment-setup](../../quickstart/environment-setup.md)
 - Complete step-by-step instructions: [builder-scaffold builder-flow](https://github.com/evefrontier/builder-scaffold/blob/main/docs/builder-flow.md)
 
-## Gate API
+## Extension Integration
+
+For extension development and integration follow the [high-level build steps](../introduction#high-level-build-steps).
+
+### Smart Gate API overview
+
+The [world gate module](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/gate.move) exposes:
+
+- **Lifecycle & ownership:** Owner-cap–guarded `online` / `offline`, `link_gates` / `unlink_gates` (both gates must be owned by the same character), metadata updates, and admin flows (anchor, unanchor, energy source). View functions: `status`, `location`, `is_online`, `owner_cap_id`, `energy_source_id`, `linked_gate_id`, `extension_type`, `is_extension_configured`, `is_extension_frozen`, etc.
+- **Default game jump:** `jump` is available with no permit — anyone can jump between linked gates via a sponsored transaction with a valid [`AdminACL` object](../../smart-contracts/ownership-model#access-hierarchy).
+- **Issued Permit jump:** Customizable via extension. The owner calls `authorize_extension<Auth>` to register a witness type. After that, only the extension contract (with that `Auth` type) can call `issue_jump_permit`; jumping is then done with `jump_with_permit` and a valid `JumpPermit`. The extension defines who gets permits (e.g. by tribe, whitelist, or payment). Details and code are below.
+
+## Smart Gate Extension API
 
 Custom contracts use the **typed witness pattern**: define a witness struct (`Auth`) and register it on the gate. The [world gate module](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/gate.move) verifies the type at runtime.
 
@@ -55,7 +67,7 @@ Below is the high-level understanding:
 
 ## 1. Understand the example contract
 
-The scaffold includes a working gate extension at `move-contracts/smart_gate/`. It has three modules:
+The scaffold includes a working gate extension at `move-contracts/smart_gate_extension/`. It has three modules:
 
 **`config.move`** — shared configuration object and the witness type:
 
