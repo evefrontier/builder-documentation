@@ -1,6 +1,6 @@
 # How to access the Utopia Sandbox Server
 {% hint style="info" %}
-Note that this server is only available during specific events and is not generally accessible. 
+Note that this server is only available during specific events and is not generally accessible.
 {% endhint %}
 
 ### Download the Launcher
