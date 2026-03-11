@@ -23,6 +23,7 @@ Note that this server is only available during specific events and is not genera
 * Open Terminal in the folder where the application resides
 * Run the following command: cd /Applications; open 'EVE Frontier.app/' --args --frontier-test-servers=Utopia
 {% endtab %}
+{% endtabs %}
 
 ### Run the Launcher and Select "Utopia"
 You should then see Utopia on the drop down list of servers in the bottom right of the launcher
