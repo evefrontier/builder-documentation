@@ -41,12 +41,15 @@ To speed up moving around the universe and gathering materials we have enabled a
 To use these commands simply enter them in the chat window
 * `/moveme` This will display a list of star systems which you can move to instantly
 * `/giveitem <itemid> <quantity>` This will allow you to spawn the specified item in your current ships' cargo hold
+* `/giveitem "<item name>" <quantity>` This works the same way as the above but lets you specify an item by name rather than ItemID
 * {% hint style="info" %}
-*Note* it is possible to overload your ships cargo this way which will prevent warping, you would first need to move the excess to a storage unit or jettison it
+Note it is possible to overload your ships cargo this way which will prevent warping, you would first need to move the excess to a storage unit or jettison it
 {% endhint %}
+
 Some common items you may want to spawn include the below, more ItemID's can be found via the WorldAPI:
+
 | Name | ItemID |
-|------|-------------|
+|------|--------|
 | Carbon Weave | 84210 |
 | Thermal Composites | 88561 |
 | Printed Circuits | 84180 |
@@ -54,4 +57,3 @@ Some common items you may want to spawn include the below, more ItemID's can be 
 | Feldspar Crystals | 77800 |
 | Hydrated Sulfide Matrix | 77811 |
 | Building Foam | 77800 | 89089 |
-* `/giveitem "<item name>" <quantity>` This works the same way as the above but lets you specify an item by name rather than ItemID
