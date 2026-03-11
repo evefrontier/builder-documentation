@@ -1,6 +1,6 @@
 # Getting Started
 
-EVE Frontier Builder Scaffold dapps are built with [Vite](https://vitejs.dev/), [Tailwind](https://tailwindcss.com/), [React Router](https://reactrouter.com/en/main), [Mysten Dapp Kit](https://sdk.mystenlabs.com/dapp-kit/) and [EVE Frontier Dapp Kit](https://sui-docs.evefrontier.com/). Before you begin:
+EVE Frontier Builder Scaffold dApps are built with [Vite](https://vitejs.dev/), [Tailwind](https://tailwindcss.com/), [React Router](https://reactrouter.com/en/main), [Mysten Labs dApp Kit](https://sdk.mystenlabs.com/dapp-kit/) and [EVE Frontier Dapp Kit](https://sui-docs.evefrontier.com/). Before you begin:
 
 ### Step 1: Install pre-requisites 
 
@@ -14,7 +14,7 @@ nvm use 22
 
 Also ensure that you have [EVE Vault](../eve-vault/browser-extension.md) installed.
 
-### Step 2: Setup local DApp
+### Step 2: Setup local dApp
 Run these commands to set up your local development DApp:
 ```bash copy
 git clone https://github.com/evefrontier/builder-scaffold.git
@@ -33,18 +33,18 @@ VITE_EVE_WORLD_PACKAGE_ID="0xf115375112eab1dcc1bb4af81a37d47ca7e95c2eb990cefa1f1
 VITE_SUI_GRAPHQL_ENDPOINT="https://graphql.testnet.sui.io/graphql"
 ```
 
-### Step 4: Start DApp 
-Start the DApp by using:
+### Step 4: Start dApp 
+Start the dApp by using:
 ```bash copy
 pnpm dev
 ```
 
-### Step 5: Open http://localhost:5173/ to view your DApp.
-You should now be able to view the DApp in your browser.
+### Step 5: Open http://localhost:5173/ to view your dApp.
+You should now be able to view the dApp in your browser.
 
-![Alt text](./images/dapp-starter-screen.png)
+![dapp starter screen](./images/dapp-starter-screen.png)
 
-Click on "Connect wallet" to see your wallet connected to the dapp.
+Click on "Connect wallet" to see your wallet connected to the dApp.
 
 
 ![Alt text](./images/dapp-starter-connected.png)
