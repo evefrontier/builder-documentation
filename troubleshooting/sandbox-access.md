@@ -56,4 +56,4 @@ Some common items you may want to spawn include the below, more ItemID's can be 
 | Reinforced Alloys | 84182 |
 | Feldspar Crystals | 77800 |
 | Hydrated Sulfide Matrix | 77811 |
-| Building Foam | 77800 | 89089 |
+| Building Foam | 89089 |
