@@ -10,7 +10,6 @@ Note that this server is only available during specific events and is not genera
 
 ### Add the Utopia Server to the launcher
 {% tabs %}
-
 {% tab title="Windows" %}
 #### Modify an application shortcut
 * Right-click on the desktop shortcut to the EVE Frontier Launcher
