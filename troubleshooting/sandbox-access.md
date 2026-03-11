@@ -14,7 +14,7 @@ Note that this server is only available during specific events and is not genera
 #### Modify an application shortcut
 * Right-click on the desktop shortcut to the EVE Frontier Launcher
 * Choose Properties
-* On the "shortcut" tab add the following to the end of the Target field: --frontier-test-servers=Utopia
+* On the "shortcut" tab add the following to the end of the Target field: ` --frontier-test-servers=Utopia`
 * Click "Okay"
 {% endtab %}
 
