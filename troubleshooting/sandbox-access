@@ -15,7 +15,7 @@ Note that this server is only available during specific events and is not genera
 {% stepper %}
 {% step %}
 #### Modify an application shortcut
-Right-click on the destop shortcut to the EVE Frontier Launcher
+Right-click on the desktop shortcut to the EVE Frontier Launcher
 {% step %}
 Choose Properties
 {% step %}
@@ -43,7 +43,7 @@ You should then see Utopia on the drop down list of servers in the bottom right 
 * Choose Utopia
 * Click Register
 * Fill in your details
-* You will see a prompt to enter an verification code
+* You will see a prompt to enter a verification code
 {% hint style="info" %}
-You will not recieve the verification code, your account will be activated by the EVE Frontier team.
+You will not receive the verification code, your account will be activated by the EVE Frontier team.
 {% endhint %}
