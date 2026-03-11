@@ -30,7 +30,8 @@ You should then see Utopia on the drop down list of servers in the bottom right 
 * Choose Utopia
 * Click Register
 * Fill in your details
-* You will see a prompt to enter a verification code
+* You will see a prompt to enter a verification code which you will recieve by email
+* You can then download the Utopia Client
 {% hint style="info" %}
-You will not receive the verification code, your account will be activated by the EVE Frontier team.
+After this point you will need to wait for your acceess to be granted by CCP, until then you will see a "Founder Access Required" Error
 {% endhint %}
