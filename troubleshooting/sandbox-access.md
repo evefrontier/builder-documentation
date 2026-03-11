@@ -45,10 +45,13 @@ To use these commands simply enter them in the chat window
 *Note* it is possible to overload your ships cargo this way which will prevent warping, you would first need to move the excess to a storage unit or jettison it
 {% endhint %}
 Some common items you may want to spawn include the below, more ItemID's can be found via the WorldAPI:
-Carbon Weave: 84210 
-Thermal Composites: 88561
-Printed Circuits: 84180 
-Reinforced Alloys: 84182
-Feldspar Crystals: 77800 
-Hydrated Sulfide Matrix: 77811
-* `/giveitem <item name> <quantity>` This works the same way as the above but lets you specify an item by name rather than ItemID
+| Name | ItemID |
+|------|-------------|
+| Carbon Weave | 84210 |
+| Thermal Composites | 88561 |
+| Printed Circuits | 84180 |
+| Reinforced Alloys | 84182 |
+| Feldspar Crystals | 77800 |
+| Hydrated Sulfide Matrix | 77811 |
+| Building Foam | 77800 | 89089 |
+* `/giveitem "<item name>" <quantity>` This works the same way as the above but lets you specify an item by name rather than ItemID
