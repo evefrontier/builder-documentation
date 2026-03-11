@@ -30,7 +30,7 @@ You should then see Utopia on the drop down list of servers in the bottom right 
 * Choose Utopia
 * Click Register
 * Fill in your details
-* You will see a prompt to enter a verification code which you will recieve by email
+* You will see a prompt to enter a verification code which you will receive by email
 * You can then download the Utopia Client
 {% hint style="info" %}
 After this point you will need to wait for your access to be granted by CCP, until then you will see a "Founder Access Required" Error
