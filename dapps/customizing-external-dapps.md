@@ -1,3 +1,0 @@
-# Customizing External dApps
-
-//TODO
