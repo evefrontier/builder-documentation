@@ -42,7 +42,7 @@ To use these commands simply enter them in the chat window
 * `/moveme` This will display a list of star systems which you can move to instantly
 * `/giveitem <itemid> <quantity>` This will allow you to spawn the specified item in your current ships' cargo hold
 * `/giveitem "<item name>" <quantity>` This works the same way as the above but lets you specify an item by name rather than ItemID
-* {% hint style="info" %}
+{% hint style="info" %}
 Note it is possible to overload your ships cargo this way which will prevent warping, you would first need to move the excess to a storage unit or jettison it
 {% endhint %}
 
