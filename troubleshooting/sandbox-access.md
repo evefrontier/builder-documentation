@@ -12,30 +12,17 @@ Note that this server is only available during specific events and is not genera
 {% tabs %}
 
 {% tab title="Windows" %}
-{% stepper %}
-{% step %}
 #### Modify an application shortcut
-Right-click on the desktop shortcut to the EVE Frontier Launcher
-{% step %}
-Choose Properties
-{% step %}
-On the "shortcut" tab add the following to the end of the Target field: --frontier-test-servers=Utopia
-{% step %}
-Click "Okay"
-{% endstep %}
-
+* Right-click on the desktop shortcut to the EVE Frontier Launcher
+* Choose Properties
+* On the "shortcut" tab add the following to the end of the Target field: --frontier-test-servers=Utopia
+* Click "Okay"
 {% endtab %}
 
 {% tab title="Mac OS" %}
-{% stepper %}
-{% step %}
 #### Run the launcher from Terminal
-Open Terminal in the folder where the application resides
-{% step %}
-Run the following command: 
-cd /Applications; open 'EVE Frontier.app/' --args --frontier-test-servers=Utopia
-{% endstep %}
-
+* Open Terminal in the folder where the application resides
+* Run the following command: cd /Applications; open 'EVE Frontier.app/' --args --frontier-test-servers=Utopia
 {% endtab %}
 
 ### Run the Launcher and Select "Utopia"
