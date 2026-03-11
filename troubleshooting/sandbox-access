@@ -29,7 +29,7 @@ Click "Okay"
 {% tab title="Mac OS" %}
 {% stepper %}
 {% step %}
-#### Run the laucher from Terminal
+#### Run the launcher from Terminal
 Open Terminal in the folder where the application resides
 {% step %}
 Run the following command: 
