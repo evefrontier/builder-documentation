@@ -41,16 +41,18 @@ Each assembly type has functionality that can be customized via the [extension p
 
 Each build process for assembly extension follows this same high-level pattern: 
 
-1. Define a witness struct (e.g. `public struct Auth has drop {}`) in a separate custom Move package (separate from the EVE Frontier world package).
+1. Define a witness struct (e.g. `public struct Auth has drop {}`) in a custom Move package (separate from the EVE Frontier world package).
 
-2. Implement extension logic in that same separate Move package such that it calls the assembly’s exposed API.
+2. Implement extension logic in that same custom Move package such that it calls the assembly’s exposed API.
 
 3. Publish your extension package and [authorize its witness](../smart-contracts/eve-frontier-world-explainer#layer-3-player-extensions-moddability) on each assembly object you want your extension to interact with. You must be the assembly `OwnerCap` holder to authorize extensions by [borrowing it from your Character object](../smart-contracts/ownership-model#borrow-use-return-pattern).
 
-4. After authorization, your extension’s logic can provide extended functionality by interacting with `public` and `Auth`-gated API on an assembly object; the world module checks and enforces the `Auth` type authorization.
+4. After authorization, your extension’s logic can provide custom functionality by interacting with `public` and `Auth`-gated API on an assembly object; the world module checks and enforces the `Auth` type authorization.
 
 To read and write world state from code (SDK, GraphQL, gRPC), see [Interfacing with the EVE Frontier World](../tools/interfacing-with-the-eve-frontier-world.md).
 
 ## Extension freeze (optional)
 
 Assembly owners can **freeze** the extension configuration on their object. Once frozen, the extension cannot be changed — the assembly is permanently bound to that extension package. This is **irreversible** and gives users of the extension a guarantee that the operating logic will not be updated (e.g. no rug-pull). Freeze only after the extension is audited or tested and you are comfortable with this permanence. Supported on Storage Unit, Gate, and Turret; for the API and usage see the [Storage Unit build guide](storage-unit/build.md#smart-storage-unit-extension-api) (which documents `freeze_extension_config`). Implementation: [extension_freeze.move](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/extension_freeze.move).
+
+**Note:** Extension freezing is permanent and should be used with caution, it prevents any upgrading of the attached extension (including bug-fix upgrades). If a bug is found on a frozen assembly, the recommended action is to stop using the current assembly and migrate to a new one immediatly.

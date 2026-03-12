@@ -39,7 +39,7 @@ public fun borrow_owner_cap<T: key>(
 
 ## Transferring OwnerCaps to another account
 
-You can transfer an **assembly** OwnerCap (e.g. `OwnerCap<StorageUnit>`, `OwnerCap<Gate>`) using [`access::transfer_owner_cap`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/access/access_control.move) or [`transfer_owner_cap_with_receipt`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/access/access_control.move#L126) if you borrowed it. The Character’s **OwnerCap** (i.e. `OwnerCap<Character>`) **cannot** be transferred to an address; only assembly caps can.
+You can transfer an **assembly** OwnerCap (e.g. `OwnerCap<StorageUnit>`, `OwnerCap<Gate>`) using [`access::transfer_owner_cap_to_address`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/access/access_control.move#L104) or [`transfer_owner_cap_with_receipt`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/access/access_control.move#L129) if you borrowed it. The Character’s **OwnerCap** (i.e. `OwnerCap<Character>`) **cannot** be transferred to an address; only assembly caps can.
 
 **If transferred to another address:** expect **limited EVE Frontier world functionality**. The Character’s `character_address` is not updated; many assembly functions require the transaction sender to equal `character.character_address()`. So a plain address holding the cap cannot perform those operations unless the **original character_address account** is the sender.
 
