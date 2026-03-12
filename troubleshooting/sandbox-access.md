@@ -46,7 +46,7 @@ To use these commands simply enter them in the chat window
 Note it is possible to overload your ships cargo this way which will prevent warping, you would first need to move the excess to a storage unit or jettison it
 {% endhint %}
 
-Some common items you may want to spawn include the below, more ItemID's can be found via the WorldAPI:
+Some common items you may want to spawn include the below, more ItemID's can be found via the WorldAPI (https://world-api-utopia.uat.pub.evefrontier.com/docs/index.html):
 
 | Name | ItemID |
 |------|--------|
