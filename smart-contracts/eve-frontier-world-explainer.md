@@ -45,11 +45,11 @@ Assemblies compose primitives. Player extensions can be authenticated on an asse
 
 Primitives are small, focused Move modules that implement basic mechanics:
 
-- **`location.move`** — Spatial positioning; locations are stored as hashes by default (for privacy). Optionally, assembly owners can reveal plain-text coordinates on-chain (see [Optional: Public location reveal](#optional-public-location-reveal)). ([location.move deep-dive](https://frontier.scetrov.live/develop/world-contracts/primitives/location.move/))
-- **`inventory.move`** — Item storage and transfers. ([`inventory.move` deep-dive](https://frontier.scetrov.live/develop/world-contracts/primitives/inventory.move/))
-- **`fuel.move`** — Energy and resource consumption mechanics. ([`fuel.move` deep-dive](https://frontier.scetrov.live/develop/world-contracts/primitives/fuel.move/))
-- **`status.move`** — Lifecycle of assembly (Anchored, Online, Offline). ([`status.move` deep-dive](https://frontier.scetrov.live/develop/world-contracts/primitives/status.move/))
-- **`energy.move`** — Power generation and reservation. ([`energy.move` deep-dive](https://frontier.scetrov.live/develop/world-contracts/primitives/energy.move/))
+- **`location.move`** — Spatial positioning; locations are stored as hashes by default (for privacy). Optionally, assembly owners can reveal plain-text coordinates on-chain (see [Optional: Public location reveal](#optional-public-location-reveal)).
+- **`inventory.move`** — Item storage and transfers.
+- **`fuel.move`** — Energy and resource consumption mechanics.
+- **`status.move`** — Lifecycle of assembly (Anchored, Online, Offline).
+- **`energy.move`** — Power generation and reservation.
 
 Primitives expose `public(package)` functions, so only modules in the same package can mutate them. Players do not call primitives directly; assemblies use them internally. Primitive access is restricted to Frontier-designed assemblies.
 
@@ -157,3 +157,6 @@ Players can optionally **reveal** the plain-text location of an assembly (solars
 **Reference** 
 - [World Contracts](https://github.com/evefrontier/world-contracts) 
 - [ADR](https://github.com/evefrontier/world-contracts/blob/main/docs/architechture.md)
+
+**More:** Primitive deep-dives — [location.move](https://frontier.scetrov.live/develop/world-contracts/primitives/location.move/), [inventory.move](https://frontier.scetrov.live/develop/world-contracts/primitives/inventory.move/), [fuel.move](https://frontier.scetrov.live/develop/world-contracts/primitives/fuel.move/), [status.move](https://frontier.scetrov.live/develop/world-contracts/primitives/status.move/), [energy.move](https://frontier.scetrov.live/develop/world-contracts/primitives/energy.move/).
+
