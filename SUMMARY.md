@@ -47,7 +47,7 @@
 * [Interfacing with the EVE Frontier World](tools/interfacing-with-the-eve-frontier-world.md)
 * [efctl (community)](tools/efctl.md) — CLI to automate builder-scaffold setup
 * [dApp kit](tools/dapp-kit.md)
-* [Resources](tools/Resources.md)
+* [Resources](tools/resources.md)
 
 ## Troubleshooting
 

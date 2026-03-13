@@ -1,11 +1,13 @@
-#World API
+# Resources
+
+## World API
 These are the current addresses for the World API endpoints for both Stillness (Live) and Utopia (Sandbox) Environments
 | Environment | Address |
 |-------------|---------|
-| Stillness | https://world-api-stillness.live.tech.evefrontier.com/docs/index.html | 
-| Utopia | https://world-api-utopia.uat.pub.evefrontier.com/docs/index.html |
+| Stillness | [World API (Stillness)](https://world-api-stillness.live.tech.evefrontier.com/docs/index.html) | 
+| Utopia | [World API (Utopia)](https://world-api-utopia.uat.pub.evefrontier.com/docs/index.html) |
 
-#Package ID's 
+## Package ID's 
 Here are the current Package ID's for Stillness (Live) and (Utopia)
 ## Utopia
 | Object                  | Address                                                            |
@@ -33,5 +35,5 @@ Here are the current Package ID's for Stillness (Live) and (Utopia)
 | Gate Config             | 0xd6d9230faec0230c839a534843396e97f5f79bdbd884d6d5103d0125dc135827 |
 | AdminACL                | 0x8ca0e61465f94e60f9c2dadf9566edfe17aa272215d9c924793d2721b3477f93 |
 
-#EVE Vault
-You can find the latest EVE Vault release at https://github.com/evefrontier/evevault/releases/
+## EVE Vault
+You can find the latest EVE Vault release at [EVE Vault releases](https://github.com/evefrontier/evevault/releases/)
