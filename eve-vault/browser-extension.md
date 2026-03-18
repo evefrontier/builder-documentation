@@ -6,7 +6,7 @@ Install the Eve Vault browser extension to use the vault from Chrome.
 
 Get the latest extension from the release:
 
-**[Eve Vault v0.0.5](https://github.com/evefrontier/evevault/releases/download/v0.0.5/eve-vault-chrome-v0.0.5.zip)**
+**[Eve Vault Extension](https://github.com/evefrontier/evevault/releases)**
 
 Download the zip asset from the release page.
 
@@ -27,23 +27,24 @@ After installing, open the extension and sign in with your credentials for the U
 
 When you open the extension for the first time, you’ll be asked to create a **6-digit PIN**. This PIN is used to unlock the vault on this device.
 
-<img src="./images/create-pin.jpg" alt="Create PIN" width="50%" />
+![Create PIN](./images/create-pin.png)
 
 ### 2. Open the sign-in flow
 
-On the sign-in screen, click **Log in**. This opens the Eve Frontier sign-in flow.
+On the sign-in screen, select which server you are signing into (Stillness for most, Utopia for hackathon). Click **Login**. This opens the Eve Frontier sign-in flow.
 
-<img src="./images/sign-in.png" alt="Sign in" width="50%" />
+![Sign in](./images/sign-in.png)
 
-### 3. Sign in with your Utopia credentials
+### 3. Sign in with your Frontier credentials
 
-Use your **Utopia server credentials** (Eve Frontier account) to sign in. Enter your email and password when prompted.
+Use your **Frontier credentials** (for your selected server) to sign in. Enter your email and password when prompted.
 
 ### 4. Use the dashboard
 
 After signing in successfully, you’ll see the **Eve Vault dashboard**, where you can manage your wallet and transactions.
 
-<img src="./images/dashboard.jpg" alt="Dashboard" width="50%" />
+
+![Dashboard](./images/dashboard.png)
 
 ---
 
