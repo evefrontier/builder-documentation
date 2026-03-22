@@ -23,7 +23,7 @@ In [world-contracts](https://github.com/evefrontier/world-contracts), each envir
 - **`original-id`** — First package in the upgrade family (the original publish address).
 - **`published-at`** — **Latest** package ID; use for app config and **new** world APIs when you want current bytecode.
 
-Bump your Move dependency to the release tag you need (e.g. `v0.0.20`), refresh `Move.lock`, then republish or **upgrade** your extension with your `UpgradeCap` if the world API you use changed.
+Bump your Move dependency to the release tag you need (e.g. `v0.0.21`), refresh `Move.lock`, then republish or **upgrade** your extension with your `UpgradeCap` if the world API you use changed.
 
 ### TypeScript / dApps
 
