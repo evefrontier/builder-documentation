@@ -35,7 +35,7 @@ EVE Vault leverages **zkLogin**—a zero-knowledge login protocol native to Sui�
 
 ## High-Level Flow
 
-1. **Install EVE Vault extension** from [evefrontier/evevault/releases/download](https://github.com/evefrontier/evevault/releases/download/v0.0.2/eve-vault-chrome.zip)
+1. **Install EVE Vault extension** from [EVE Vault Releases](https://github.com/evefrontier/evevault/releases)
 2. **Create your wallet** with a single sign on login — no secret phrases or manual backups.
 3. **Authorize dApps** and the EVE Frontier game client to interact with your wallet and identity as needed.
 4. **Transact, play, and participate** using EVE Vault as your only identity, both in and out of game.
