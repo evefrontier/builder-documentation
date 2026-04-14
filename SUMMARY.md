@@ -33,7 +33,6 @@
 
 * [dApps Quick Start](dapps/dapps-quick-start.md)
 * [Connecting from an External Browser](dapps/connecting-from-an-external-browser.md)
-* [Customizing External dApps](dapps/customizing-external-dapps.md)
 * [Connecting In-Game](dapps/connecting-in-game.md)
 
 ## EVE Vault
