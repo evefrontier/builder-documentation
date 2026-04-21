@@ -28,8 +28,8 @@ Today this name resolves to our **testnet** deployment for Stillness server. Whe
 
 Before MVR, builders often tracked **two** hex addresses from our `Published.toml`:
 
-- `**published-at`** — latest package ID; needed for **new** entrypoints and bytecode that only exist on the upgraded package.
-- `**original-id`** — first package in the family; objects and type strings created before an upgrade often still reference this id in **on-chain type tags** and filters.
+- **`published-at`** — latest package ID; needed for **new** entrypoints and bytecode that only exist on the upgraded package.
+- **`original-id`** — first package in the family; objects and type strings created before an upgrade often still reference this id in **on-chain type tags** and filters.
 
 For **calling** the world package from a dApp, you had to update `packageId` in config when we shipped a new `published-at`. With MVR, **one name** (`@evefrontier/world`) is enough for those call targets on a given network, as long as your client resolves names against the right chain.
 
@@ -39,18 +39,18 @@ You still need to understand **original vs latest** when **reading** existing ob
 
 ## Where the IDs live (Move / extensions / debugging)
 
-After a world upgrade, `**published-at`** (per environment) remains the **latest** package ID in the repo and in `Published.toml`. Extension authors and anyone editing `Move.toml` still care about `**original-id`** vs `**published-at`** for dependency pins and upgrades.
+After a world upgrade, **`published-at`** (per environment) remains the **latest** package ID in the repo and in `Published.toml`. Extension authors and anyone editing `Move.toml` still care about **`original-id`** vs **`published-at`** for dependency pins and upgrades.
 
 In [world-contracts](https://github.com/evefrontier/world-contracts), each environment is recorded in `contracts/world/Published.toml`:
 
-- `**original-id**` — First package in the upgrade family (the original publish address).
+- **`original-id`** — First package in the upgrade family (the original publish address).
 - **`published-at`** — **Latest** package ID; used for Move dependency `published-at`, extension upgrades, and **manual** hex-based tooling.
 
 Bump your Move dependency to the release tag you need (e.g. `v0.0.21`), refresh `Move.lock`, then republish or **upgrade** your extension with your `UpgradeCap` if the world API you use changed.
 
 ### TypeScript / dApps
 
-Prefer `**@evefrontier/world`** (MVR) for configurable `moveCall` targets when your stack supports it. If you are not using MVR yet, use a configurable `packageId` set from `**published-at`** for that network.
+Prefer **`@evefrontier/world`** (MVR) for configurable `moveCall` targets when your stack supports it. If you are not using MVR yet, use a configurable `packageId` set from **`published-at`** for that network.
 
 ---
 
@@ -61,9 +61,9 @@ If you are still pinned to an **old** world package ID:
 
 | Audience              | What to do                                                                                                                                                                                                                                                                                                             |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **dApps**             | Prefer `**@evefrontier/world`** (MVR) for call targets on testnet; otherwise point config at `**published-at`** when you need new functions or fixes.                                                                                                                                                                  |
+| **dApps**             | Prefer **`@evefrontier/world`** (MVR) for call targets on testnet; otherwise point config at **`published-at`** when you need new functions or fixes.                                                                                                                                                                  |
 | **Custom extensions** | Bump world-contracts, test, upgrade your package if needed.                                                                                                                                                                                                                                                            |
-| **Indexers**          | Do not assume a single type prefix across upgrades, expand filters or use canonical type resolution ([GraphQL `type](https://docs.sui.io/references/sui-api/sui-graphql/beta/reference/operations/queries/type)`; see also [MystenLabs/sui#12853](https://github.com/MystenLabs/sui/pull/12853) for event edge cases). |
+| **Indexers**          | Do not assume a single type prefix across upgrades, expand filters or use canonical type resolution ([GraphQL `type`](https://docs.sui.io/references/sui-api/sui-graphql/beta/reference/operations/queries/type)); see also [MystenLabs/sui#12853](https://github.com/MystenLabs/sui/pull/12853) for event edge cases). |
 
 
 ---
