@@ -20,7 +20,7 @@ The [Move Registry (MVR)](https://docs.suins.io/move-registry) maps a **stable a
 
 `@evefrontier/world`  : [https://www.moveregistry.com/package/@evefrontier/world?tab=versions](https://www.moveregistry.com/package/@evefrontier/world?tab=versions)
 
-Today this name resolves to our **testnet** deployment for stillness server. When Stillness ships on mainnet and the registry is updated, the **same name** will resolve to the production package on mainnet and to the sandbox/testnet package when clients target testnet. 
+Today this name resolves to our **testnet** deployment for Stillness server. When Stillness ships on mainnet and the registry is updated, the **same name** will resolve to the production package on mainnet and to the sandbox/testnet package when clients target testnet. 
 
 **Integrate in TypeScript:** [Transaction plugin for Sui TypeScript SDK](https://docs.suins.io/move-registry/tooling/typescript-sdk) (`namedPackagesPlugin`, or `@mysten/sui` client resolution). Use `@evefrontier/world::…` in `moveCall` `target` strings and in type references the same way you would a package ID.
 
