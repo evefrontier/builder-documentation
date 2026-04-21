@@ -44,7 +44,7 @@ After a world upgrade, `**published-at`** (per environment) remains the **latest
 In [world-contracts](https://github.com/evefrontier/world-contracts), each environment is recorded in `contracts/world/Published.toml`:
 
 - `**original-id**` — First package in the upgrade family (the original publish address).
-- `**published-at**` — **Latest** package ID; used for Move dependency `published-at`, extension upgrades, and **manual** hex-based tooling.
+- **`published-at`** — **Latest** package ID; used for Move dependency `published-at`, extension upgrades, and **manual** hex-based tooling.
 
 Bump your Move dependency to the release tag you need (e.g. `v0.0.21`), refresh `Move.lock`, then republish or **upgrade** your extension with your `UpgradeCap` if the world API you use changed.
 
