@@ -73,7 +73,7 @@ If you are still pinned to an **old** world package ID:
 
 | Situation                                                      | What to use                                                                                                                                                                    |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `**moveCall` targets from an app (recommended)**               | `**@evefrontier/world`** — resolves to the latest registered package on the network your RPC targets (Stillness / testnet today).                                              |
+| **`moveCall` targets from an app (recommended)**               | **`@evefrontier/world`** — resolves to the latest registered package on the network your RPC targets (Stillness / testnet today).                                            |
 | **New functions** (only in upgraded bytecode), **without** MVR | **Latest** (`published-at`) in `moveCall` targets.                                                                                                                             |
 | **Existing flows** (unchanged public APIs), **without** MVR    | **Original** or **latest**—both work.                                                                                                                                          |
 | **Object lookups / type filters** (e.g. `getOwnedObjects`)     | Use the **package ID in the object’s type string** (often **original** for objects from before the upgrade, e.g. `originalId::gate::JumpPermit`). Types are not auto-retagged. |
