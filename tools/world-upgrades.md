@@ -33,7 +33,7 @@ Before MVR, builders often tracked **two** hex addresses from our `Published.tom
 
 For **calling** the world package from a dApp, you had to update `packageId` in config when we shipped a new `published-at`. With MVR, **one name** (`@evefrontier/world`) is enough for those call targets on a given network, as long as your client resolves names against the right chain.
 
-You still need to understand **original vs latest** when **reading** existing objects or filtering by type string see [Which package ID for what?](#which-package-id-for-what) below.
+You still need to understand **original vs latest** when **reading** existing objects or filtering by type string; see [Which package ID for what?](#which-package-id-for-what) below.
 
 ---
 
