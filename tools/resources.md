@@ -4,7 +4,7 @@
 These are the current addresses for the World API endpoints for both Stillness (Live) and Utopia (Sandbox) Environments
 | Environment | Address |
 |-------------|---------|
-| Stillness | [World API (Stillness)](https://world-api-stillness.live.tech.evefrontier.com/docs/index.html) | 
+| Stillness | [World API (Stillness)](https://world-api-stillness.live.pub.evefrontier.com/docs/index.html#/) | 
 | Utopia | [World API (Utopia)](https://world-api-utopia.uat.pub.evefrontier.com/docs/index.html) |
 
 ## Package ID's 
