@@ -63,7 +63,7 @@
 
 ## Blogs
 
-* [Moving into the Future](blogs/moving-into-the-future.mdx)
+* [Moving into the Future](blogs/moving-into-the-future.md)
 
 ## Archive
 
