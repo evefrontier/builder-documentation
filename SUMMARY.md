@@ -61,6 +61,10 @@
 * [A Work In Progress](contributing/a-work-in-progress.md)
 * [How to Contribute](CONTRIBUTING.md)
 
+## Blog
+
+* [Moving into the Future: Upgrading to Python 3](blogs/moving-into-the-future.mdx)
+
 ## Archive
 
 * [Introduction](archive/introduction.md)
@@ -112,4 +116,3 @@
   * [Player](archive/troubleshooting/player.md)
   * [Wallet](archive/troubleshooting/wallet.md)
 * [Contributing](archive/contributing.md)
-* [Moving into the Future: Upgrading to Python 3](blogs/moving-into-the-future.mdx)
