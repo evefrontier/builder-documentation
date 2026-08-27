@@ -39,8 +39,12 @@
 
 * [Wallets & Identity](eve-vault/wallets-and-identity.md)
 * [Introduction to EVE Vault](eve-vault/introduction-to-eve-vault.md)
-* [Wallet Game Setup](eve-vault/wallet-game-setup.md)
 * [Browser Extension](eve-vault/browser-extension.md)
+* [Using Your Wallet](eve-vault/using-your-wallet.md)
+* [Address Aliases & Recovery](eve-vault/address-aliases-and-recovery.md)
+* [Signing Transactions](eve-vault/signing-transactions.md)
+* [Developer & Localnet](eve-vault/developer-and-localnet.md)
+* [Wallet Game Setup](eve-vault/wallet-game-setup.md)
 
 ## Tools
 * [Interfacing with the EVE Frontier World](tools/interfacing-with-the-eve-frontier-world.md)
