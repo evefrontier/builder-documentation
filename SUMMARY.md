@@ -34,6 +34,7 @@
 * [dApps Quick Start](dapps/dapps-quick-start.md)
 * [Connecting from an External Browser](dapps/connecting-from-an-external-browser.md)
 * [Connecting In-Game](dapps/connecting-in-game.md)
+* [Verifying a Sign-In Server-Side](dapps/verifying-sign-in.md)
 
 ## EVE Vault
 
