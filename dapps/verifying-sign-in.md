@@ -1,6 +1,8 @@
 # Verifying a Sign-In (Server-Side)
 
-Sign-in works by having the user sign a personal message with EVE Vault (via the wallet's `signPersonalMessage`) and verifying that signature on your server. This page shows the flow end to end: issue a nonce, have the wallet sign a message built from it, and verify the personal message signature server-side.
+Verifying the signature is how your server establishes a **trusted player identity**: proof that the user actually controls the wallet they claim, rather than just supplying a name or address. You need this anywhere your server attributes something to a player — for example, bookmarks tied to a player, chat messages shown as coming from a particular character, or leaderboards built from parsed logs. Without this check, a client can claim to be any wallet.
+
+Verifying a sign-in works by having the user sign a personal message with EVE Vault (via the wallet's `signPersonalMessage`) and verifying that signature on your server. This page shows the flow end to end: issue a nonce, have the wallet sign a message built from it, and verify the personal message signature server-side.
 
 ## Prerequisites
 
@@ -61,11 +63,11 @@ async function verifySignIn(req: { signature: string; address: string }) {
 
 The `address` option makes the verifier reject a signature that is valid but was produced by a different wallet, so a signature over your challenge from one account cannot be claimed by another.
 
-## Checklist
+## Summary
 
-- [ ] The nonce is random, single-use, and expires.
-- [ ] The message is rebuilt on the server from the stored nonce.
-- [ ] Client-supplied message bytes are never passed to the verifier.
-- [ ] A `client` is passed so the zkLogin proof is verified against the current epoch.
-- [ ] The signer is bound to the claimed address (via the `address` option or an explicit compare).
-- [ ] The nonce is consumed once verification succeeds.
+- The nonce is random, single-use, and expires.
+- The message is rebuilt on the server from the stored nonce.
+- Client-supplied message bytes are never passed to the verifier.
+- A `client` is passed so the zkLogin proof is verified against the current epoch.
+- The signer is bound to the claimed address (via the `address` option or an explicit compare).
+- The nonce is consumed once verification succeeds.
