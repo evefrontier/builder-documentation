@@ -10,7 +10,7 @@ Step-by-step instructions for building a custom Storage Unit extension. For conc
 ## High-level steps
 
 1. **Define a witness struct** (e.g. `public struct VendingAuth has drop {}`) in your Move package.
-2. **Implement your logic** so it calls the [world storage unit module](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/storage_unit.move) to deposit or withdraw items using your `Auth` witness (e.g. after checking payment, tribe, or other rules).
+2. **Implement your logic** so it calls the world storage unit module ([`deposit_item`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/storage_unit.move#L254), [`withdraw_item`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/storage_unit.move#L282)) to deposit or withdraw items using your `Auth` witness (e.g. after checking payment, tribe, or other rules).
 3. **Publish** the package and **authorize** it on the storage unit: borrow the storage unit’s `OwnerCap` and call `storage_unit::authorize_extension<YourAuth>`.
 
 After authorization, only your extension’s logic can perform deposits/withdrawals for non-owner characters; the world module checks the `Auth` type.

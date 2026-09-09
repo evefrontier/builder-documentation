@@ -95,9 +95,9 @@ tx.moveCall({
 
 You can transfer an `OwnerCap` to another address instead of returning it to the character (e.g. another player or an object managed by a tribe/corporation) using functions defined in [`access_control.move`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/access/access_control.move). 
 
-- **Transfer while borrowed** — If you borrowed the cap and have a `ReturnOwnerCapReceipt`, use [`transfer_owner_cap_with_receipt`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/access/access_control.move#L126) to send the cap to a new owner in the same transaction. The receipt is consumed; the cap is not returned to the original character.
+- **Transfer while borrowed** — If you borrowed the cap and have a `ReturnOwnerCapReceipt`, use [`transfer_owner_cap_with_receipt`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/access/access_control.move#L129) to send the cap to a new owner in the same transaction. The receipt is consumed; the cap is not returned to the original character.
 
-- **Direct transfer** — [`transfer_owner_cap<T>(owner_cap, owner)`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/access/access_control.move#L96) sends the cap to a given address or [object ID](https://docs.sui.io/guides/developer/objects/transfers/transfer-to-object) (e.g. another Character). Only the current owner can call this; the Sui runtime enforces ownership.
+- **Direct transfer** — [`transfer_owner_cap<T>(owner_cap, owner)`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/access/access_control.move#L100) sends the cap to a given address or [object ID](https://docs.sui.io/guides/developer/objects/transfers/transfer-to-object) (e.g. another Character). Only the current owner can call this; the Sui runtime enforces ownership.
 
 So you can hand off an assembly access to another player, or to an address that represents a tribe/corporation. The contracts currently transfer to a single address; multi-party access (e.g. a capability shared by a tribe) is planned as a future extension via a capability registry.
 
