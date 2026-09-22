@@ -9,7 +9,7 @@ End-to-end build guide: write a gate extension, publish it, and test the complet
 
 ## Gate API
 
-Custom contracts use the **typed witness pattern**: define a witness struct (`Auth`) and register it on the gate. The [world gate module](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/gate.move) verifies the type at runtime.
+Custom contracts use the **typed witness pattern**: define a witness struct (`Auth`) and register it on the gate. The [world gate module](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/gate.move#L932) verifies the type at runtime.
 
 **Authorize an extension:**
 

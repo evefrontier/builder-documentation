@@ -10,7 +10,7 @@ Step-by-step instructions for building a custom Turret extension that controls t
 ## High-level steps
 
 1. **Define a witness struct** (e.g. `public struct TurretAuth has drop {}`) in your Move package.
-2. **Implement `get_target_priority_list`** with the same signature as the [world turret module](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/turret.move):
+2. **Implement `get_target_priority_list`** with the same signature as the [world turret module](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/turret.move#L315):
    - Parameters: `turret`, `owner_character`, BCS target list, `OnlineReceipt`
    - Return: BCS `vector<ReturnTargetPriorityList>`
    - Use `turret::unpack_candidate_list` and `turret::new_return_target_priority_list`; apply your priority rules (e.g. aggressors only, tribe/group filters, behaviour-based weights).
@@ -32,7 +32,7 @@ public fun authorize_extension<Auth: drop>(
 ```
 
 **Extension entry point (game calls this):**  
-Expose a function with the same signature as the [world turret module](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/turret.move).
+Expose a function with the same signature as the [world turret module](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/turret.move#L315).
 
 - The game deserialises `target_candidate_list` as BCS `vector<TargetCandidate>` and expects BCS `vector<ReturnTargetPriorityList>` back.
 - Use `turret::unpack_candidate_list` and `turret::new_return_target_priority_list` / `turret::unpack_return_priority_list` as helpers.

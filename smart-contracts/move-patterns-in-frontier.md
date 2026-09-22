@@ -8,7 +8,7 @@ Key Move patterns used in the EVE Frontier world contracts:
 
 On-chain object IDs are **derived deterministically** from in-game identifiers (`item_id` + `tenant`) using Sui’s [derived objects](https://docs.sui.io/guides/developer/objects/derived-objects). A single `ObjectRegistry` ensures one in-game item maps to one on-chain object across characters, assemblies, and network nodes.
 
-**Example:** IDs are claimed from the registry when creating assemblies (e.g. [assembly.move](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/assembly.move)).  
+**Example:** IDs are claimed from the registry when creating assemblies (e.g. [`assembly::anchor`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/assembly.move#L178)).  
 **More:** [Object model](object-model.md) — items, `TenantItemId`, and derivation.
 
 ---
@@ -29,7 +29,7 @@ A **hot potato** is a struct with no `drop` ability. It must be consumed in the 
 
 - **ReturnOwnerCapReceipt** — Returned when borrowing an OwnerCap from a Character; it must be used to either return or transfer the cap, so the cap cannot be dropped or lost.
 
-- **OfflineAssemblies** — [`network_node::offline`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/network_node/network_node.move) returns a hot potato; the caller must bring all connected assemblies offline and then call `destroy_offline_assemblies` in the same transaction.
+- **OfflineAssemblies** — [`network_node::offline`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/network_node/network_node.move#L133) returns a hot potato; the caller must bring all connected assemblies offline and then call `destroy_offline_assemblies` in the same transaction.
 
 ---
 
@@ -37,7 +37,7 @@ A **hot potato** is a struct with no `drop` ability. It must be consumed in the 
 
 A **witness** is a one-time type that proves “this call comes from the module that defines this type.” Frontier uses it across **assemblies** so that only a specific extension module can authorize itself on an assembly. Once authorized, that custom contract can change the assembly's behaviour.
 
-**Example:** [`gate::authorize_extension`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/gate.move) — the gate calls `type_name::with_defining_ids()` and stores that type as its extension. Only the module that defines that type could have produced the witness, so only that module’s logic can be registered. Other assemblies use the same pattern to allow custom contracts to extend their behaviour.
+**Example:** [`gate::authorize_extension`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/assemblies/gate.move#L167) — the gate calls `type_name::with_defining_ids()` and stores that type as its extension. Only the module that defines that type could have produced the witness, so only that module’s logic can be registered. Other assemblies use the same pattern to allow custom contracts to extend their behaviour.
 
 ---
 
@@ -45,7 +45,7 @@ A **witness** is a one-time type that proves “this call comes from the module 
 
 OwnerCaps are **borrowed** from the Character object for a single transaction using Sui’s [transfer to object](https://docs.sui.io/guides/developer/objects/transfers/transfer-to-object) (e.g. `Receiving<OwnerCap<T>>`). The Character has a `Receiving` slot; the client passes a ticket to materialize the OwnerCap, uses it, then returns it (or transfers it) in the same transaction.
 
-**In world contracts:** [character.move](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/character/character.move) — `borrow_owner_cap`, `return_owner_cap`.  
+**In world contracts:** [character.move](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/character/character.move) — [`borrow_owner_cap`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/character/character.move#L191), [`return_owner_cap`](https://github.com/evefrontier/world-contracts/blob/main/contracts/world/sources/character/character.move#L207).  
 **More:** [Move book: Transfer to object](https://move-book.com/storage/transfer-to-object); [Ownership model](ownership-model.md) — borrow-use-return pattern.
 
 ---
