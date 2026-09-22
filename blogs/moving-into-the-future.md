@@ -26,13 +26,13 @@ The Python documentation has a rather dramatic quote regarding this change:
 
 > *Everything you thought you knew about binary data and Unicode has changed.*
 
-<br/ >
+<br>
 
 However, we can be a bit less dramatic and just say:
 
 > *Don't worry, in practice this doesn't really change anything for you, you're good.*
 
-<br/ >
+<br>
 
 In short we now have the concepts of text and data. All text, represented with the ```str``` type, is Unicode. Data, represented with the ```bytes``` type, is just a sequence of bytes. You can not directly mix these two together. If you need to represent some text as data (i.e. for serialization) then it must be encoded as bytes with the ```str.encode()``` method. If you need to interpret some data as text, then it must first be decoded from bytes to text with the ```bytes.decode()``` method. That's pretty much it.
 
